@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/lidzknyy/lidzknyy.github.io/note/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</loc>
+    
+    <lastmod>2022-08-28</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://github.com/lidzknyy/lidzknyy.github.io/tags/index.html</loc>
     
     <lastmod>2022-08-28</lastmod>
@@ -66,10 +73,38 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://github.com/lidzknyy/lidzknyy.github.io/tags/java/</loc>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/lidzknyy/lidzknyy.github.io/tags/%E5%A4%9A%E6%80%81/</loc>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
     <loc>https://github.com/lidzknyy/lidzknyy.github.io/categories/Hexo-Theme-LiveMyLife/</loc>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/lidzknyy/lidzknyy.github.io/categories/java/</loc>
+    <lastmod>2022-08-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/lidzknyy/lidzknyy.github.io/categories/java/%E5%A4%9A%E6%80%81/</loc>
     <lastmod>2022-08-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
