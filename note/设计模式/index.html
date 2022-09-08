@@ -234,8 +234,6 @@
 
           
           
-          
-          
           <li>
             <a href="/archive/">
               
@@ -248,9 +246,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/categories/">
               
-              关于
+              分类
               
               
             </a>
@@ -258,10 +256,12 @@
           
           
           
+          
+          
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
+              关于
               
               
             </a>
@@ -462,14 +462,32 @@
 
         <blockquote>
 <p>设计模式（Design pattern）是软件开发人员在软件开发过程中面临的一般问题的解决方案。这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。</p>
+<ul>
+<li>
 <p>设计模式使代码编制真正工程化，设计模式是软件工程的基石。</p>
+</li>
+<li>
 <p>设计模式的目的：解决开发过程中程序员面临的来自以下等多方面的挑战：</p>
+</li>
+<li>
 <p>复用性：相同功能的代码，不用多次编写。</p>
+</li>
+<li>
 <p>维护性：编程规范性，便于其它程序员的阅读和理解。</p>
+</li>
+<li>
 <p>可扩展性：便于增加新的功能。</p>
+</li>
+<li>
 <p>可靠性：增加新功能后，对原来功能没有影响。</p>
+</li>
+<li>
 <p>高内聚：模块内的联系紧密。</p>
+</li>
+<li>
 <p>低耦合：模块之间的依赖低。</p>
+</li>
+</ul>
 </blockquote>
 <h2 id="设计模式的七大原则">设计模式的七大原则</h2>
 <h3 id="开闭原则">开闭原则</h3>
@@ -560,7 +578,7 @@
 </ul>
 <h3 id="合成复用原则">合成复用原则</h3>
 <p>尽量使用合成 / 聚合的方式，而不是使用继承。</p>
-<p><img src="D:%5CBlog%5Csource_posts%5Cnote%5C%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%5Cimage-20220905154736070.png" alt="image-20220905154736070"></p>
+<p><img src="image-20220905154736070.png" alt="image-20220905154736070"></p>
 <h3 id="总结">总结</h3>
 <ul>
 <li>单一职责原则告诉我们实现类要职责单一</li>
@@ -573,7 +591,7 @@
 <h2 id="设计模式分类">设计模式分类</h2>
 <table>
     <tr>
-        <th width="400px">类型</th>
+        <th width="300px">类型</th>
     	<th width="150px">名称</th>
     	<th>介绍</th>
     </tr>
@@ -673,55 +691,53 @@
         <td></td>
     </tr>
 </table>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>名称</th>
-<th>介绍</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>创建型模式</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>结构型模式</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>行为型模式</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <h2 id="单例模式">单例模式</h2>
+<ul>
+<li>
 <p>保证系统内存中该类只存在一个对象。</p>
-<p>使用场景：需要频繁的进行创建和销毁的对象，创建对象耗时或耗资源过多、但又经常用到的对象，工具类对象，频繁访问数据库或文件的对象（如数据源、session工厂等）。</p>
+</li>
+<li>
+<p>使用场景：</p>
+<ul>
+<li>需要频繁的进行创建和销毁的对象</li>
+<li>创建对象耗时或耗资源过多、但又经常用到的对象</li>
+<li>工具类对象</li>
+<li>频繁访问数据库或文件的对象（如数据源、session工厂等）</li>
+</ul>
+</li>
+<li>
 <p>java中，java.lang.Runtime 类就使用了单例模式（饿汉式）。</p>
+</li>
+</ul>
 <h3 id="饿汉式">饿汉式</h3>
 <ol>
 <li>构造器私有化（防止 new）</li>
 <li>类的内部创建对象</li>
 <li>向外暴露一个静态的公共方法</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  1. 优点:这种写法比较简单，就是在类装载的时候就完成实例化。避免了线程同步问题。</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  2. 缺点:在类装载的时候就完成实例化，没有达到Lazy Loading的效果。如果从始至终从未使用过这个实例，则会造成内存的浪费。</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  3. 这种方式基于classloder机制避免了多线程的同步问题，不过，instance在类装载时就实例化，在单例模式中大多数都是调用getInstance方法，但是导致类装载的原因有很多种，因此不能确定有其他的方式(或者其他的静态方法)导致类装载，这时候初始化instance就没有达到lazy loading的效果。</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  4. 结论:这种单例模式可用，可能造成内存浪费</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 静态常量</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  1. 优点:这种写法比较简单，就是在类装载的时候就完成实例化。避免了线程同步问题。</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  2. 缺点:在类装载的时候就完成实例化，没有达到Lazy Loading的效果。如果从始至终</span></span><br><span class="line"><span class="comment">     从未使用过这个实例，则会造成内存的浪费。</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  3. 这种方式基于classloder机制避免了多线程的同步问题。不过，instance在类装载</span></span><br><span class="line"><span class="comment">     时就实例化，在单例模式中大多数都是调用getInstance方法，但是导致类装载的原因有</span></span><br><span class="line"><span class="comment">     很多种，因此不能确定有其他的方式(或者其他的静态方法)导致类装载，这时候初始化</span></span><br><span class="line"><span class="comment">     instance就没有达到lazy loading的效果。</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  4. 结论:这种单例模式可用，可能造成内存浪费</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 静态常量</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 静态代码块</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="懒汉式">懒汉式</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 优点：有 lazy loading 效果</span></span><br><span class="line"><span class="comment">// 缺点：线程不安全。在一个线程进入 if 语句，但还未创建实例时，另一个线程也进入了 if 语句，就会产生多个实例。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 优点：解决了线程不安全问题，加上 synchronized</span></span><br><span class="line"><span class="comment">// 缺点：效率低。每个线程在想获得实例的时候，执行 getInstance() 方法都要进行同步。但实际上我们只需要执行一次实例化代码就够了。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 优点：有 lazy loading 效果</span></span><br><span class="line"><span class="comment">// 缺点：线程不安全。在一个线程进入 if 语句，但还未创建实例时，</span></span><br><span class="line"><span class="comment">//      另一个线程也进入了 if 语句，就会产生多个实例。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 优点：解决了线程不安全问题，加上 synchronized</span></span><br><span class="line"><span class="comment">// 缺点：效率低。每个线程在想获得实例的时候，执行 getInstance() 方法都要进行同步。</span></span><br><span class="line"><span class="comment">//      但实际上我们只需要执行一次实例化代码就够了。</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="双重检查">双重检查</h3>
 <p>线程安全，有 lazy loading 效果，效率高。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">volatile</span> Singleton instance;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (Singleton.class) &#123;</span><br><span class="line">                <span class="keyword">if</span> (instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="静态内部类">静态内部类</h3>
+<ul>
+<li>
 <p>线程安全，有 lazy loading 效果，效率高。</p>
+</li>
+<li>
 <p>采用类加载的机制，保证初始化实例时只有一个线程。</p>
+</li>
+<li>
 <p>静态内部类方式在 Singleton 类被加载时并不会立即实例化，而是在需要实例化时，调用 getInstance() 方法，才会加载 SingletonInstance 类，从而完成 Singleton 的实例化。</p>
+</li>
+<li>
 <p>类的静态属性只会在第一次加载类的时候初始化，所以，该方法保证了线程的安全性，在类进行初始化是，别的线程是无法进入的。</p>
+</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">SingletonInstance</span> </span>&#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Singleton INSTANCE = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> SingletonInstance.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="枚举">枚举</h3>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Singleton instance1 = Singleton.INSTANCE;</span><br><span class="line">        Singleton instance2 = Singleton.INSTANCE;</span><br><span class="line">        System.out.println(instance1 == instance2); <span class="comment">// true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 线程安全，而且还能防止反序列化重新创建新的对象</span></span><br><span class="line"><span class="class"><span class="keyword">enum</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">	INSTANCE；</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ……</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
