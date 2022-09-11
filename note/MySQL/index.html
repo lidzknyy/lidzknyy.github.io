@@ -756,22 +756,22 @@
 <tr>
 <td>FLOAT</td>
 <td>4</td>
-<td></td>
-<td></td>
+<td>-</td>
+<td>-</td>
 <td>单精度浮点</td>
 </tr>
 <tr>
 <td>DOUBLE</td>
 <td>8</td>
-<td></td>
-<td></td>
+<td>-</td>
+<td>-</td>
 <td>双精度浮点</td>
 </tr>
 <tr>
 <td>DECIMAL</td>
 <td>对DECIMAL(M, D)，如果M &gt; D，为 M+2；否则为 D+2</td>
-<td></td>
-<td></td>
+<td>-</td>
+<td>-</td>
 <td>小数值</td>
 </tr>
 </tbody>
@@ -781,7 +781,7 @@
 <thead>
 <tr>
 <th>类型</th>
-<th>大小（Bytes）</th>
+<th>大小(Bytes)</th>
 <th>范围</th>
 <th>格式</th>
 <th>用途</th>
@@ -889,9 +889,17 @@
 </tbody>
 </table>
 <h4 id="CHAR-和-VARCHAR">CHAR 和 VARCHAR</h4>
+<ul>
+<li>
 <p>char(N) 和 varchar(N) 中 N 代表存储最大字符的个数。例：varchar(32) 代表该字段最多可以存储 30 个字符。</p>
+</li>
+<li>
 <p>char 类型为固定长度，如果数据长度不足，则会在右侧进行填充，检索时会去掉；varchar 类型为可变长度。</p>
+</li>
+<li>
 <p>更多区别，参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chengyunblogs/p/15788493.html">CHAR 和 VARCHAR的区别</a></p>
+</li>
+</ul>
 <h4 id="SET-类型">SET 类型</h4>
 <ul>
 <li>SET 类型可以有 0 或多个值，最多可以有 64 个不同的成员，成员之间用 ‘,’ 分隔。</li>
