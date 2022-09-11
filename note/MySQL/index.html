@@ -936,40 +936,13 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table student;</span><br></pre></td></tr></table></figure>
 <h3 id="修改表">修改表</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># - 修改表名</span><br><span class="line">alter table student rename to student_tbl;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>添加字段</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl add tel varchar(256);				# 默认添加到末尾</span><br><span class="line"></span><br><span class="line">alter table student_tbl add tel varchar(256) first;			# 添加在第一列</span><br><span class="line">alter table student_tbl add tel varchar(256) after sname;	# 添加在 sname 字段后面</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>删除字段</p>
-<p>如果表中只剩下一个字段，则无法删除。</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl drop tel;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>
-<p>修改字段</p>
-<p>在 alter 命令中使用 modify 或 change 子句。</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl modify sno varchar(128);		# 修改 sno 字段类型为 varchar(128)</span><br><span class="line"></span><br><span class="line">alter table student_tbl change sno sno varchar(128);	# 修改 sno 字段类型为 varchar(128)</span><br><span class="line">alter table student_tbl change sno sid varchar(20);		# 修改 sno 字段名称为 sid</span><br></pre></td></tr></table></figure>
-<ul>
-<li>修改字段默认值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl modify tel int not null;</span><br><span class="line"></span><br><span class="line">alter table student_tbl modify tel int default 100;</span><br><span class="line"></span><br><span class="line">alter table student_tbl change tel tel int not null default 100;</span><br><span class="line"></span><br><span class="line">alter table student_tbl alter tel set default 100;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>修改字段位置</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl modify tel int first;	# 将 tel 移到 首位</span><br><span class="line"></span><br><span class="line">alter table student_tbl modify tel int after sex;	# 将 tel 移到 sex 后面</span><br></pre></td></tr></table></figure>
-<ul>
-<li>删除字段默认值</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl alter tel drop default;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>修改数据表引擎</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl engine &#x3D; InnoDB;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># - 添加字段</span><br><span class="line">alter table student_tbl add tel varchar(256);				# 默认添加到末尾</span><br><span class="line">alter table student_tbl add tel varchar(256) first;			# 添加在第一列</span><br><span class="line">alter table student_tbl add tel varchar(256) after sname;	# 添加在 sname 字段后面</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># - 删除字段</span><br><span class="line"># 如果表中只剩下一个字段，则无法删除。</span><br><span class="line">alter table student_tbl drop tel;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># - 修改字段</span><br><span class="line"># 在 alter 命令中使用 modify 子句。</span><br><span class="line">alter table student_tbl modify sno varchar(128);		# 修改 sno 字段类型为 varchar(128)</span><br><span class="line"></span><br><span class="line"># 在 alter 命令中使用 change 子句。</span><br><span class="line">alter table student_tbl change sno sno varchar(128);	# 修改 sno 字段类型为 varchar(128)</span><br><span class="line">alter table student_tbl change sno sid varchar(20);		# 修改 sno 字段名称为 sid</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 修改字段默认值</span><br><span class="line">alter table student_tbl modify tel int not null;</span><br><span class="line"></span><br><span class="line">alter table student_tbl modify tel int default 100;</span><br><span class="line"></span><br><span class="line">alter table student_tbl change tel tel int not null default 100;</span><br><span class="line"></span><br><span class="line">alter table student_tbl alter tel set default 100;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 修改字段位置</span><br><span class="line">alter table student_tbl modify tel int first;		# 将 tel 移到 首位</span><br><span class="line">alter table student_tbl modify tel int after sex;	# 将 tel 移到 sex 后面</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 删除字段默认值</span><br><span class="line">alter table student_tbl alter tel drop default;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改数据表引擎</span><br><span class="line">alter table student_tbl engine &#x3D; InnoDB;</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-INSERT">MySQL INSERT</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;test_tbl&#96;(</span><br><span class="line">   &#96;id&#96; int unsigned auto_increment,</span><br><span class="line">   &#96;title&#96; VARCHAR(100) not null default &quot;title&quot;,</span><br><span class="line">   &#96;author&#96; VARCHAR(40) NOT NULL,</span><br><span class="line">   &#96;create_time&#96; DATE,</span><br><span class="line">   PRIMARY KEY ( &#96;runoob_id&#96; )</span><br><span class="line">)engine&#x3D;InnoDB default charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
 <ul>
