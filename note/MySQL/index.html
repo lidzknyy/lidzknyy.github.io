@@ -360,7 +360,7 @@
 
     
       #signature {/*signature*/
-        background-image: url('/img/signature/nickname.png');
+        background-image: url('/img/signature/nickname2.png');
       }
     
   </style>
@@ -620,17 +620,33 @@
 </ul>
 <h2 id="关系模型">关系模型</h2>
 <h3 id="关系模式的数据结构">关系模式的数据结构</h3>
+<p><b style="color:#b22222">关系模式要求关系必须是规范化的，关系的每一个分量必须是一个不可分的数据项。</b></p>
 <ul>
-<li>关系（relation）：一张数据表为一个关系。</li>
-<li>元组（tuple）：也称记录，一行为一个元组，包含一组相关的数据。</li>
-<li>属性（attribute）：一列为一个属性，包含相同类型的数据。</li>
-<li>码（key）：表中的某个属性组，可唯一确定一个元组。</li>
-<li>域（domain）：是一组具有相同数据类型的值的集合。属性的取值范围来自某个域。例：性别的域是（男，女），即属性的数据类型【int、varchar等】</li>
-<li>基数：域的大小。</li>
-<li>分量：元组中的一个属性值。例：男</li>
-<li>关系模式：对关系的描述，一般表示为【关系名（属性1， 属性2，…， 属性n）】</li>
+<li>
+<p>关系（relation）：一张数据表为一个关系。</p>
+</li>
+<li>
+<p>元组（tuple）：也称记录，一行为一个元组，包含一组相关的数据。</p>
+</li>
+<li>
+<p>属性（attribute）：一列为一个属性，包含相同类型的数据。</p>
+</li>
+<li>
+<p>码（key）：表中的某个属性组，可唯一确定一个元组。</p>
+</li>
+<li>
+<p>域（domain）：是一组具有相同数据类型的值的集合。属性的取值范围来自某个域。例：性别的域是（男，女），即属性的数据类型【int、varchar等】</p>
+</li>
+<li>
+<p>基数：域的大小。</p>
+</li>
+<li>
+<p>分量：元组中的一个属性值。例：男</p>
+</li>
+<li>
+<p>关系模式：对关系的描述，一般表示为【关系名（属性1， 属性2，…， 属性n）】</p>
+</li>
 </ul>
-<p><strong>关系模式要求关系必须是规范化的，关系的每一个分量必须是一个不可分的数据项。</strong></p>
 <h3 id="关系">关系</h3>
 <h4 id="关系的术语">关系的术语</h4>
 <ul>
@@ -658,11 +674,21 @@
 <h4 id="关系模式">关系模式</h4>
 <p>关系模式形式化表示  $R(U, D, DOM, F)$。</p>
 <ul>
-<li>R为关系名</li>
-<li>U为组成该关系的属性名集合</li>
-<li>D为U中属性所来自的域</li>
-<li>DOM为属性向域的映像集合</li>
-<li>F为属性间数据的依赖关系集合</li>
+<li>
+<p>R为关系名</p>
+</li>
+<li>
+<p>U为组成该关系的属性名集合</p>
+</li>
+<li>
+<p>D为U中属性所来自的域</p>
+</li>
+<li>
+<p>DOM为属性向域的映像集合</p>
+</li>
+<li>
+<p>F为属性间数据的依赖关系集合</p>
+</li>
 </ul>
 <h3 id="关系的完整性">关系的完整性</h3>
 <ul>
@@ -702,10 +728,10 @@
 <h2 id="MySQL-数据库">MySQL 数据库</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database test;		# 创建数据库，数据库名为 test</span><br><span class="line">drop database test;			# 删除数据库</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-数据类型">MySQL 数据类型</h2>
-<ul>
-<li>定义数据字段的类型对<text style="color:red">数据库的优化</text>是非常重要的。</li>
-<li>mysql 支持数值、日期 / 时间和字符串三种数据类型。</li>
-</ul>
+<blockquote>
+<p>定义数据字段的类型对<span style="color:#B22222">数据库的优化</span>是非常重要的。<br>
+MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
+</blockquote>
 <h3 id="数值类型">数值类型</h3>
 <table>
 <thead>
@@ -826,7 +852,7 @@
 </tbody>
 </table>
 <h3 id="字符串类型">字符串类型</h3>
-<p>字符串类型包含 CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM、SET。<text style="color:red">数据表的字符集不同，最大长度会不同</text>。</p>
+<p>字符串类型包含 CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM、SET。<span style="color:#b22222">数据表的字符集不同，最大长度会不同</span>。</p>
 <table>
 <thead>
 <tr>
@@ -902,66 +928,102 @@
 </ul>
 <h4 id="SET-类型">SET 类型</h4>
 <ul>
-<li>SET 类型可以有 0 或多个值，最多可以有 64 个不同的成员，成员之间用 ‘,’ 分隔。</li>
-<li>SET 成员本身不能包含 ‘,’ 。</li>
-<li>创建表时，SET 成员值的尾部空格会被自动删除。</li>
-<li>插入数据时，顺序不重要，某一个元素出现次数也不重要。最终检索时，每个元素只会出现一次，顺序为创建表示设置的顺序。</li>
+<li>
+<p>SET 类型可以有 0 或多个值，最多可以有 64 个不同的成员，成员之间用 ‘,’ 分隔。</p>
+</li>
+<li>
+<p>SET 成员本身不能包含 ‘,’ 。</p>
+</li>
+<li>
+<p>创建表时，SET 成员值的尾部空格会被自动删除。</p>
+</li>
+<li>
+<p>插入数据时，顺序不重要，某一个元素出现次数也不重要。最终检索时，每个元素只会出现一次，顺序为创建表示设置的顺序。</p>
+</li>
 </ul>
-<p>使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;myset_tbl&#96;(</span><br><span class="line">	col SET(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;de&#39;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"># ‘’ 中间不能加空格</span><br><span class="line">insert into myset_tbl values</span><br><span class="line">(&#39;a,b,a&#39;), (&#39;c,de&#39;), (&#39;a,b,c,de&#39;), (&#39;a,a,a&#39;);</span><br><span class="line"></span><br><span class="line"># 检索结果为</span><br><span class="line">(1) a,b</span><br><span class="line">(2) c,de</span><br><span class="line">(3) a,b,c,de</span><br><span class="line">(4) a</span><br><span class="line"></span><br><span class="line"># 如果插入的元素，set 中为定义，则插入失败，如: insert into myset_tbl values(&#39;x, a&#39;);</span><br><span class="line"></span><br><span class="line"># 查询</span><br><span class="line"># 使用 like ，会将整个分量看做一个字符串整体(包含逗号)</span><br><span class="line">select * from myset_tbl where col like &#39;%d%&#39;; 			# 结果(2)(3)</span><br><span class="line">select * from myset_tbl where col like &#39;%,%&#39;; 			# 结果(1)(2)(3)</span><br><span class="line"></span><br><span class="line"># 使用 find_in_set 只能精准匹配某一个 set 成员</span><br><span class="line">select * from myset_tbl where find_in_set(&#39;de&#39;,col);	# 结果(2)(3)</span><br><span class="line">select * from myset_tbl where find_in_set(&#39;d&#39;,col);		# 结果 Empty</span><br><span class="line"></span><br><span class="line">select * from myset_tbl where find_in_set(&#39;a&#39;,col) and find_in_set(&#39;c&#39;,col);  # 结果(3)</span><br></pre></td></tr></table></figure>
+<p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;myset_tbl&#96;(</span><br><span class="line">    col SET(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;de&#39;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"># &#39;&#39;中间不能加空格</span><br><span class="line">insert into myset_tbl values</span><br><span class="line">(&#39;a,b,a&#39;), (&#39;c,de&#39;), (&#39;a,b,c,de&#39;), (&#39;a,a,a&#39;);</span><br><span class="line"></span><br><span class="line"># 检索结果为</span><br><span class="line">(1) a,b</span><br><span class="line">(2) c,de</span><br><span class="line">(3) a,b,c,de</span><br><span class="line">(4) a</span><br><span class="line"></span><br><span class="line"># 如果插入的元素，set 中为定义，则插入失败，如: insert into myset_tbl values(&#39;x, a&#39;);</span><br><span class="line"></span><br><span class="line"># 查询</span><br><span class="line"># 使用 like ，会将整个分量看做一个字符串整体(包含逗号)</span><br><span class="line">select * from myset_tbl where col like &#39;%d%&#39;;           # 结果(2)(3)</span><br><span class="line">select * from myset_tbl where col like &#39;%,%&#39;;           # 结果(1)(2)(3)</span><br><span class="line"></span><br><span class="line"># 使用 find_in_set 只能精准匹配某一个 set 成员</span><br><span class="line">select * from myset_tbl where find_in_set(&#39;de&#39;,col);    # 结果(2)(3)</span><br><span class="line">select * from myset_tbl where find_in_set(&#39;d&#39;,col);     # 结果 Empty</span><br><span class="line"></span><br><span class="line">select * from myset_tbl where find_in_set(&#39;a&#39;,col) and find_in_set(&#39;c&#39;,col);  # 结果(3)</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-数据表">MySQL 数据表</h2>
 <h3 id="创建表">创建表</h3>
-<p>创建表时，必须指定表名、字段名、字段类型。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) primary key comment &#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(20) comment &#39;姓名&#39;,</span><br><span class="line">    &#96;sex&#96; enum(‘男’, ’女’) comment &#39;性别&#39;</span><br><span class="line">)comment &#39;学生表&#39;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>创建表时，必须指定表名、字段名、字段类型。</strong></p>
 <ul>
 <li>使用 if not exists，创建表时，先判断该表是否存在，如果不存在，则会创建；</li>
 <li>使用 comment 可以为字段和表做解释；</li>
 <li>enum(‘男’,  ’女’)，，枚举类型，再插入数据时，sex字段的值只能为 男 或 女；</li>
-<li>primary key 指定该表的主键，也可以使用如下方式：</li>
+<li>primary key 指定该表的主键。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) comment &#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(20) comment &#39;姓名&#39;,</span><br><span class="line">    &#96;sex&#96; enum(‘男’, ’女’) comment &#39;性别&#39;，</span><br><span class="line">    primary key (&#96;sno&#96;)</span><br><span class="line">    </span><br><span class="line">    # primary key (&#96;sno&#96;, &#96;sname&#96;)，指定 sno 和 sname 做联合主码</span><br><span class="line">)comment &#39;学生表&#39;;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) primary key comment &#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(20) comment &#39;姓名&#39;,</span><br><span class="line">    &#96;sex&#96; enum(‘男’, ’女’) comment &#39;性别&#39;</span><br><span class="line">    </span><br><span class="line">    # primary key (&#96;sno&#96;)</span><br><span class="line">    # primary key (&#96;sno&#96;, &#96;sname&#96;)，指定 sno 和 sname 做联合主码</span><br><span class="line">)comment &#39;学生表&#39;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>在创建表时，可以为表字段设置默认值等约束：</strong></p>
 <ul>
-<li>在创建表时，可以为表字段设置默认值等约束
-<ul>
-<li>unsigned 无符号整数</li>
-<li>auto_increment 自增，一般用于主键</li>
-<li>not null 该字段不能为空。插入数据时，如果该字段为空，则会报错</li>
-<li>engine 设置存储引擎，charset 设置编码</li>
-<li>default 设置字段默认值。插入数据时，如果该字段为空，则使用默认值</li>
+<li>unsigned 无符号整数；</li>
+<li>auto_increment 自增，一般用于主键；</li>
+<li>not null 该字段不能为空。插入数据时，如果该字段为空，则会报错；</li>
+<li>engine 设置存储引擎，charset 设置编码；</li>
+<li>default 设置字段默认值。插入数据时，如果该字段为空，则使用默认值；</li>
 </ul>
-</li>
-</ul>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;test_tbl&#96;(</span><br><span class="line">   &#96;id&#96; int unsigned auto_increment,</span><br><span class="line">   &#96;title&#96; VARCHAR(100) not null default &quot;title&quot;,</span><br><span class="line">   &#96;author&#96; VARCHAR(40) NOT NULL,</span><br><span class="line">   &#96;creat_time&#96; DATE,</span><br><span class="line">   PRIMARY KEY ( &#96;runoob_id&#96; )</span><br><span class="line">)engine&#x3D;InnoDB default charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
 <h3 id="删除表">删除表</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table student;</span><br></pre></td></tr></table></figure>
 <h3 id="修改表">修改表</h3>
+<blockquote>
+<p><strong>修改表名</strong></p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># - 修改表名</span><br><span class="line">alter table student rename to student_tbl;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># - 添加字段</span><br><span class="line">alter table student_tbl add tel varchar(256);				# 默认添加到末尾</span><br><span class="line">alter table student_tbl add tel varchar(256) first;			# 添加在第一列</span><br><span class="line">alter table student_tbl add tel varchar(256) after sname;	# 添加在 sname 字段后面</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>添加字段</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># - 添加字段</span><br><span class="line">alter table student_tbl add tel varchar(256);			# 默认添加到末尾</span><br><span class="line">alter table student_tbl add tel varchar(256) first;		# 添加在第一列</span><br><span class="line">alter table student_tbl add tel varchar(256) after sname;	# 添加在 sname 字段后面</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>删除字段</strong></p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># - 删除字段</span><br><span class="line"># 如果表中只剩下一个字段，则无法删除。</span><br><span class="line">alter table student_tbl drop tel;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># - 修改字段</span><br><span class="line"># 在 alter 命令中使用 modify 子句。</span><br><span class="line">alter table student_tbl modify sno varchar(128);		# 修改 sno 字段类型为 varchar(128)</span><br><span class="line"></span><br><span class="line"># 在 alter 命令中使用 change 子句。</span><br><span class="line">alter table student_tbl change sno sno varchar(128);	# 修改 sno 字段类型为 varchar(128)</span><br><span class="line">alter table student_tbl change sno sid varchar(20);		# 修改 sno 字段名称为 sid</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>修改字段</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># - 修改字段</span><br><span class="line"># 在 alter 命令中使用 modify 子句。</span><br><span class="line">alter table student_tbl modify sno varchar(128);	# 修改 sno 字段类型为 varchar(128)</span><br><span class="line"></span><br><span class="line"># 在 alter 命令中使用 change 子句。</span><br><span class="line">alter table student_tbl change sno sno varchar(128);	# 修改 sno 字段类型为 varchar(128)</span><br><span class="line">alter table student_tbl change sno sid varchar(20);	# 修改 sno 字段名称为 sid</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>修改字段默认值</strong></p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 修改字段默认值</span><br><span class="line">alter table student_tbl modify tel int not null;</span><br><span class="line"></span><br><span class="line">alter table student_tbl modify tel int default 100;</span><br><span class="line"></span><br><span class="line">alter table student_tbl change tel tel int not null default 100;</span><br><span class="line"></span><br><span class="line">alter table student_tbl alter tel set default 100;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>修改字段位置</strong></p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 修改字段位置</span><br><span class="line">alter table student_tbl modify tel int first;		# 将 tel 移到 首位</span><br><span class="line">alter table student_tbl modify tel int after sex;	# 将 tel 移到 sex 后面</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>删除字段默认值</strong></p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 删除字段默认值</span><br><span class="line">alter table student_tbl alter tel drop default;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>修改数据表引擎</strong></p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改数据表引擎</span><br><span class="line">alter table student_tbl engine &#x3D; InnoDB;</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-INSERT">MySQL INSERT</h2>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;test_tbl&#96;(</span><br><span class="line">   &#96;id&#96; int unsigned auto_increment,</span><br><span class="line">   &#96;title&#96; VARCHAR(100) not null default &quot;title&quot;,</span><br><span class="line">   &#96;author&#96; VARCHAR(40) NOT NULL,</span><br><span class="line">   &#96;create_time&#96; DATE,</span><br><span class="line">   PRIMARY KEY ( &#96;runoob_id&#96; )</span><br><span class="line">)engine&#x3D;InnoDB default charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
-<li>如果字段类型为字符型，则必须使用 ‘ ’ 或 “ ”</li>
-<li>如果规定插入字段，数据值的顺序 必须和 规定字段顺序 一一对应</li>
-<li>可以一次性插入多组数据，使用 “,” 分隔</li>
-<li>插入数据时，主键的值不能重复</li>
+<li>如果字段类型为字符型，则必须使用 ‘ ’ 或 “ ”；</li>
+<li>如果规定插入字段，数据值的顺序 必须和 规定字段顺序 一一对应；</li>
+<li>可以一次性插入多组数据，使用 “,” 分隔；</li>
+<li>插入数据时，主键的值不能重复。</li>
 </ul>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into test_tbl(title, author, create_time) </span><br><span class="line">values</span><br><span class="line">(&#39;Java 教程&#39;, &#39;zknyy&#39;, now()),</span><br><span class="line">(&#39;人间词话&#39;, &#39;王国维&#39;, now());</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
-<li>如果所有字段都需要插入，可以不指定字段</li>
-<li>如果主键有设置自增，则可以写为 0 或 null，插入后会自动自增</li>
+<li>如果所有字段都需要插入，可以不指定字段；</li>
+<li>如果主键有设置自增，则可以写为 0 或 null，插入后会自动自增。</li>
 </ul>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into test_tbl</span><br><span class="line">values</span><br><span class="line">(0, &#39;MySQL 教程&#39;, &#39;zknyy&#39;, now()),</span><br><span class="line">(0, &#39;三体&#39;, &#39;刘慈欣&#39;, now());</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-SELECT">MySQL SELECT</h2>
 <h3 id="join">join</h3>
 <p><img src="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png" alt="img"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select S.*, R.* from S,R   # 笛卡尔积</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select S.*, R.* from R join S on R.A&#x3D;S.A where F</span><br><span class="line"></span><br><span class="line"># 等值连接，重复属性不去掉，以表名.属性名存在，结果为 R∩S</span><br><span class="line">select S.*, R.* from R inner join S on R.A&#x3D;S.A</span><br><span class="line"></span><br><span class="line">select S.*, R.* from R join S on R.A&#x3D;S.A		# 自然连接，重复属性会去掉</span><br><span class="line">select S.*, R.* from R left join S on R.A&#x3D;S.A	# 左连接，R</span><br><span class="line">select S.*, R.* from R right join S on R.A&#x3D;S.A	# 右连接，结果只有关系S中的元组</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">select S.*, R.* from R join S on R.A&#x3D;S.A where F</span><br><span class="line"></span><br><span class="line"># 等值连接，重复属性不去掉，以表名.属性名存在，结果为 R∩S</span><br><span class="line">select S.*, R.* from R inner join S on R.A&#x3D;S.A</span><br><span class="line"></span><br><span class="line">select S.*, R.* from R join S on R.A&#x3D;S.A	# 自然连接，重复属性会去掉</span><br><span class="line">select S.*, R.* from R left join S on R.A&#x3D;S.A	# 左连接，R</span><br><span class="line">select S.*, R.* from R right join S on R.A&#x3D;S.A	# 右连接，结果只有关系S中的元组</span><br></pre></td></tr></table></figure>
 <h3 id="distinct">distinct</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct *(属性) from R</span><br></pre></td></tr></table></figure>
 <h3 id="order-by">order by</h3>
@@ -969,29 +1031,45 @@
 <h3 id="group-by">group by</h3>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select L as c from R group by L</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-UPDATE">MySQL UPDATE</h2>
+<blockquote>
+<p><strong>示例数据表</strong></p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) primary key comment &#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(20) comment &#39;姓名&#39;,</span><br><span class="line">    &#96;age&#96; int comment &#39;年龄&#39;,</span><br><span class="line">    &#96;sex&#96; enum(‘男’, ’女’) comment &#39;性别&#39;</span><br><span class="line">)comment &#39;学生表&#39;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>可以同时更新多个字段</li>
-<li>可以使用 where 指定更新条件</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 通用sql语法</span><br><span class="line">update table_name set field1&#x3D;new-value1, field2&#x3D;new-value2</span><br><span class="line">[where ...];</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将学号为 1900301 的学生年龄改为 23</span><br><span class="line">update student_tbl set age&#x3D;23 where sno&#x3D;&quot;1900301&quot;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>修改值可以使用表达式</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将所有学生年龄 +1</span><br><span class="line">update student_tbl set age&#x3D;age+1;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>替换某个字段中的某个字符串</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 将所有 姓长孙的学生 改为 姓张</span><br><span class="line">update student_tbl set sname&#x3D;replace(sname, &#39;长孙&#39;, &#39;张&#39;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>通用 sql</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 通用 sql 语法</span><br><span class="line">update table_name set field1&#x3D;new-value1, field2&#x3D;new-value2</span><br><span class="line">[where ...];</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>可以同时更新多个字段；<br>
+可以使用 where 指定更新条件。</strong></p>
+<p><span style="color:#2222f2">例：将学号为 1900301 的学生年龄改为 23</span></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student_tbl set age&#x3D;23 where sno&#x3D;&quot;1900301&quot;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>修改值可以使用表达式。</strong></p>
+<p><span style="color:#2222f2">例：将所有学生年龄 +1</span></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student_tbl set age&#x3D;age+1;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>替换某个字段中的某个字符串。</strong></p>
+<p><span style="color:#2222f2">例：将所有 姓长孙的学生 改为 姓张</span></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student_tbl set sname&#x3D;replace(sname, &#39;长孙&#39;, &#39;张&#39;);</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-DELETE">MySQL DELETE</h2>
+<blockquote>
+<p><strong>示例数据表</strong></p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) primary key comment &#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(20) comment &#39;姓名&#39;,</span><br><span class="line">    &#96;age&#96; int comment &#39;年龄&#39;,</span><br><span class="line">    &#96;sex&#96; enum(‘男’, ’女’) comment &#39;性别&#39;</span><br><span class="line">)comment &#39;学生表&#39;;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>如果不指定 where，则删除表中所有记录</li>
-<li>使用 where，删除指定条件的记录</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 通用 sql 语句</span><br><span class="line">delete from table_name [where ...]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 删除所有年龄大于 25 的学生</span><br><span class="line">delete from student_tbl where age&gt;25;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>通用 sql</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 通用 sql 语法</span><br><span class="line">delete from table_name [where ...]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>如果不指定 where，则删除表中所有记录；<br>
+使用 where，删除指定条件的记录。</strong></p>
+<p><span style="color:#2222f2">例：删除所有年龄大于 25 的学生</span></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from student_tbl where age&gt;25;</span><br></pre></td></tr></table></figure>
 <h2 id="约束">约束</h2>
 <h2 id="视图">视图</h2>
 <h2 id="函数">函数</h2>
@@ -1100,7 +1178,7 @@
       perPage: 10,
       pagerDirection: 'last',
       createIssueManually: false,
-      language: 'en',
+      language: 'zh-CN',
       proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
     });
     gitalk.render('gitalk-container');
