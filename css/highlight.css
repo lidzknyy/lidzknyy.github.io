@@ -2,8 +2,8 @@
 .post-container pre,
 .post-container .highlight {
   overflow: auto;
-  margin: 20px 0;
-  padding: 15px;
+  margin: 10px 0 20px 0;
+  padding: 10px;
   font-size: 13px;
   color: #c5c8c6;
   background: #1d1f21;
