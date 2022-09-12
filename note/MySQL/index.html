@@ -1151,31 +1151,32 @@ latin1 字符集，每个字符占 1 Bytes，汉字是两个字符（即：占 2
 <p><span style="color:#2222f2">例：查询所有学生考试成绩，只显示有效成绩</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select stu.sno, sname, cno, grade</span><br><span class="line">from student_tbl as stu inner join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno;</span><br></pre></td></tr></table></figure>
+<p><img src="innerjoin.png" alt="image-20220912175246739"></p>
 <h4 id="LEFT-JOIN">LEFT JOIN</h4>
 <blockquote>
 <p>返回左表所有行，如果和右表没有匹配记录，则显示NULL</p>
 <p><span style="color:#2222f2">例：查询所有学生002课程成绩，未选课成绩显示 NULL</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select stu.sno, sname, cno</span><br><span class="line">from student_tbl as stu left join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno and cno&#x3D;&quot;002&quot;;</span><br></pre></td></tr></table></figure>
-<p><img src="image-20220912165403951.png" alt="image-20220912165403951"></p>
+<p><img src="leftjoin.png" alt="image-20220912165403951"></p>
 <h4 id="RIGHT-JOIN">RIGHT JOIN</h4>
 <blockquote>
 <p>返回右表所有行，如果和左表没有匹配记录，则显示NULL</p>
 <p><span style="color:#2222f2">例：查询每个课程选课情况，显示课号和选课学生学号</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select course.cno, sc.sno</span><br><span class="line">from score_tbl as sc right join course_tbl as course</span><br><span class="line">on sc.cno&#x3D;course.cno;</span><br></pre></td></tr></table></figure>
-<p><img src="image-20220912172448443.png" alt="image-20220912172448443"></p>
+<p><img src="rightjoin1.png" alt="image-20220912172448443"></p>
 <blockquote>
 <p><span style="color:#2222f2">例：课程选课情况，显示课号和选课人数</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select course.cno, count(sc.sno) as count</span><br><span class="line">from score_tbl as sc right join course_tbl as course</span><br><span class="line">on sc.cno&#x3D;course.cno group by course.cno;</span><br></pre></td></tr></table></figure>
-<p><img src="image-20220912172505381.png" alt="image-20220912172505381"></p>
+<p><img src="rightjoin2.png" alt="image-20220912172505381"></p>
 <h4 id="FULL-JOIN">FULL JOIN</h4>
 <blockquote>
 <p>left join 和 right join 的并集。由于 mysql 不支持 full outer join，所以只能通过两个的并集实现。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select stu.sno as sno, cno</span><br><span class="line">from student_tbl as stu left join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno</span><br><span class="line">union</span><br><span class="line">select sc.sno as sno, course.cno as cno</span><br><span class="line">from score_tbl as sc right join course_tbl as course</span><br><span class="line">on sc.cno&#x3D;course.cno;</span><br></pre></td></tr></table></figure>
-<p><img src="image-20220912172523380.png" alt="image-20220912172523380"></p>
+<p><img src="fulljoin.png" alt="image-20220912172523380"></p>
 <h2 id="MySQL-UPDATE">MySQL UPDATE</h2>
 <blockquote>
 <p><strong>示例数据表</strong></p>
@@ -1242,7 +1243,7 @@ latin1 字符集，每个字符占 1 Bytes，汉字是两个字符（即：占 2
 <p><span style="color:#2222f2">例：查询所有学生 002课程 的成绩，未选课显示 NULL。</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 条件写在 on 中</span><br><span class="line"></span><br><span class="line">select stu.sno, sname, cno</span><br><span class="line">from student_tbl as stu left join score_tbl as sc</span><br><span class="line">on (stu.sno&#x3D;sc.sno and cno&#x3D;&quot;002&quot;);</span><br></pre></td></tr></table></figure>
-<p><img src="image-20220912165403951.png" alt="image-20220912165403951"></p>
+<p><img src="leftjoin.png" alt="image-20220912165403951"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 条件写在 where 中</span><br><span class="line"></span><br><span class="line">select stu.sno, sname, cno</span><br><span class="line">from student_tbl as stu left join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno </span><br><span class="line">where cno&#x3D;&quot;002&quot;;</span><br></pre></td></tr></table></figure>
 <p><img src="image-20220912165418223.png" alt="image-20220912165418223"></p>
 
