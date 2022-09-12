@@ -564,6 +564,7 @@
 </li>
 </ul>
 <h3 id="概念模型">概念模型</h3>
+<p>概念模型的表示方法：E-R模型（图）。</p>
 <ul>
 <li>实体（entity）：客观存在并可相互区别的事物。例：一个学生、一次选课、一次订货等。</li>
 <li>属性（attribute）：实体所具有的某一特性。</li>
@@ -572,7 +573,6 @@
 <li>实体集（entity set）：同一类型实体的集合。</li>
 <li>联系（relationship）：实体之间的联系。一对一、一对多、多对多。</li>
 </ul>
-<p>概念模型的表示方法：E-R模型（图）。</p>
 <h3 id="DBS的三级模式结构">DBS的三级模式结构</h3>
 <ul>
 <li>
@@ -928,10 +928,10 @@ utf8 字符集，每个字符【所有字符】占 3 Bytes；<br>
 gbk 字符集，每个字符占 2 Bytes；<br>
 latin1 字符集，每个字符占 1 Bytes，汉字是两个字符（即：占 2 Bytes）。</p>
 <p>例：goods_tbl 表的 charset 是 utf8 字符集。其拥有 varchar(N) 类型字段 info。</p>
-<p>​        因为 varchar 最多能存储 65535 Bytes 的数据，而 utf8 字符集中每个字符 占 3 Bytes，故 info 字段所能定义最大存储字符数为 65535 / 3 = 21845。</p>
-<p>​        又由于 varchar 存储变长字段的字符类型，其存储时需要在前缀长度列表加上实际存储的字符，当存储的字符串长度小于 255 字节时，需要 1 字节的空间，当大于 255 字节时，需要 2 字节的空间。故 N = (65535 - 1) / 3 = 21844 或 N = (65535 - 2) / 3 = 21844，即 varchar(21844);</p>
-<p>​        如果 good_tbl 表的 charset 为 latin1。则 info 字段最大能定义 65535 - 2 = 65533 Bytes，varchar(65533) 。</p>
-<p>​        实际开发中，varchar 字段长度不仅收到编码限制，还有null标识位，还会受到<span style="color:#b22222">行长度</span>限制，mysql 中要求每一行的定义长度不能超过 65535。故实际最大能存储多少字符，还要考虑其他字段的长度。</p>
+<p>​		因为 varchar 最多能存储 65535 Bytes 的数据，而 utf8 字符集中每个字符 占 3 Bytes，故 info 字段所能定义最大存储字符数为 65535 / 3 = 21845。</p>
+<p>​		又由于 varchar 存储变长字段的字符类型，其存储时需要在前缀长度列表加上实际存储的字符，当存储的字符串长度小于 255 字节时，需要 1 字节的空间，当大于 255 字节时，需要 2 字节的空间。故 N = (65535 - 1) / 3 = 21844 或 N = (65535 - 2) / 3 = 21844，即 varchar(21844);</p>
+<p>​		如果 good_tbl 表的 charset 为 latin1。则 info 字段最大能定义 65535 - 2 = 65533 Bytes，varchar(65533) 。</p>
+<p>​		实际开发中，varchar 字段长度不仅收到编码限制，还有null标识位，还会受到<span style="color:#b22222">行长度</span>限制，mysql 中要求每一行的定义长度不能超过 65535。故实际最大能存储多少字符，还要考虑其他字段的长度。</p>
 </li>
 <li>
 <p>更多区别，参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chengyunblogs/p/15788493.html">CHAR 和 VARCHAR的区别</a></p>
@@ -1831,5 +1831,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
