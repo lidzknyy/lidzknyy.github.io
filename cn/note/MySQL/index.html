@@ -394,11 +394,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">24</span> Minutes
+              Estimated Reading Time <span class="post-count">29</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">6k</span> In Total
+              Words <span class="post-count">7.1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -460,17 +460,10 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="数据库系统概述">数据库系统概述</h2>
-<h3 id="数据、DB、DBMS、DBS">数据、DB、DBMS、DBS</h3>
-<ul>
-<li>
-<p>数据（Data）：描述事物的符号记录。数据的解释是指对数据含义的说明，即语义。</p>
-</li>
-<li>
-<p>数据库（DataBase，DB）：数据库数据具有永久存储、有组织和可共享三个基本特点。</p>
-</li>
-<li>
-<p>数据库管理系统（DataBase Management System，DBMS）：功能如下</p>
+        <h2 id="数据库系统概述"><a href="#数据库系统概述" class="headerlink" title="数据库系统概述"></a>数据库系统概述</h2><h3 id="数据、DB、DBMS、DBS"><a href="#数据、DB、DBMS、DBS" class="headerlink" title="数据、DB、DBMS、DBS"></a>数据、DB、DBMS、DBS</h3><ul>
+<li>数据（Data）：描述事物的符号记录。数据的解释是指对数据含义的说明，即语义。</li>
+<li>数据库（DataBase，DB）：数据库数据具有永久存储、有组织和可共享三个基本特点。</li>
+<li><p>数据库管理系统（DataBase Management System，DBMS）：功能如下</p>
 <ul>
 <li>数据定义。</li>
 <li>数据组织、存储和管理：数据字典、用户数据、数据存取路径。【数据组织和存储的基本目标是提高存储空间利用率和存取效率。】</li>
@@ -480,27 +473,19 @@
 <li>与其他系统网络通信等：一个DBMS和其他DBMS或文件系统的数据转换功能，异构数据库之间的互访和互操作功能。</li>
 </ul>
 </li>
-<li>
-<p>数据库系统（DataBase System，DBS）：由DB、DBMS（及其应用开发工具）、应用程序和数据库管理员（DataBase Administrator，DBA）组成的存储、管理、处理和维护数据的系统。</p>
+<li><p>数据库系统（DataBase System，DBS）：由DB、DBMS（及其应用开发工具）、应用程序和数据库管理员（DataBase Administrator，DBA）组成的存储、管理、处理和维护数据的系统。</p>
 </li>
 </ul>
-<h3 id="数据库的特点">数据库的特点</h3>
-<ul>
-<li>
-<p>整体数据结构化。【所谓“整体”结构化是指数据库中的数据不再仅仅针对某一应用，而是面向整个组织或企业；不仅数据内部是结构化的，而且整体是结构化的，数据之间是具有联系的。】</p>
-</li>
-<li>
-<p>数据的共享性高、冗余度底且易扩充。</p>
-</li>
-<li>
-<p>数据独立性高。</p>
+<h3 id="数据库的特点"><a href="#数据库的特点" class="headerlink" title="数据库的特点"></a>数据库的特点</h3><ul>
+<li>整体数据结构化。【所谓“整体”结构化是指数据库中的数据不再仅仅针对某一应用，而是面向整个组织或企业；不仅数据内部是结构化的，而且整体是结构化的，数据之间是具有联系的。】</li>
+<li>数据的共享性高、冗余度底且易扩充。</li>
+<li><p>数据独立性高。</p>
 <ul>
 <li>物理独立性：指用户的应用程序与数据库中的数据物理内存是相互独立的。</li>
 <li>逻辑独立性：指用户的应用程序与数据库中的逻辑结构是相互独立的。</li>
 </ul>
 </li>
-<li>
-<p>数据由DBMS统一管理和控制</p>
+<li><p>数据由DBMS统一管理和控制</p>
 <ul>
 <li>数据的安全性保护：保护数据以防止不合法使用造成的数据泄密和破坏。</li>
 <li>数据的完整性检查：指数据的正确性、有效性和相容性。</li>
@@ -509,62 +494,46 @@
 </ul>
 </li>
 </ul>
-<h3 id="数据模型">数据模型</h3>
-<p><strong>【现实世界】 ——抽象——&gt;&gt; 【信息世界】 ——转换——&gt;&gt; 【机器世界】</strong></p>
+<h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p><strong>【现实世界】 ——抽象——&gt;&gt; 【信息世界】 ——转换——&gt;&gt; 【机器世界】</strong></p>
 <ul>
-<li>
-<p>数据模型是对现实世界数据特征的抽象。用来描述、组织和操作数据。</p>
+<li><p>数据模型是对现实世界数据特征的抽象。用来描述、组织和操作数据。</p>
 </li>
-<li>
-<p>数据模型应满足三点要求：</p>
+<li><p>数据模型应满足三点要求：</p>
 <ul>
-<li>
-<p>比较真实地模拟现实世界。</p>
+<li><p>比较真实地模拟现实世界。</p>
 </li>
-<li>
-<p>容易为人所理解。</p>
+<li><p>容易为人所理解。</p>
 </li>
-<li>
-<p>便于在计算机上实现。</p>
+<li><p>便于在计算机上实现。</p>
 </li>
 </ul>
 </li>
-<li>
-<p>数据模型分类：</p>
+<li><p>数据模型分类：</p>
 <ol>
-<li>
-<p>概念模型：按用户观点对数据和信息建模，主要用于数据库设计。</p>
+<li><p>概念模型：按用户观点对数据和信息建模，主要用于数据库设计。</p>
 </li>
-<li>
-<p>逻辑模型和物理模型</p>
+<li><p>逻辑模型和物理模型</p>
 <ul>
-<li>
-<p>逻辑模型：包括层次模型、网状模型、<strong>关系模型</strong>、面向对象模型等，主要用于数据库管理的实现。</p>
+<li><p>逻辑模型：包括层次模型、网状模型、<strong>关系模型</strong>、面向对象模型等，主要用于数据库管理的实现。</p>
 </li>
-<li>
-<p>物理模型：描述数据的存储方式和存取方法。</p>
+<li><p>物理模型：描述数据的存储方式和存取方法。</p>
 </li>
 </ul>
 </li>
 </ol>
 </li>
-<li>
-<p>数据模型的组成：</p>
+<li><p>数据模型的组成：</p>
 <ul>
-<li>
-<p>数据结构：描述数据库的组成对象以及对象之间的联系。</p>
+<li><p>数据结构：描述数据库的组成对象以及对象之间的联系。</p>
 </li>
-<li>
-<p>数据操作：指对数据库中的各种对象（型）和实例（值）允许执行的操作的集合，包括操作及操作规则。</p>
+<li><p>数据操作：指对数据库中的各种对象（型）和实例（值）允许执行的操作的集合，包括操作及操作规则。</p>
 </li>
-<li>
-<p>数据的完整性约束：实体完整性、参照完整性、自定义完整性。</p>
+<li><p>数据的完整性约束：实体完整性、参照完整性、自定义完整性。</p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="概念模型">概念模型</h3>
-<p>概念模型的表示方法：E-R模型（图）。</p>
+<h3 id="概念模型"><a href="#概念模型" class="headerlink" title="概念模型"></a>概念模型</h3><p>概念模型的表示方法：E-R模型（图）。</p>
 <ul>
 <li>实体（entity）：客观存在并可相互区别的事物。例：一个学生、一次选课、一次订货等。</li>
 <li>属性（attribute）：实体所具有的某一特性。</li>
@@ -573,97 +542,64 @@
 <li>实体集（entity set）：同一类型实体的集合。</li>
 <li>联系（relationship）：实体之间的联系。一对一、一对多、多对多。</li>
 </ul>
-<h3 id="DBS的三级模式结构">DBS的三级模式结构</h3>
+<h3 id="DBS的三级模式结构"><a href="#DBS的三级模式结构" class="headerlink" title="DBS的三级模式结构"></a>DBS的三级模式结构</h3><ul>
+<li><p>DBS的三级模式结构是指数据库系统是由外模式、模式和内模式三级构成。</p>
+</li>
+<li><p>模式（schema）：也称逻辑模式。是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。<strong>一个数据库只有一个模式</strong>。</p>
+</li>
+<li><p>外模式（external schema）：也称子模式、用户模式。是数据库用户能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图，<strong>是与某一应用有关的数据的逻辑表示</strong>。</p>
 <ul>
-<li>
-<p>DBS的三级模式结构是指数据库系统是由外模式、模式和内模式三级构成。</p>
+<li><p>外模式通常是模式的子集。</p>
 </li>
-<li>
-<p>模式（schema）：也称逻辑模式。是数据库中全体数据的逻辑结构和特征的描述，是所有用户的公共数据视图。<strong>一个数据库只有一个模式</strong>。</p>
+<li><p><strong>一个数据库可以有多个外模式</strong>。</p>
 </li>
-<li>
-<p>外模式（external schema）：也称子模式、用户模式。是数据库用户能够看见和使用的局部数据的逻辑结构和特征的描述，是数据库用户的数据视图，<strong>是与某一应用有关的数据的逻辑表示</strong>。</p>
-<ul>
-<li>
-<p>外模式通常是模式的子集。</p>
-</li>
-<li>
-<p><strong>一个数据库可以有多个外模式</strong>。</p>
-</li>
-<li>
-<p>一个外模式可以为某一用户的多个应用系统所使用，一个应用程序只能使用一个外模式。</p>
+<li><p>一个外模式可以为某一用户的多个应用系统所使用，一个应用程序只能使用一个外模式。</p>
 </li>
 </ul>
 </li>
-<li>
-<p>内模式（internal schema）：也称存储模式。<strong>一个数据库只有一个内模式</strong>。它是数据物理结构和存储方式的描述，<strong>是数据在数据库内部的组织方式</strong>。</p>
+<li><p>内模式（internal schema）：也称存储模式。<strong>一个数据库只有一个内模式</strong>。它是数据物理结构和存储方式的描述，<strong>是数据在数据库内部的组织方式</strong>。</p>
 <ul>
-<li>
-<p>存储方式：堆存储、按照某个属性升（降）序存储</p>
+<li><p>存储方式：堆存储、按照某个属性升（降）序存储</p>
 </li>
-<li>
-<p>索引组织方式：B+数索引、hash索引</p>
+<li><p>索引组织方式：B+数索引、hash索引</p>
 </li>
-<li>
-<p>数据是否压缩、是否加密</p>
+<li><p>数据是否压缩、是否加密</p>
 </li>
-<li>
-<p>数据的存储记录结构规定：定长、变长</p>
+<li><p>数据的存储记录结构规定：定长、变长</p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="注">注</h3>
-<ul>
+<h3 id="注"><a href="#注" class="headerlink" title="注"></a>注</h3><ul>
 <li>mysql 中 create schema 和 create database 是一样的。</li>
 <li>sql sever中的逻辑关系为 <strong>【服务器名】.【数据库名】.【模式名】.【表名】</strong>，如果在数据库中创建用户，会默认创建一个与 user 同名的schema。</li>
 </ul>
-<h2 id="关系模型">关系模型</h2>
-<h3 id="关系模式的数据结构">关系模式的数据结构</h3>
-<p><b style="color:#b22222">关系模式要求关系必须是规范化的，关系的每一个分量必须是一个不可分的数据项。</b></p>
+<h2 id="关系模型"><a href="#关系模型" class="headerlink" title="关系模型"></a>关系模型</h2><h3 id="关系模式的数据结构"><a href="#关系模式的数据结构" class="headerlink" title="关系模式的数据结构"></a>关系模式的数据结构</h3><p><b style="color:#b22222">关系模式要求关系必须是规范化的，关系的每一个分量必须是一个不可分的数据项。</b></p>
 <ul>
-<li>
-<p>关系（relation）：一张数据表为一个关系。</p>
+<li>关系（relation）：一张数据表为一个关系。</li>
+<li>元组（tuple）：也称记录，一行为一个元组，包含一组相关的数据。</li>
+<li>属性（attribute）：一列为一个属性，包含相同类型的数据。</li>
+<li>码（key）：表中的某个属性组，可唯一确定一个元组。</li>
+<li>域（domain）：是一组具有相同数据类型的值的集合。属性的取值范围来自某个域。例：性别的域是（男，女），即属性的数据类型【int、varchar等】</li>
+<li>基数：域的大小。</li>
+<li><p>分量：元组中的一个属性值。例：男</p>
 </li>
-<li>
-<p>元组（tuple）：也称记录，一行为一个元组，包含一组相关的数据。</p>
-</li>
-<li>
-<p>属性（attribute）：一列为一个属性，包含相同类型的数据。</p>
-</li>
-<li>
-<p>码（key）：表中的某个属性组，可唯一确定一个元组。</p>
-</li>
-<li>
-<p>域（domain）：是一组具有相同数据类型的值的集合。属性的取值范围来自某个域。例：性别的域是（男，女），即属性的数据类型【int、varchar等】</p>
-</li>
-<li>
-<p>基数：域的大小。</p>
-</li>
-<li>
-<p>分量：元组中的一个属性值。例：男</p>
-</li>
-<li>
-<p>关系模式：对关系的描述，一般表示为【关系名（属性1， 属性2，…， 属性n）】</p>
+<li><p>关系模式：对关系的描述，一般表示为【关系名（属性1， 属性2，…， 属性n）】</p>
 </li>
 </ul>
-<h3 id="关系">关系</h3>
-<h4 id="关系的术语">关系的术语</h4>
-<ul>
+<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><h4 id="关系的术语"><a href="#关系的术语" class="headerlink" title="关系的术语"></a>关系的术语</h4><ul>
 <li>候选码：某一<strong>属性组</strong>的值能够唯一的标识一个元组，而其子集不能，则该属性组为候选码。</li>
 <li>主码：任一候选码。</li>
 <li>主属性：所有候选码包含的所有属性。</li>
 <li>非主属性：不被任一候选码所包含。</li>
 <li>全码：关系模式的所有属性是这个关系的候选码。</li>
 </ul>
-<h4 id="关系的基本类型">关系的基本类型</h4>
-<ul>
+<h4 id="关系的基本类型"><a href="#关系的基本类型" class="headerlink" title="关系的基本类型"></a>关系的基本类型</h4><ul>
 <li>基本关系：实际存在的表。实际存储数据。</li>
 <li>查询表：查询结果对应的表。</li>
 <li>视图表：由基本表或其它视图表导出的表。不实际存储数据。</li>
 </ul>
-<h4 id="基本关系的性质">基本关系的性质</h4>
-<ul>
+<h4 id="基本关系的性质"><a href="#基本关系的性质" class="headerlink" title="基本关系的性质"></a>基本关系的性质</h4><ul>
 <li>列是同质的，即每一列的所有分量来自同一个域。</li>
 <li>不同列可出自同一域，每一列为一个属性，不同属性名称不同。</li>
 <li>列顺序无所谓。</li>
@@ -671,68 +607,43 @@
 <li>任意两个元组的候选码值不能相同。</li>
 <li>每个分量都必须是不可分的数据项。（第一范式）</li>
 </ul>
-<h4 id="关系模式">关系模式</h4>
-<p>关系模式形式化表示  $R(U, D, DOM, F)$。</p>
+<h4 id="关系模式"><a href="#关系模式" class="headerlink" title="关系模式"></a>关系模式</h4><p>关系模式形式化表示  $R(U, D, DOM, F)$。</p>
 <ul>
-<li>
-<p>R为关系名</p>
+<li><p>R为关系名</p>
 </li>
-<li>
-<p>U为组成该关系的属性名集合</p>
+<li><p>U为组成该关系的属性名集合</p>
 </li>
-<li>
-<p>D为U中属性所来自的域</p>
+<li><p>D为U中属性所来自的域</p>
 </li>
-<li>
-<p>DOM为属性向域的映像集合</p>
-</li>
-<li>
-<p>F为属性间数据的依赖关系集合</p>
-</li>
+<li>DOM为属性向域的映像集合</li>
+<li>F为属性间数据的依赖关系集合</li>
 </ul>
-<h3 id="关系的完整性">关系的完整性</h3>
-<ul>
-<li>
-<p>实体完整性：主码不能为null。</p>
+<h3 id="关系的完整性"><a href="#关系的完整性" class="headerlink" title="关系的完整性"></a>关系的完整性</h3><ul>
+<li><p>实体完整性：主码不能为null。</p>
 </li>
-<li>
-<p>参照完整性：</p>
+<li><p>参照完整性：</p>
 <ul>
-<li>
-<p>关系R的外码必须是其它关系的主码。</p>
+<li><p>关系R的外码必须是其它关系的主码。</p>
 </li>
-<li>
-<p>关系R外码的值  必须为  其在关系S上对应的主码值或null。</p>
+<li><p>关系R外码的值  必须为  其在关系S上对应的主码值或null。</p>
 </li>
 </ul>
 </li>
-<li>
-<p>用户定义完整性：某个属性的取值范围或默认值等。</p>
+<li><p>用户定义完整性：某个属性的取值范围或默认值等。</p>
 </li>
 </ul>
-<h2 id="管理MySQL">管理MySQL</h2>
-<h3 id="查询数据库">查询数据库</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases;		# 查询所有数据库</span><br><span class="line">use student;		# 使用数据库student</span><br></pre></td></tr></table></figure>
-<h3 id="查询数据表">查询数据表</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> tables;</span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> tables <span class="keyword">from</span> student;		# 查询 student 数据库中所有的表</span><br></pre></td></tr></table></figure>
-<h3 id="查询数据表结构">查询数据表结构</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show columns from student_tbl;</span><br><span class="line">desc student_tbl;</span><br></pre></td></tr></table></figure>
-<h3 id="查询数据表索引信息">查询数据表索引信息</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show index from student_tbl;</span><br></pre></td></tr></table></figure>
-<h3 id="其它">其它</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show table status from student;    # 显示数据库 student 中所有表的信息</span><br><span class="line"></span><br><span class="line">show table status from student like &#39;s%&#39;;       # 显示以 s 开头的所有表信息</span><br><span class="line">show table status from student like &#39;s%&#39;\G;     # 查询结果按列打印</span><br></pre></td></tr></table></figure>
-<h2 id="MySQL-连接">MySQL 连接</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p        # 输入密码后即可连接成功</span><br><span class="line"></span><br><span class="line">exit&#x2F;quit               # exit 或 quit 命令，断开连接</span><br></pre></td></tr></table></figure>
-<h3 id="修改密码">修改密码</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;新密码&#39;;</span><br></pre></td></tr></table></figure>
-<h2 id="MySQL-数据库">MySQL 数据库</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database test;        # 创建数据库，数据库名为 test</span><br><span class="line">drop database test;          # 删除数据库</span><br></pre></td></tr></table></figure>
-<h2 id="MySQL-数据类型">MySQL 数据类型</h2>
-<blockquote>
-<p>定义数据字段的类型对<span style="color:#B22222">数据库的优化</span>是非常重要的。<br>
-MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
+<h2 id="管理MySQL"><a href="#管理MySQL" class="headerlink" title="管理MySQL"></a>管理MySQL</h2><h3 id="查询数据库"><a href="#查询数据库" class="headerlink" title="查询数据库"></a>查询数据库</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> databases;		# 查询所有数据库</span><br><span class="line">use student;		# 使用数据库student</span><br></pre></td></tr></table></figure>
+<h3 id="查询数据表"><a href="#查询数据表" class="headerlink" title="查询数据表"></a>查询数据表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> tables;</span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> tables <span class="keyword">from</span> student;		# 查询 student 数据库中所有的表</span><br></pre></td></tr></table></figure>
+<h3 id="查询数据表结构"><a href="#查询数据表结构" class="headerlink" title="查询数据表结构"></a>查询数据表结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show columns from student_tbl;</span><br><span class="line">desc student_tbl;</span><br></pre></td></tr></table></figure>
+<h3 id="查询数据表索引信息"><a href="#查询数据表索引信息" class="headerlink" title="查询数据表索引信息"></a>查询数据表索引信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show index from student_tbl;</span><br></pre></td></tr></table></figure>
+<h3 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">show table status from student;    # 显示数据库 student 中所有表的信息</span><br><span class="line"></span><br><span class="line">show table status from student like &#39;s%&#39;;       # 显示以 s 开头的所有表信息</span><br><span class="line">show table status from student like &#39;s%&#39;\G;     # 查询结果按列打印</span><br></pre></td></tr></table></figure>
+<h2 id="MySQL-连接"><a href="#MySQL-连接" class="headerlink" title="MySQL 连接"></a>MySQL 连接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p        # 输入密码后即可连接成功</span><br><span class="line"></span><br><span class="line">exit&#x2F;quit               # exit 或 quit 命令，断开连接</span><br></pre></td></tr></table></figure>
+<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;新密码&#39;;</span><br></pre></td></tr></table></figure>
+<h2 id="MySQL-数据库"><a href="#MySQL-数据库" class="headerlink" title="MySQL 数据库"></a>MySQL 数据库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database test;        # 创建数据库，数据库名为 test</span><br><span class="line">drop database test;          # 删除数据库</span><br></pre></td></tr></table></figure>
+<h2 id="MySQL-数据类型"><a href="#MySQL-数据类型" class="headerlink" title="MySQL 数据类型"></a>MySQL 数据类型</h2><blockquote>
+<p>定义数据字段的类型对<span style="color:#B22222">数据库的优化</span>是非常重要的。<br>MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
-<h3 id="数值类型">数值类型</h3>
+<h3 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -802,7 +713,8 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </tr>
 </tbody>
 </table>
-<h3 id="日期-时间类型">日期/时间类型</h3>
+</div>
+<h3 id="日期-时间类型"><a href="#日期-时间类型" class="headerlink" title="日期/时间类型"></a>日期/时间类型</h3><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -851,8 +763,9 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </tr>
 </tbody>
 </table>
-<h3 id="字符串类型">字符串类型</h3>
-<p>​       字符串类型包含 CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM、SET。</p>
+</div>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p>​       字符串类型包含 CHAR、VARCHAR、BINARY、VARBINARY、BLOB、TEXT、ENUM、SET。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -914,49 +827,33 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </tr>
 </tbody>
 </table>
-<h4 id="CHAR-和-VARCHAR">CHAR 和 VARCHAR</h4>
-<ul>
-<li>
-<p>char(N) 和 varchar(N) 中 N 代表存储最大字符的个数。例：varchar(32) 代表该字段最多可以存储 30 个字符。</p>
+</div>
+<h4 id="CHAR-和-VARCHAR"><a href="#CHAR-和-VARCHAR" class="headerlink" title="CHAR 和 VARCHAR"></a>CHAR 和 VARCHAR</h4><ul>
+<li><p>char(N) 和 varchar(N) 中 N 代表存储最大字符的个数。例：varchar(32) 代表该字段最多可以存储 30 个字符。</p>
 </li>
-<li>
-<p>char 类型为固定长度，如果数据长度不足，则会在右侧进行填充，检索时会去掉；varchar 类型为可变长度。</p>
+<li><p>char 类型为固定长度，如果数据长度不足，则会在右侧进行填充，检索时会去掉；varchar 类型为可变长度。</p>
 </li>
-<li>
-<p><span style="color:#b22222">数据表的字符集不同，最大存储字节相同，最大存储长度会不同</span>。<br>
- utf8 字符集，每个字符【所有字符】占 3 Bytes；<br>
- gbk 字符集，每个字符占 2 Bytes；<br>
- latin1 字符集，每个字符占 1 Bytes，汉字是两个字符（即：占 2 Bytes）。</p>
+<li><p><span style="color:#b22222">数据表的字符集不同，最大存储字节相同，最大存储长度会不同</span>。<br>&emsp;utf8 字符集，每个字符【所有字符】占 3 Bytes；<br>&emsp;gbk 字符集，每个字符占 2 Bytes；<br>&emsp;latin1 字符集，每个字符占 1 Bytes，汉字是两个字符（即：占 2 Bytes）。</p>
 <p><span style="color:#2222f2">例：goods_tbl 表的 charset 是 utf8 字符集。其拥有 varchar(N) 类型字段 info。</span></p>
-<p>  因为 varchar 最多能存储 65535 Bytes 的数据，而 utf8 字符集中每个字符 占 3 Bytes，故 info 字段所能定义最大存储字符数为 65535 / 3 = 21845。</p>
-<p>  又由于 varchar 存储变长字段的字符类型，其存储时需要在前缀长度列表加上实际存储的字符，当存储的字符串长度小于 255 字节时，需要 1 字节的空间，当大于 255 字节时，需要 2 字节的空间。故 N = (65535 - 1) / 3 = 21844 或 N = (65535 - 2) / 3 = 21844，即 varchar(21844);</p>
-<p>  如果 good_tbl 表的 charset 为 latin1。则 info 字段最大能定义 65535 - 2 = 65533 Bytes，varchar(65533) 。</p>
-<p>  实际开发中，varchar 字段长度不仅收到编码限制，还有null标识位，还会受到<span style="color:#b22222">行长度</span>限制，mysql 中要求每一行的定义长度不能超过 65535。故实际最大能存储多少字符，还要考虑其他字段的长度。</p>
+<p>&emsp;&emsp;因为 varchar 最多能存储 65535 Bytes 的数据，而 utf8 字符集中每个字符 占 3 Bytes，故 info 字段所能定义最大存储字符数为 65535 / 3 = 21845。</p>
+<p>&emsp;&emsp;又由于 varchar 存储变长字段的字符类型，其存储时需要在前缀长度列表加上实际存储的字符，当存储的字符串长度小于 255 字节时，需要 1 字节的空间，当大于 255 字节时，需要 2 字节的空间。故 N = (65535 - 1) / 3 = 21844 或 N = (65535 - 2) / 3 = 21844，即 varchar(21844);</p>
+<p>&emsp;&emsp;如果 good_tbl 表的 charset 为 latin1。则 info 字段最大能定义 65535 - 2 = 65533 Bytes，varchar(65533) 。</p>
+<p>&emsp;&emsp;实际开发中，varchar 字段长度不仅收到编码限制，还有null标识位，还会受到<span style="color:#b22222">行长度</span>限制，mysql 中要求每一行的定义长度不能超过 65535。故实际最大能存储多少字符，还要考虑其他字段的长度。</p>
 </li>
-<li>
-<p>更多区别，参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chengyunblogs/p/15788493.html">CHAR 和 VARCHAR的区别</a></p>
+<li><p>更多区别，参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chengyunblogs/p/15788493.html">CHAR 和 VARCHAR的区别</a></p>
 </li>
 </ul>
-<h4 id="SET-类型">SET 类型</h4>
+<h4 id="SET-类型"><a href="#SET-类型" class="headerlink" title="SET 类型"></a>SET 类型</h4><ul>
+<li>SET 类型可以有 0 或多个值，最多可以有 64 个不同的成员，成员之间用 ‘,’ 分隔。</li>
+<li>SET 成员本身不能包含 ‘,’ 。</li>
+<li>创建表时，SET 成员值的尾部空格会被自动删除。</li>
+</ul>
 <ul>
-<li>
-<p>SET 类型可以有 0 或多个值，最多可以有 64 个不同的成员，成员之间用 ‘,’ 分隔。</p>
-</li>
-<li>
-<p>SET 成员本身不能包含 ‘,’ 。</p>
-</li>
-<li>
-<p>创建表时，SET 成员值的尾部空格会被自动删除。</p>
-</li>
-<li>
-<p>插入数据时，顺序不重要，某一个元素出现次数也不重要。最终检索时，每个元素只会出现一次，顺序为创建表示设置的顺序。</p>
-</li>
+<li>插入数据时，顺序不重要，某一个元素出现次数也不重要。最终检索时，每个元素只会出现一次，顺序为创建表示设置的顺序。</li>
 </ul>
 <p><strong>示例</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;myset_tbl&#96;(</span><br><span class="line">    col SET(&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;de&#39;)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"># &#39;&#39;中间不能加空格</span><br><span class="line">insert into myset_tbl values</span><br><span class="line">(&#39;a,b,a&#39;), (&#39;c,de&#39;), (&#39;a,b,c,de&#39;), (&#39;a,a,a&#39;);</span><br><span class="line"></span><br><span class="line"># 检索结果为</span><br><span class="line">(1) a,b</span><br><span class="line">(2) c,de</span><br><span class="line">(3) a,b,c,de</span><br><span class="line">(4) a</span><br><span class="line"></span><br><span class="line"># 如果插入的元素，set 中为定义，则插入失败，如: insert into myset_tbl values(&#39;x, a&#39;);</span><br><span class="line"></span><br><span class="line"># 查询</span><br><span class="line"># 使用 like ，会将整个分量看做一个字符串整体(包含逗号)</span><br><span class="line">select * from myset_tbl where col like &#39;%d%&#39;;           # 结果(2)(3)</span><br><span class="line">select * from myset_tbl where col like &#39;%,%&#39;;           # 结果(1)(2)(3)</span><br><span class="line"></span><br><span class="line"># 使用 find_in_set 只能精准匹配某一个 set 成员</span><br><span class="line">select * from myset_tbl where find_in_set(&#39;de&#39;,col);    # 结果(2)(3)</span><br><span class="line">select * from myset_tbl where find_in_set(&#39;d&#39;,col);     # 结果 Empty</span><br><span class="line"></span><br><span class="line">select * from myset_tbl where find_in_set(&#39;a&#39;,col) and find_in_set(&#39;c&#39;,col);  # 结果(3)</span><br></pre></td></tr></table></figure>
-<h2 id="MySQL-数据表">MySQL 数据表</h2>
-<h3 id="创建表">创建表</h3>
-<blockquote>
+<h2 id="MySQL-数据表"><a href="#MySQL-数据表" class="headerlink" title="MySQL 数据表"></a>MySQL 数据表</h2><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><blockquote>
 <p><strong>创建表时，必须指定表名、字段名、字段类型。</strong></p>
 <ul>
 <li>使用 if not exists，创建表时，先判断该表是否存在，如果不存在，则会创建；</li>
@@ -977,10 +874,8 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </ul>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;test_tbl&#96;(</span><br><span class="line">   &#96;id&#96; int unsigned auto_increment,</span><br><span class="line">   &#96;title&#96; VARCHAR(100) not null default &quot;title&quot;,</span><br><span class="line">   &#96;author&#96; VARCHAR(40) NOT NULL,</span><br><span class="line">   &#96;creat_time&#96; DATE,</span><br><span class="line">   PRIMARY KEY ( &#96;runoob_id&#96; )</span><br><span class="line">)engine&#x3D;InnoDB default charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
-<h3 id="删除表">删除表</h3>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table student;</span><br></pre></td></tr></table></figure>
-<h3 id="修改表">修改表</h3>
-<blockquote>
+<h3 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table student;</span><br></pre></td></tr></table></figure>
+<h3 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h3><blockquote>
 <p><strong>修改表名</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># - 修改表名</span><br><span class="line">alter table student rename to student_tbl;</span><br></pre></td></tr></table></figure>
@@ -993,27 +888,18 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># - 删除字段</span><br><span class="line"># 如果表中只剩下一个字段，则无法删除。</span><br><span class="line">alter table student_tbl drop tel;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>修改字段</strong></p>
+<p><strong>修改字段名称、数据类型</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># - 修改字段</span><br><span class="line"># 在 alter 命令中使用 modify 子句。</span><br><span class="line">alter table student_tbl modify sno varchar(128);	# 修改 sno 字段类型为 varchar(128)</span><br><span class="line"></span><br><span class="line"># 在 alter 命令中使用 change 子句。</span><br><span class="line">alter table student_tbl change sno sno varchar(128);	# 修改 sno 字段类型为 varchar(128)</span><br><span class="line">alter table student_tbl change sno sid varchar(20);	# 修改 sno 字段名称为 sid</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>修改字段默认值</strong></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 修改字段默认值</span><br><span class="line">alter table student_tbl modify tel int not null;</span><br><span class="line"></span><br><span class="line">alter table student_tbl modify tel int default 100;</span><br><span class="line"></span><br><span class="line">alter table student_tbl change tel tel int not null default 100;</span><br><span class="line"></span><br><span class="line">alter table student_tbl alter tel set default 100;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>修改字段位置</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 修改字段位置</span><br><span class="line">alter table student_tbl modify tel int first;		# 将 tel 移到 首位</span><br><span class="line">alter table student_tbl modify tel int after sex;	# 将 tel 移到 sex 后面</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>删除字段默认值</strong></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 删除字段默认值</span><br><span class="line">alter table student_tbl alter tel drop default;</span><br></pre></td></tr></table></figure>
-<blockquote>
 <p><strong>修改数据表引擎</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 修改数据表引擎</span><br><span class="line">alter table student_tbl engine &#x3D; InnoDB;</span><br></pre></td></tr></table></figure>
-<h2 id="MySQL-INSERT">MySQL INSERT</h2>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;test_tbl&#96;(</span><br><span class="line">   &#96;id&#96; int unsigned auto_increment,</span><br><span class="line">   &#96;title&#96; VARCHAR(100) not null default &quot;title&quot;,</span><br><span class="line">   &#96;author&#96; VARCHAR(40) NOT NULL,</span><br><span class="line">   &#96;create_time&#96; DATE,</span><br><span class="line">   PRIMARY KEY ( &#96;runoob_id&#96; )</span><br><span class="line">)engine&#x3D;InnoDB default charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
+<h2 id="MySQL-INSERT"><a href="#MySQL-INSERT" class="headerlink" title="MySQL INSERT"></a>MySQL INSERT</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;test_tbl&#96;(</span><br><span class="line">   &#96;id&#96; int unsigned auto_increment,</span><br><span class="line">   &#96;title&#96; VARCHAR(100) not null default &quot;title&quot;,</span><br><span class="line">   &#96;author&#96; VARCHAR(40) NOT NULL,</span><br><span class="line">   &#96;create_time&#96; DATE,</span><br><span class="line">   PRIMARY KEY ( &#96;runoob_id&#96; )</span><br><span class="line">)engine&#x3D;InnoDB default charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ul>
 <li>如果字段类型为字符型，则必须使用 ‘ ’ 或 “ ”；</li>
@@ -1030,8 +916,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </ul>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into test_tbl</span><br><span class="line">values</span><br><span class="line">(0, &#39;MySQL 教程&#39;, &#39;zknyy&#39;, now()),</span><br><span class="line">(0, &#39;三体&#39;, &#39;刘慈欣&#39;, now());</span><br></pre></td></tr></table></figure>
-<h2 id="MySQL-SELECT">MySQL SELECT</h2>
-<blockquote>
+<h2 id="MySQL-SELECT"><a href="#MySQL-SELECT" class="headerlink" title="MySQL SELECT"></a>MySQL SELECT</h2><blockquote>
 <p><strong>示例数据表</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) primary key comment &#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(32) comment &#39;姓名&#39;,</span><br><span class="line">    &#96;age&#96; int comment &#39;年龄&#39;,</span><br><span class="line">    &#96;sex&#96; enum(&#39;男&#39;, &#39;女&#39;) comment &#39;性别&#39;</span><br><span class="line">)comment &#39;学生表&#39; charset&#x3D;utf8;</span><br><span class="line"></span><br><span class="line">create table if not exists &#96;course_tbl&#96; (</span><br><span class="line">    &#96;cno&#96; varchar(20) primary key comment &#39;课号&#39;,</span><br><span class="line">    &#96;cname&#96; varchar(32) comment &#39;课程名&#39;</span><br><span class="line">)comment &#39;课程表&#39; charset&#x3D;utf8;</span><br><span class="line"></span><br><span class="line">create table if not exists &#96;score_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) comment &#39;学号&#39;,</span><br><span class="line">    &#96;cno&#96; varchar(20) comment &#39;课号&#39;,</span><br><span class="line">    &#96;grade&#96; double comment &#39;成绩&#39;,</span><br><span class="line">    primary key (&#96;sno&#96;, &#96;cno&#96;),</span><br><span class="line">    foreign key (&#96;sno&#96;) references student_tbl(&#96;sno&#96;),</span><br><span class="line">    foreign key (&#96;cno&#96;) references course_tbl(&#96;cno&#96;)</span><br><span class="line">)comment &#39;成绩表&#39; charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
@@ -1044,40 +929,33 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p><span style="color:#2222f2">例：查询所有学生的姓名和性别</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sname, sex from student_tbl;</span><br></pre></td></tr></table></figure>
-<h3 id="DISTINCT">DISTINCT</h3>
-<blockquote>
+<h3 id="DISTINCT"><a href="#DISTINCT" class="headerlink" title="DISTINCT"></a>DISTINCT</h3><blockquote>
 <p>使用 distinct ，去除查询结果中的重复值</p>
 <p><span style="color:#2222f2">例：查询学生年龄的分布(不考虑不同年龄的人数)</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct age from student_tbl;</span><br></pre></td></tr></table></figure>
-<h3 id="WHERE">WHERE</h3>
-<p>使用 where 指定查询条件，用于过滤记录。</p>
+<h3 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h3><p>使用 where 指定查询条件，用于过滤记录。</p>
 <blockquote>
 <p><strong>通用语法</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name,column_name</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name operator value;</span><br></pre></td></tr></table></figure>
-<h4 id="AND、OR">AND、OR</h4>
-<blockquote>
+<h4 id="AND、OR"><a href="#AND、OR" class="headerlink" title="AND、OR"></a>AND、OR</h4><blockquote>
 <p><strong>连接多个查询条件</strong></p>
 <p><span style="color:#2222f2">例：查询 age&gt;19 且 age&lt;30 的学生的姓名和性别</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sname, sex from student_tbl where age&gt;19 and age&lt;30;</span><br></pre></td></tr></table></figure>
-<h4 id="BETWEEN-AND">BETWEEN AND</h4>
-<blockquote>
+<h4 id="BETWEEN-AND"><a href="#BETWEEN-AND" class="headerlink" title="BETWEEN AND"></a>BETWEEN AND</h4><blockquote>
 <p><strong>值在某个区间，包含两个端点</strong></p>
 <p><span style="color:#2222f2">例：查询 age在19和30之间 的学生的姓名和性别</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where age between 19 and 30;</span><br></pre></td></tr></table></figure>
-<h4 id="IN">IN</h4>
-<blockquote>
+<h4 id="IN"><a href="#IN" class="headerlink" title="IN"></a>IN</h4><blockquote>
 <p><strong>值在指定集合中</strong></p>
 <p><span style="color:#2222f2">例：查询 年龄是19、20或21 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where age in(19, 20, 21);</span><br></pre></td></tr></table></figure>
-<h4 id="LIKE">LIKE</h4>
-<blockquote>
-<p><strong>模糊匹配</strong><br>
-% 表示多个字值，_下划线表示一个字符</p>
+<h4 id="LIKE"><a href="#LIKE" class="headerlink" title="LIKE"></a>LIKE</h4><blockquote>
+<p><strong>模糊匹配</strong><br>% 表示多个字值，_下划线表示一个字符</p>
 <p><span style="color:#2222f2">例：查询 姓张 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where sname like &#39;张%&#39;;</span><br></pre></td></tr></table></figure>
@@ -1085,31 +963,23 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p><span style="color:#2222f2">例：查询 学号中含有002 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where sno like &#39;%002%&#39;;</span><br></pre></td></tr></table></figure>
-<h4 id="IS-NULL">IS NULL</h4>
-<blockquote>
-<p><strong>查询空记录</strong><br>
-<span style="color:#2222f2">例：查询 成绩还未登记 的记录</span></p>
+<h4 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h4><blockquote>
+<p><strong>查询空记录</strong><br><span style="color:#2222f2">例：查询 成绩还未登记 的记录</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from score_tbl where grade is null;</span><br></pre></td></tr></table></figure>
-<h4 id="NOT">NOT</h4>
-<blockquote>
-<p><strong>取反</strong><br>
-<span style="color:#2222f2">例：查询所有 不姓吴 的学生</span></p>
+<h4 id="NOT"><a href="#NOT" class="headerlink" title="NOT"></a>NOT</h4><blockquote>
+<p><strong>取反</strong><br><span style="color:#2222f2">例：查询所有 不姓吴 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where sname not like &#39;吴%&#39;;</span><br></pre></td></tr></table></figure>
-<h3 id="ORDER-BY">ORDER BY</h3>
-<blockquote>
-<p><strong>对结果集进行排序</strong><br>
-可以按照一个或多个列进行排序，默认排序方式为升序，使用 desc 可以改为降序。<br>
-按照多列排序：如果第一个字段值相同，则按照第二个字段排序。</p>
+<h3 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h3><blockquote>
+<p><strong>对结果集进行排序</strong><br>可以按照一个或多个列进行排序，默认排序方式为升序，使用 desc 可以改为降序。<br>按照多列排序：如果第一个字段值相同，则按照第二个字段排序。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name,column_name</span><br><span class="line">FROM table_name</span><br><span class="line">ORDER BY column_name,column_name ASC|DESC;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><span style="color:#2222f2">例：查询所有学生的成绩，按照成绩，学号，课号降序排列。</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from score_tbl</span><br><span class="line">order by grade,sno,cno desc;</span><br></pre></td></tr></table></figure>
-<h3 id="GROUP-BY">GROUP BY</h3>
-<blockquote>
+<h3 id="GROUP-BY"><a href="#GROUP-BY" class="headerlink" title="GROUP BY"></a>GROUP BY</h3><blockquote>
 <p><strong>按照列分类统计，结合聚集函数使用</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name, aggregate_function(column_name)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name operator value</span><br><span class="line">GROUP BY column_name;</span><br></pre></td></tr></table></figure>
@@ -1117,50 +987,42 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p>例：分别统计男、女生人数</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select sex, count(sno) as nums </span><br><span class="line">from student_tbl </span><br><span class="line">group by sex;</span><br></pre></td></tr></table></figure>
-<h3 id="LIMIT">LIMIT</h3>
-<blockquote>
+<h3 id="LIMIT"><a href="#LIMIT" class="headerlink" title="LIMIT"></a>LIMIT</h3><blockquote>
 <p>使用 limit 设定返回的记录数。</p>
 <p>limit x，读取前 x 条数据；</p>
 <p>limit x,y，跳过前 x 条数据，读取 y 条数据。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查询年龄最小的 10 个学生</span><br><span class="line">select * from student_tbl order by age limit 10;</span><br></pre></td></tr></table></figure>
-<h3 id="OFFSET">OFFSET</h3>
-<blockquote>
+<h3 id="OFFSET"><a href="#OFFSET" class="headerlink" title="OFFSET"></a>OFFSET</h3><blockquote>
 <p>使用 offset 指定 查询偏移量</p>
 <p>limit x offset y，跳过前 y 条数据，读取 x 条数据。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 去掉一个最小年龄，查询年龄最小的 10 个学生</span><br><span class="line">select * from student_tbl order by age limit 10 offset 1;</span><br></pre></td></tr></table></figure>
-<h3 id="JOIN">JOIN</h3>
-<p><img src="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png" alt="img"></p>
+<h3 id="JOIN"><a href="#JOIN" class="headerlink" title="JOIN"></a>JOIN</h3><p><img src="https://www.runoob.com/wp-content/uploads/2019/01/sql-join.png" alt="img"></p>
 <blockquote>
 <p><strong>示例数据</strong></p>
 </blockquote>
 <p><img src="student_tbl.png" alt="img"></p>
 <p><img src="course_tbl.png" alt="img"></p>
 <p><img src="score_tbl.png" alt="img"></p>
-<h4 id="笛卡尔积">笛卡尔积</h4>
-<blockquote>
-<p>多个表之间做 笛卡尔积 运算，结果记录数 = 所有表记录数乘积。<br>
-可以使用 where 语句对记录进行过滤。</p>
+<h4 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h4><blockquote>
+<p>多个表之间做 笛卡尔积 运算，结果记录数 = 所有表记录数乘积。<br>可以使用 where 语句对记录进行过滤。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select a.*, b.*</span><br><span class="line">from student_tbl as a, course_tbl as b</span><br><span class="line">limit 16;</span><br></pre></td></tr></table></figure>
 <p><img src="image-20220912162911150.png" alt="image-20220912163137882"></p>
-<h4 id="INNER-JOIN">INNER JOIN</h4>
-<blockquote>
+<h4 id="INNER-JOIN"><a href="#INNER-JOIN" class="headerlink" title="INNER JOIN"></a>INNER JOIN</h4><blockquote>
 <p>多个表根据字段匹配，结果为所有表的交集</p>
 <p><span style="color:#2222f2">例：查询所有学生考试成绩，只显示有效成绩</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select stu.sno, sname, cno, grade</span><br><span class="line">from student_tbl as stu inner join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno;</span><br></pre></td></tr></table></figure>
 <p><img src="innerjoin.png" alt="image-20220912175246739"></p>
-<h4 id="LEFT-JOIN">LEFT JOIN</h4>
-<blockquote>
+<h4 id="LEFT-JOIN"><a href="#LEFT-JOIN" class="headerlink" title="LEFT JOIN"></a>LEFT JOIN</h4><blockquote>
 <p>返回左表所有行，如果和右表没有匹配记录，则显示NULL</p>
 <p><span style="color:#2222f2">例：查询所有学生002课程成绩，未选课成绩显示 NULL</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select stu.sno, sname, cno</span><br><span class="line">from student_tbl as stu left join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno and cno&#x3D;&quot;002&quot;;</span><br></pre></td></tr></table></figure>
 <p><img src="leftjoin.png" alt="image-20220912165403951"></p>
-<h4 id="RIGHT-JOIN">RIGHT JOIN</h4>
-<blockquote>
+<h4 id="RIGHT-JOIN"><a href="#RIGHT-JOIN" class="headerlink" title="RIGHT JOIN"></a>RIGHT JOIN</h4><blockquote>
 <p>返回右表所有行，如果和左表没有匹配记录，则显示NULL</p>
 <p><span style="color:#2222f2">例：查询每个课程选课情况，显示课号和选课学生学号</span></p>
 </blockquote>
@@ -1171,14 +1033,12 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select course.cno, count(sc.sno) as count</span><br><span class="line">from score_tbl as sc right join course_tbl as course</span><br><span class="line">on sc.cno&#x3D;course.cno group by course.cno;</span><br></pre></td></tr></table></figure>
 <p><img src="rightjoin2.png" alt="image-20220912172505381"></p>
-<h4 id="FULL-JOIN">FULL JOIN</h4>
-<blockquote>
+<h4 id="FULL-JOIN"><a href="#FULL-JOIN" class="headerlink" title="FULL JOIN"></a>FULL JOIN</h4><blockquote>
 <p>left join 和 right join 的并集。由于 mysql 不支持 full outer join，所以只能通过两个的并集实现。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select stu.sno as sno, cno</span><br><span class="line">from student_tbl as stu left join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno</span><br><span class="line">union</span><br><span class="line">select sc.sno as sno, course.cno as cno</span><br><span class="line">from score_tbl as sc right join course_tbl as course</span><br><span class="line">on sc.cno&#x3D;course.cno;</span><br></pre></td></tr></table></figure>
 <p><img src="fulljoin.png" alt="image-20220912172523380"></p>
-<h2 id="MySQL-UPDATE">MySQL UPDATE</h2>
-<blockquote>
+<h2 id="MySQL-UPDATE"><a href="#MySQL-UPDATE" class="headerlink" title="MySQL UPDATE"></a>MySQL UPDATE</h2><blockquote>
 <p><strong>示例数据表</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) primary key comment &#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(20) comment &#39;姓名&#39;,</span><br><span class="line">    &#96;age&#96; int comment &#39;年龄&#39;,</span><br><span class="line">    &#96;sex&#96; enum(&#39;男&#39;, &#39;女&#39;) comment &#39;性别&#39;</span><br><span class="line">)comment &#39;学生表&#39;;</span><br></pre></td></tr></table></figure>
@@ -1187,8 +1047,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 通用 sql 语法</span><br><span class="line">update table_name set field1&#x3D;new-value1, field2&#x3D;new-value2</span><br><span class="line">[where ...];</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>可以同时更新多个字段；<br>
-可以使用 where 指定更新条件。</strong></p>
+<p><strong>可以同时更新多个字段；<br>可以使用 where 指定更新条件。</strong></p>
 <p><span style="color:#2222f2">例：将学号为 1900301 的学生年龄改为 23</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student_tbl set age&#x3D;23 where sno&#x3D;&quot;1900301&quot;;</span><br></pre></td></tr></table></figure>
@@ -1202,8 +1061,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p><span style="color:#2222f2">例：将所有 姓长孙的学生 改为 姓张</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student_tbl set sname&#x3D;replace(sname, &#39;长孙&#39;, &#39;张&#39;);</span><br></pre></td></tr></table></figure>
-<h2 id="MySQL-DELETE">MySQL DELETE</h2>
-<blockquote>
+<h2 id="MySQL-DELETE"><a href="#MySQL-DELETE" class="headerlink" title="MySQL DELETE"></a>MySQL DELETE</h2><blockquote>
 <p><strong>示例数据表</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) primary key comment &#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(20) comment &#39;姓名&#39;,</span><br><span class="line">    &#96;age&#96; int comment &#39;年龄&#39;,</span><br><span class="line">    &#96;sex&#96; enum(&#39;男&#39;, &#39;女&#39;) comment &#39;性别&#39;</span><br><span class="line">)comment &#39;学生表&#39;;</span><br></pre></td></tr></table></figure>
@@ -1212,30 +1070,66 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 通用 sql 语法</span><br><span class="line">delete from table_name [where ...]</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><strong>如果不指定 where，则删除表中所有记录；<br>
-使用 where，删除指定条件的记录。</strong></p>
+<p><strong>如果不指定 where，则删除表中所有记录；<br>使用 where，删除指定条件的记录。</strong></p>
 <p><span style="color:#2222f2">例：删除所有年龄大于 25 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from student_tbl where age&gt;25;</span><br></pre></td></tr></table></figure>
-<h2 id="约束">约束</h2>
-<h3 id="NOT-NULL">NOT NULL</h3>
-<h3 id="UNIQUE">UNIQUE</h3>
-<h3 id="PRIMARY-KEY">PRIMARY KEY</h3>
-<h3 id="FOREIGN-KEY">FOREIGN KEY</h3>
-<h3 id="CHECK">CHECK</h3>
-<h3 id="DEFAULT">DEFAULT</h3>
-<h2 id="视图">视图</h2>
-<h2 id="函数">函数</h2>
-<h2 id="其它-2">其它</h2>
-<h3 id="delete、truncate、drop区别">delete、truncate、drop区别</h3>
-<ul>
+<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><p>约束用于规定表中数据规则，如果存在违反约束的数据行为，行为会被终止。<br>添加约束的两种方式：1. 在创建表时添加； 2. 使用alter语句修改表。</p>
+<h3 id="NOT-NULL"><a href="#NOT-NULL" class="headerlink" title="NOT NULL"></a>NOT NULL</h3><p>约束该字段值不能为 NULL。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 建表时，添加约束</span><br><span class="line">create table &#96;student&#96; (</span><br><span class="line">    &#96;sno&#96; int not null,</span><br><span class="line">    &#96;sname&#96; varchar(32) not null</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"># 使用 alter 语句，删除或添加约束</span><br><span class="line">alter table student modify sno int null;</span><br><span class="line">alter table student modify sno int not null;</span><br></pre></td></tr></table></figure>
+<h3 id="UNIQUE"><a href="#UNIQUE" class="headerlink" title="UNIQUE"></a>UNIQUE</h3><p>约束 <span style="color:#b22222">列或列的集合</span> 不能有重复值。同时为其添加 唯一索引。</p>
+<p>在建表时，如果给一个字段同时添加 not null 和 unique 约束，该字段会被默认为添加 primary key 约束；若有多个字段都被添加 not null 和 unique 约束，则第一个拥有双约束的字段 是 primary key 约束。</p>
+<blockquote>
+<p>添加 unique 约束</p>
+</blockquote>
+<p>使用 alter 语句添加 unique 约束时，可以使用 constraint 指定约束名称。</p>
+<ol>
+<li>单个列添加 unique 约束，默认名称为 字段名；</li>
+<li>多个列联合添加 unique 约束，默认名称为 第一个字段名；<span style="color:#b22222">所有列的值完全相同才会违反 unique 约束。</span></li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 为 sno 字段添加 unique 约束，默认名称为 sno</span><br><span class="line">alter table student add unique(sno);</span><br><span class="line"></span><br><span class="line"># 为 sno,sname 添加联合 unique 约束，名称定义为 unikey</span><br><span class="line">alter table student add constraint uni_key unique(sno, sname);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>撤销 unique 约束</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table student drop index uni_key;</span><br></pre></td></tr></table></figure>
+<h3 id="PRIMARY-KEY"><a href="#PRIMARY-KEY" class="headerlink" title="PRIMARY KEY"></a>PRIMARY KEY</h3><p>not null 和 unique 结合，保证任意列都有唯一标识。</p>
+<p>使用 primary key 约束的 字段或字段集合 做该表的主码。<br>注：每个表可以有多个  unique 约束，但只能有一个 primary key 且 应有一个 primary key。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(32) primary key comment&#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(32) not null comment&#39;姓名&#39;</span><br><span class="line">) comment&#39;学生表&#39; charset&#x3D;utf8;</span><br><span class="line"></span><br><span class="line"># 联合主码</span><br><span class="line">create table &#96;score_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(32) not null comment&#39;学号&#39;,</span><br><span class="line">    &#96;cno&#96; varchar(32) not null comment&#39;课号&#39;,</span><br><span class="line">    &#96;grade&#96; double comment&#39;成绩&#39;,</span><br><span class="line">    </span><br><span class="line">    constraint pk_scoreID primary key(&#96;sno&#96;, &#96;cno&#96;),</span><br><span class="line">    foreign key(&#96;sno&#96;) references student_tbl(&#96;sno&#96;),</span><br><span class="line">    foreign key(&#96;cno&#96;) references course_tbl(&#96;cno&#96;)</span><br><span class="line">) comment&#39;成绩表&#39; charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 alter 语句添加或撤销 primary key</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 添加</span><br><span class="line">alter table student_tbl add primary key(sno);</span><br><span class="line"></span><br><span class="line"># 撤销</span><br><span class="line">alter table drop primary key;</span><br></pre></td></tr></table></figure>
+<h3 id="FOREIGN-KEY"><a href="#FOREIGN-KEY" class="headerlink" title="FOREIGN KEY"></a>FOREIGN KEY</h3><p>约束参照完成性：1. 该字段在其他表做主码；2. 该字段的值必须在参照的表中存在或者为NULL。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 为 sno 和 cno 添加 foreign key 约束</span><br><span class="line">create table &#96;score_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(32) not null comment&#39;学号&#39;,</span><br><span class="line">    &#96;cno&#96; varchar(32) not null comment&#39;课号&#39;,</span><br><span class="line">    &#96;grade&#96; double comment&#39;成绩&#39;,</span><br><span class="line">    </span><br><span class="line">    constraint pk_scoreID primary key(&#96;sno&#96;, &#96;cno&#96;),</span><br><span class="line">    constraint fk_sno foreign key(&#96;sno&#96;) references student_tbl(&#96;sno&#96;),</span><br><span class="line">    constraint fk_cno foreign key(&#96;cno&#96;) references course_tbl(&#96;cno&#96;)</span><br><span class="line">) comment&#39;成绩表&#39; charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 alter 语句添加或撤销 foreign key 约束</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 如果不设置 外键名称，在Navicat</span><br><span class="line">alter table score_tbl add foreign key (&#96;sno&#96;) references key student_tbl(&#96;sno&#96;);</span><br><span class="line">alter table score_tbl add foreign key (&#96;sno&#96;) references key course_tbl(&#96;cno&#96;);</span><br><span class="line"></span><br><span class="line">alter table score_tbl drop foreign key fk_sno;</span><br><span class="line">alter table score_tbl drop foreign key fk_cno;</span><br></pre></td></tr></table></figure>
+<p><span style="color:#b22222">注：如果没有指定外键的名称，无法进行删除时，可以使用下面的语句进行查看：</span></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE  WHERE constraint_schema &#x3D; &#39;student&#39;  AND table_name &#x3D; &#39;score&#39;;</span><br></pre></td></tr></table></figure>
+<h3 id="CHECK"><a href="#CHECK" class="headerlink" title="CHECK"></a>CHECK</h3><p>使字段的值满足约束条件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(32) primary key comment&#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(32) not null comment&#39;姓名&#39;,</span><br><span class="line">    &#96;sex&#96; varchar(1) not null comment&#39;性别&#39;,</span><br><span class="line">    &#96;age&#96; int not null comment&#39;年龄&#39;,</span><br><span class="line">    </span><br><span class="line">    constraint ch_key check(sex in (&#39;男&#39;, &#39;女&#39;) and age&gt;0)</span><br><span class="line">) comment&#39;学生表&#39; charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 alter 语句添加或撤销 check 约束</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl add check(sex in (&#39;男&#39;, &#39;女&#39;) and age&gt;0);</span><br><span class="line"></span><br><span class="line">alter table student_tbl drop ch_key;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用如下语句可以查看默认 check 约束名称</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS  WHERE constraint_schema &#x3D; &#39;student&#39;;</span><br></pre></td></tr></table></figure>
+<h3 id="DEFAULT"><a href="#DEFAULT" class="headerlink" title="DEFAULT"></a>DEFAULT</h3><p>为该字段设置默认值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(32) primary key comment&#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(32) not null comment&#39;姓名&#39;,</span><br><span class="line">    &#96;sex&#96; varchar(1) not null comment&#39;性别&#39;,</span><br><span class="line">    &#96;age&#96; int not null comment&#39;年龄&#39;,</span><br><span class="line">    &#96;date&#96; date default &#39;2019-09-01&#39; comment&#39;入学时间&#39;, </span><br><span class="line">    </span><br><span class="line">    constraint ch_key check(sex in (&#39;男&#39;, &#39;女&#39;) and age&gt;0)</span><br><span class="line">) comment&#39;学生表&#39; charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用 alter 语句添加或撤销 default 约束</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl alter date set default &#39;2019-09-01&#39;;</span><br><span class="line"></span><br><span class="line">alter table student_tbl alter date drop default;</span><br></pre></td></tr></table></figure>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h2 id="其它-1"><a href="#其它-1" class="headerlink" title="其它"></a>其它</h2><h3 id="delete、truncate、drop区别"><a href="#delete、truncate、drop区别" class="headerlink" title="delete、truncate、drop区别"></a>delete、truncate、drop区别</h3><ul>
 <li>delete、truncate 仅删除表的数据，drop 删除数据和表结构。</li>
 <li>delete 是 DML 语句，操作完成后不想提交事务可以回滚；truncate、drop 是 DDL 语句，操作完成立马生效，不能回滚。</li>
 <li>truncate 只能对没有外键约束的 table 操作，delete 可以对 table 和 view 操作。</li>
 <li>执行速度：drop &gt; truncate &gt; delete。</li>
 </ul>
-<h3 id="where-和-on-的区别">where 和 on 的区别</h3>
-<ul>
+<h3 id="where-和-on-的区别"><a href="#where-和-on-的区别" class="headerlink" title="where 和 on 的区别"></a>where 和 on 的区别</h3><ul>
 <li>在 inner join 中，查询条件放在 where 或 on 中，返回结果相同。</li>
 <li>在 left join 中，不管 on 中的条件是否为真，都会返回左表所有记录，未匹配显示 NULL。right join 同理。</li>
 </ul>
@@ -1337,7 +1231,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
       clientSecret: '21dc47c8207b6e318baa54ac24cb20ac5428c924',
       repo: 'gitalk',
       owner: 'lidzknyy',
-      admin: '[&#39;lidzknyy&#39;]',
+      admin: 'lidzknyy',
       id: 'Fri Jul 09 2021 23:20:20 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
@@ -1391,7 +1285,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">数据库系统概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E3%80%81DB%E3%80%81DBMS%E3%80%81DBS"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">数据、DB、DBMS、DBS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">数据库的特点</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">数据模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">概念模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DBS%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">DBS的三级模式结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">注</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">关系模型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">关系模式的数据结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E6%9C%AF%E8%AF%AD"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">关系的术语</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">关系的基本类型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">基本关系的性质</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">关系模式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关系的完整性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%A1%E7%90%86MySQL"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">管理MySQL</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">查询数据库</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">查询数据表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">查询数据表结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%B4%A2%E5%BC%95%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">查询数据表索引信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">其它</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E8%BF%9E%E6%8E%A5"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">MySQL 连接</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">修改密码</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">MySQL 数据库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">MySQL 数据类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">数值类型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">日期&#x2F;时间类型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">字符串类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CHAR-%E5%92%8C-VARCHAR"><span class="toc-nav-number">6.3.1.</span> <span class="toc-nav-text">CHAR 和 VARCHAR</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SET-%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.3.2.</span> <span class="toc-nav-text">SET 类型</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">MySQL 数据表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">创建表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">删除表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">修改表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-INSERT"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">MySQL INSERT</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-SELECT"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">MySQL SELECT</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DISTINCT"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">DISTINCT</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#WHERE"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">WHERE</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#AND%E3%80%81OR"><span class="toc-nav-number">9.2.1.</span> <span class="toc-nav-text">AND、OR</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#BETWEEN-AND"><span class="toc-nav-number">9.2.2.</span> <span class="toc-nav-text">BETWEEN AND</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IN"><span class="toc-nav-number">9.2.3.</span> <span class="toc-nav-text">IN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LIKE"><span class="toc-nav-number">9.2.4.</span> <span class="toc-nav-text">LIKE</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IS-NULL"><span class="toc-nav-number">9.2.5.</span> <span class="toc-nav-text">IS NULL</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#NOT"><span class="toc-nav-number">9.2.6.</span> <span class="toc-nav-text">NOT</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ORDER-BY"><span class="toc-nav-number">9.3.</span> <span class="toc-nav-text">ORDER BY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GROUP-BY"><span class="toc-nav-number">9.4.</span> <span class="toc-nav-text">GROUP BY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LIMIT"><span class="toc-nav-number">9.5.</span> <span class="toc-nav-text">LIMIT</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#OFFSET"><span class="toc-nav-number">9.6.</span> <span class="toc-nav-text">OFFSET</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JOIN"><span class="toc-nav-number">9.7.</span> <span class="toc-nav-text">JOIN</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="toc-nav-number">9.7.1.</span> <span class="toc-nav-text">笛卡尔积</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#INNER-JOIN"><span class="toc-nav-number">9.7.2.</span> <span class="toc-nav-text">INNER JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LEFT-JOIN"><span class="toc-nav-number">9.7.3.</span> <span class="toc-nav-text">LEFT JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RIGHT-JOIN"><span class="toc-nav-number">9.7.4.</span> <span class="toc-nav-text">RIGHT JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#FULL-JOIN"><span class="toc-nav-number">9.7.5.</span> <span class="toc-nav-text">FULL JOIN</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-UPDATE"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">MySQL UPDATE</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-DELETE"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">MySQL DELETE</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BA%A6%E6%9D%9F"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">约束</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#NOT-NULL"><span class="toc-nav-number">12.1.</span> <span class="toc-nav-text">NOT NULL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#UNIQUE"><span class="toc-nav-number">12.2.</span> <span class="toc-nav-text">UNIQUE</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PRIMARY-KEY"><span class="toc-nav-number">12.3.</span> <span class="toc-nav-text">PRIMARY KEY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#FOREIGN-KEY"><span class="toc-nav-number">12.4.</span> <span class="toc-nav-text">FOREIGN KEY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CHECK"><span class="toc-nav-number">12.5.</span> <span class="toc-nav-text">CHECK</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DEFAULT"><span class="toc-nav-number">12.6.</span> <span class="toc-nav-text">DEFAULT</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-nav-number">13.</span> <span class="toc-nav-text">视图</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-nav-number">14.</span> <span class="toc-nav-text">函数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B6%E5%AE%83-2"><span class="toc-nav-number">15.</span> <span class="toc-nav-text">其它</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#delete%E3%80%81truncate%E3%80%81drop%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">15.1.</span> <span class="toc-nav-text">delete、truncate、drop区别</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#where-%E5%92%8C-on-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">15.2.</span> <span class="toc-nav-text">where 和 on 的区别</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">数据库系统概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E3%80%81DB%E3%80%81DBMS%E3%80%81DBS"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">数据、DB、DBMS、DBS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">数据库的特点</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">数据模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">概念模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DBS%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">DBS的三级模式结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">注</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">关系模型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">关系模式的数据结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E6%9C%AF%E8%AF%AD"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">关系的术语</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">关系的基本类型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">基本关系的性质</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">关系模式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关系的完整性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%A1%E7%90%86MySQL"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">管理MySQL</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">查询数据库</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">查询数据表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">查询数据表结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%B4%A2%E5%BC%95%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">查询数据表索引信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">其它</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E8%BF%9E%E6%8E%A5"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">MySQL 连接</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">修改密码</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">MySQL 数据库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">MySQL 数据类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">数值类型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">日期&#x2F;时间类型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">字符串类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CHAR-%E5%92%8C-VARCHAR"><span class="toc-nav-number">6.3.1.</span> <span class="toc-nav-text">CHAR 和 VARCHAR</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SET-%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.3.2.</span> <span class="toc-nav-text">SET 类型</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">MySQL 数据表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">创建表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">删除表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">修改表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-INSERT"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">MySQL INSERT</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-SELECT"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">MySQL SELECT</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DISTINCT"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">DISTINCT</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#WHERE"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">WHERE</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#AND%E3%80%81OR"><span class="toc-nav-number">9.2.1.</span> <span class="toc-nav-text">AND、OR</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#BETWEEN-AND"><span class="toc-nav-number">9.2.2.</span> <span class="toc-nav-text">BETWEEN AND</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IN"><span class="toc-nav-number">9.2.3.</span> <span class="toc-nav-text">IN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LIKE"><span class="toc-nav-number">9.2.4.</span> <span class="toc-nav-text">LIKE</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IS-NULL"><span class="toc-nav-number">9.2.5.</span> <span class="toc-nav-text">IS NULL</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#NOT"><span class="toc-nav-number">9.2.6.</span> <span class="toc-nav-text">NOT</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ORDER-BY"><span class="toc-nav-number">9.3.</span> <span class="toc-nav-text">ORDER BY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GROUP-BY"><span class="toc-nav-number">9.4.</span> <span class="toc-nav-text">GROUP BY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LIMIT"><span class="toc-nav-number">9.5.</span> <span class="toc-nav-text">LIMIT</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#OFFSET"><span class="toc-nav-number">9.6.</span> <span class="toc-nav-text">OFFSET</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JOIN"><span class="toc-nav-number">9.7.</span> <span class="toc-nav-text">JOIN</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="toc-nav-number">9.7.1.</span> <span class="toc-nav-text">笛卡尔积</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#INNER-JOIN"><span class="toc-nav-number">9.7.2.</span> <span class="toc-nav-text">INNER JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LEFT-JOIN"><span class="toc-nav-number">9.7.3.</span> <span class="toc-nav-text">LEFT JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RIGHT-JOIN"><span class="toc-nav-number">9.7.4.</span> <span class="toc-nav-text">RIGHT JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#FULL-JOIN"><span class="toc-nav-number">9.7.5.</span> <span class="toc-nav-text">FULL JOIN</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-UPDATE"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">MySQL UPDATE</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-DELETE"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">MySQL DELETE</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BA%A6%E6%9D%9F"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">约束</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#NOT-NULL"><span class="toc-nav-number">12.1.</span> <span class="toc-nav-text">NOT NULL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#UNIQUE"><span class="toc-nav-number">12.2.</span> <span class="toc-nav-text">UNIQUE</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PRIMARY-KEY"><span class="toc-nav-number">12.3.</span> <span class="toc-nav-text">PRIMARY KEY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#FOREIGN-KEY"><span class="toc-nav-number">12.4.</span> <span class="toc-nav-text">FOREIGN KEY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CHECK"><span class="toc-nav-number">12.5.</span> <span class="toc-nav-text">CHECK</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DEFAULT"><span class="toc-nav-number">12.6.</span> <span class="toc-nav-text">DEFAULT</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-nav-number">13.</span> <span class="toc-nav-text">视图</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-nav-number">14.</span> <span class="toc-nav-text">函数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B6%E5%AE%83-1"><span class="toc-nav-number">15.</span> <span class="toc-nav-text">其它</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#delete%E3%80%81truncate%E3%80%81drop%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">15.1.</span> <span class="toc-nav-text">delete、truncate、drop区别</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#where-%E5%92%8C-on-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">15.2.</span> <span class="toc-nav-text">where 和 on 的区别</span></a></li></ol></li></ol>
         
         </div>
       </aside>
