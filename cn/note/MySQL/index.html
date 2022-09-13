@@ -1335,9 +1335,9 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
     var gitalk = new Gitalk({
       clientID: '3a2fb87f10e4af9fe320',
       clientSecret: '21dc47c8207b6e318baa54ac24cb20ac5428c924',
-      repo: 'lidzknyy.github.io',
+      repo: 'gitalk',
       owner: 'lidzknyy',
-      admin: 'lidzknyy',
+      admin: '[&#39;lidzknyy&#39;]',
       id: 'Fri Jul 09 2021 23:20:20 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
@@ -1953,5 +1953,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
