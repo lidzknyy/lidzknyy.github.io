@@ -394,11 +394,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">31</span> Minutes
+              Estimated Reading Time <span class="post-count">40</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">7.4k</span> In Total
+              Words <span class="post-count">9.5k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -1023,22 +1023,29 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">insert into test_tbl</span><br><span class="line">values</span><br><span class="line">(0, &#39;MySQL 教程&#39;, &#39;zknyy&#39;, now()),</span><br><span class="line">(0, &#39;三体&#39;, &#39;刘慈欣&#39;, now());</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-SELECT">MySQL SELECT</h2>
+<p>select 语句用于数据的查询。一般格式为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> [<span class="keyword">ALL</span> <span class="operator">|</span> <span class="keyword">DISTINCT</span>] <span class="operator">&lt;</span>目标列表达式<span class="operator">&gt;</span> [,<span class="operator">&lt;</span>目标列表达式<span class="operator">&gt;</span>]...</span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span>表名<span class="operator">|</span>视图名<span class="operator">&gt;</span> [,<span class="operator">&lt;</span>表名<span class="operator">|</span>视图名<span class="operator">&gt;</span>...] <span class="operator">|</span> (<span class="operator">&lt;</span><span class="keyword">select</span> 语句<span class="operator">&gt;</span>)[<span class="keyword">AS</span>]<span class="operator">&lt;</span>别名<span class="operator">&gt;</span></span><br><span class="line">[<span class="keyword">where</span> <span class="operator">&lt;</span>条件表达式<span class="operator">&gt;</span>]</span><br><span class="line">[<span class="keyword">group</span> <span class="keyword">by</span> <span class="operator">&lt;</span>列名 <span class="number">1</span><span class="operator">&gt;</span> [<span class="keyword">having</span> <span class="operator">&lt;</span>条件表达式<span class="operator">&gt;</span>]]</span><br><span class="line">[<span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>列名 <span class="number">2</span><span class="operator">&gt;</span> [<span class="keyword">asc</span> <span class="operator">|</span> <span class="keyword">desc</span>]];</span><br></pre></td></tr></table></figure>
+<p>含义：</p>
+<p>  根据 where 子句的条件表达式，从 from 子句指定的 数据表、视图或派生表 中找出满足条件的元组，再按select 子句中的目标表达式选出元组中的属性值（相关列，表达式结果）成结果表。</p>
+<p>  如果有 group by 子句，则将结果按照 &lt;列名 1&gt; 的值进行分组，该列值相等的元组分为一组。如果有 having 子句，则只输出满足 having 条件表达式的元组。</p>
+<p>  如果有 order by 子句，则结果表还要按 &lt;列名 2&gt; 的值进行 升序 (asc) 或降序 (desc) 排序。</p>
+<p>注：关于 select 子句中的 &lt;目标列表达式&gt;，详见：[select &lt;目标列表达式&gt;](#关于 select &lt;目标列表达式&gt;)</p>
 <blockquote>
 <p><strong>示例数据表</strong></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists &#96;student_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) primary key comment &#39;学号&#39;,</span><br><span class="line">    &#96;sname&#96; varchar(32) comment &#39;姓名&#39;,</span><br><span class="line">    &#96;age&#96; int comment &#39;年龄&#39;,</span><br><span class="line">    &#96;sex&#96; enum(&#39;男&#39;, &#39;女&#39;) comment &#39;性别&#39;</span><br><span class="line">)comment &#39;学生表&#39; charset&#x3D;utf8;</span><br><span class="line"></span><br><span class="line">create table if not exists &#96;course_tbl&#96; (</span><br><span class="line">    &#96;cno&#96; varchar(20) primary key comment &#39;课号&#39;,</span><br><span class="line">    &#96;cname&#96; varchar(32) comment &#39;课程名&#39;</span><br><span class="line">)comment &#39;课程表&#39; charset&#x3D;utf8;</span><br><span class="line"></span><br><span class="line">create table if not exists &#96;score_tbl&#96; (</span><br><span class="line">    &#96;sno&#96; varchar(20) comment &#39;学号&#39;,</span><br><span class="line">    &#96;cno&#96; varchar(20) comment &#39;课号&#39;,</span><br><span class="line">    &#96;grade&#96; double comment &#39;成绩&#39;,</span><br><span class="line">    primary key (&#96;sno&#96;, &#96;cno&#96;),</span><br><span class="line">    foreign key (&#96;sno&#96;) references student_tbl(&#96;sno&#96;),</span><br><span class="line">    foreign key (&#96;cno&#96;) references course_tbl(&#96;cno&#96;)</span><br><span class="line">)comment &#39;成绩表&#39; charset&#x3D;utf8;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>查询语句中可以使用一个或多个表</p>
+<p>单表查询、多表查询</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查询所有学生信息</span><br><span class="line">select * from student_tbl;</span><br><span class="line"></span><br><span class="line"># 查询所有学生的考试成绩</span><br><span class="line">select student_tbl.*, score_tbl.* from student_tbl, score_tbl where student_tbl.sno&#x3D;score_tbl.sno;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查询所有学生信息，单表查询</span><br><span class="line">select * from student_tbl;</span><br><span class="line"></span><br><span class="line"># 查询所有学生的考试成绩，多表查询</span><br><span class="line">select student_tbl.*, score_tbl.* from student_tbl, score_tbl where student_tbl.sno&#x3D;score_tbl.sno;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>查询可以定义查询字段</p>
+<p>指定字段查询</p>
 <p><span style="color:#2222f2">例：查询所有学生的姓名和性别</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sname, sex from student_tbl;</span><br></pre></td></tr></table></figure>
 <h3 id="DISTINCT">DISTINCT</h3>
 <blockquote>
-<p>使用 distinct ，去除查询结果中的重复值</p>
+<p>使用 distinct ，去除查询结果中的重复值。不指定 distinct，默认为 all。</p>
 <p><span style="color:#2222f2">例：查询学生年龄的分布(不考虑不同年龄的人数)</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct age from student_tbl;</span><br></pre></td></tr></table></figure>
@@ -1062,14 +1069,15 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where age between 19 and 30;</span><br></pre></td></tr></table></figure>
 <h4 id="IN">IN</h4>
 <blockquote>
-<p><strong>值在指定集合中</strong></p>
+<p><strong>值在指定集合中，多个 OR 的缩写</strong></p>
 <p><span style="color:#2222f2">例：查询 年龄是19、20或21 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where age in(19, 20, 21);</span><br></pre></td></tr></table></figure>
 <h4 id="LIKE">LIKE</h4>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">not</span>] <span class="keyword">like</span><span class="string">&#x27;&lt;匹配串&gt;&#x27;</span> [<span class="keyword">escape</span><span class="string">&#x27;&lt;换码字符&gt;&#x27;</span>]</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>模糊匹配</strong><br>
-% 表示多个字值，_下划线表示一个字符</p>
+通配符 % 表示多个字值，_下划线表示一个字符（注：下划线所表示的字符数量和字符集有关，ascll 字符集，一个汉字字符需要两个_，gbk 则只需要一个_）</p>
 <p><span style="color:#2222f2">例：查询 姓张 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where sname like &#39;张%&#39;;</span><br></pre></td></tr></table></figure>
@@ -1077,6 +1085,11 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p><span style="color:#2222f2">例：查询 学号中含有002 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where sno like &#39;%002%&#39;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>escape 使用</p>
+<p><span style="color:#2222f2">例：查询 以DB_开头，且倒数第三个字符为 i 的课程信息</span></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from course where cname like &#39;DB&#x2F;_%i__&#39; escape&#39;&#x2F;&#39;;</span><br><span class="line"># escape&#39;&#x2F;&#39; 表示 &#x2F; 为换码字符，作用：&#39;&#x2F;&#39;之后的&#39;_&#39;不再作为通配符</span><br></pre></td></tr></table></figure>
 <h4 id="IS-NULL">IS NULL</h4>
 <blockquote>
 <p><strong>查询空记录</strong><br>
@@ -1089,6 +1102,16 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <span style="color:#2222f2">例：查询所有 不姓吴 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where sname not like &#39;吴%&#39;;</span><br></pre></td></tr></table></figure>
+<h3 id="GROUP-BY">GROUP BY</h3>
+<blockquote>
+<p>将查询结果按照 某一列或多列的值 分组统计，值相等的为一组。</p>
+<p>结合聚集函数使用，聚集函数会作用于每一组，每一组都有一个函数值。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name, aggregate_function(column_name)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name operator value</span><br><span class="line">GROUP BY column_name;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>例：分别统计男、女生人数</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select sex, count(sno) as nums </span><br><span class="line">from student_tbl </span><br><span class="line">group by sex;</span><br></pre></td></tr></table></figure>
 <h3 id="ORDER-BY">ORDER BY</h3>
 <blockquote>
 <p><strong>对结果集进行排序</strong><br>
@@ -1100,15 +1123,6 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p><span style="color:#2222f2">例：查询所有学生的成绩，按照成绩，学号，课号降序排列。</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from score_tbl</span><br><span class="line">order by grade,sno,cno desc;</span><br></pre></td></tr></table></figure>
-<h3 id="GROUP-BY">GROUP BY</h3>
-<blockquote>
-<p><strong>按照列分类统计，结合聚集函数使用</strong></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name, aggregate_function(column_name)</span><br><span class="line">FROM table_name</span><br><span class="line">WHERE column_name operator value</span><br><span class="line">GROUP BY column_name;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>例：分别统计男、女生人数</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select sex, count(sno) as nums </span><br><span class="line">from student_tbl </span><br><span class="line">group by sex;</span><br></pre></td></tr></table></figure>
 <h3 id="LIMIT">LIMIT</h3>
 <blockquote>
 <p>使用 limit 设定返回的记录数。</p>
@@ -1291,8 +1305,142 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into student_tbl values (0, &#39;张三&#39;, &#39;男&#39;, 32, now());</span><br></pre></td></tr></table></figure>
 <h2 id="索引">索引</h2>
+<p>索引分单列索引和组合索引。单列索引，即一个索引只包含一列；组合索引，一个索引包含多个列。<br>
+索引也是一张表，该表保存了主键和索引字段，并指向实体表记录。</p>
+<p>优点：</p>
+<ul>
+<li>合理使用索引可以提高 MySQL 的检索速度。仅在常被搜索的列添加索引。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>过多使用索引会降低更新表的速度。因为更新表时，不仅要更新数据，还要保存索引文件。</li>
+<li>建立索引会占用磁盘空间的索引文件。</li>
+</ul>
+<h3 id="创建索引">创建索引</h3>
+<p>创建索引时，需要指定 表名 和 字段名。<br>
+如果字段数据类型为 字符串类型，则需要指定长度。</p>
+<ul>
+<li>char、varchar 类型，length 可以小于字段实际长度；</li>
+<li>BLOB、TEXT 类型，必须指定 length。</li>
+</ul>
+<blockquote>
+<p>方式一：create index</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 单列索引</span><br><span class="line">create index index_sname on student_tbl(sname);</span><br><span class="line"></span><br><span class="line"># 组合索引</span><br><span class="line">create index index_sname on student_tbl(sname, age);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>方式二：alter 语句</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table student_tbl add index index_sname(sname);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>方式三：创建表时添加</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;student_tbl&#96;(</span><br><span class="line">    &#96;sno&#96; int primary key auto_increment,</span><br><span class="line">    &#96;sname&#96; varchar(16) not null,</span><br><span class="line">    </span><br><span class="line">    index index_sname (sname(length))</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="删除索引">删除索引</h3>
+<p>删除主键索引时，只需要指定 primary key，见 [primary key约束](#PRIMARY KEY)；删除其它索引时，必须指定索引名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop index index_sname on student_tbl;</span><br></pre></td></tr></table></figure>
+<h3 id="显示索引信息">显示索引信息</h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show index from student_tbl\G;</span><br></pre></td></tr></table></figure>
 <h2 id="视图">视图</h2>
 <h2 id="函数">函数</h2>
+<p>一般格式：<code>&lt;函数名&gt;([distinct | all] &lt;列名&gt;)</code>，如果指定 distinct，在计算时会去掉指定列中重复值，默认为all。</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>作用</th>
+<th>语法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COUNT()</td>
+<td>返回指定列的数量</td>
+<td><code>select count(col_name) from table;</code></td>
+</tr>
+<tr>
+<td>SUM()</td>
+<td>返回<span style="color:#b22222">数值列</span>的总和</td>
+<td><code>select sum(col_name) from table;</code></td>
+</tr>
+<tr>
+<td>AVG()</td>
+<td>返回<span style="color:#b22222">数值列</span>的平均值</td>
+<td><code>select avg(col_name) from table;</code></td>
+</tr>
+<tr>
+<td>MAX()</td>
+<td>返回指定列的最大值</td>
+<td><code>select max(col_name) from table;</code></td>
+</tr>
+<tr>
+<td>MIN()</td>
+<td>返回指定列的最小值</td>
+<td><code>select min(col_name) from table;</code></td>
+</tr>
+<tr>
+<td>UCASE()</td>
+<td>将字段的值转换为大写</td>
+<td><code>select ucase(col_name) from table;</code></td>
+</tr>
+<tr>
+<td>LCASE()</td>
+<td>将字段的值转换为小写</td>
+<td><code>select lcase(col_name) from table;</code></td>
+</tr>
+<tr>
+<td>MID()</td>
+<td>从字段中提取内容</td>
+<td><code>select mid(col_name, start[,length]) from table;</code></td>
+</tr>
+<tr>
+<td>LENGTH()</td>
+<td>返回文本字段值的长度</td>
+<td><code>select length(col_name) from table;</code></td>
+</tr>
+<tr>
+<td>ROUND()</td>
+<td>设置小数精度</td>
+<td><code>select round(col_name[,decimals]) from table;</code></td>
+</tr>
+<tr>
+<td>NOW()</td>
+<td>返回当前系统日期和时间</td>
+<td><code>select now() from table;</code></td>
+</tr>
+<tr>
+<td>FORMAT()</td>
+<td>格式化字段</td>
+<td><code>select format(col_name,format) from table;</code></td>
+</tr>
+</tbody>
+</table>
+<p>注：</p>
+<ul>
+<li>除了count(*) 之外，其它聚集函数都只处理非 NULL 值。</li>
+<li>聚集函数 只能作用于 select 子句和 having 子句中。</li>
+</ul>
+<blockquote>
+<p>实例数据表</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;score&#96;(</span><br><span class="line">    &#96;sno&#96; int primary key auto_increment,</span><br><span class="line">    &#96;sname&#96; varchar(16) not null,</span><br><span class="line">    &#96;ch&#96; double not null comment&#39;语文成绩&#39;,</span><br><span class="line">    &#96;en&#96; double not null comment&#39;英语成绩&#39;,</span><br><span class="line">    &#96;ma&#96; double not null comment&#39;数学成绩&#39;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">alter table score auto_increment&#x3D;19003001;</span><br><span class="line"></span><br><span class="line">insert into score values</span><br><span class="line">(0, &quot;刘备&quot;, 87, 78, 89),</span><br><span class="line">(0, &quot;关羽&quot;, 76, 88, 96),</span><br><span class="line">(0, &quot;张飞&quot;, 55, 42, 61),</span><br><span class="line">(0, &quot;赵云&quot;, 92, 59, 90),</span><br><span class="line">(0, &quot;马超&quot;, 73, 64, 89);</span><br></pre></td></tr></table></figure>
+<h3 id="AVG">AVG</h3>
+<blockquote>
+<p>查询语文平均分</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select avg(ch) as ch_avg from score;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查询语文成绩高于平均分的学生</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sno, sname, ch from score where ch &gt; (select avg(ch) from score);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查询总成绩平均分</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select avg(ch+en+ma) as total_avg from score;</span><br></pre></td></tr></table></figure>
+<h3 id="COUNT">COUNT</h3>
+<p>查询学生人数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from score;</span><br></pre></td></tr></table></figure>
+<p>查询英语及格人数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from score where en&gt;&#x3D;60;</span><br></pre></td></tr></table></figure>
 <h2 id="其它-2">其它</h2>
 <h3 id="delete、truncate、drop区别">delete、truncate、drop区别</h3>
 <ul>
@@ -1313,6 +1461,67 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p><img src="leftjoin.png" alt="image-20220912165403951"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 条件写在 where 中</span><br><span class="line"></span><br><span class="line">select stu.sno, sname, cno</span><br><span class="line">from student_tbl as stu left join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno </span><br><span class="line">where cno&#x3D;&quot;002&quot;;</span><br></pre></td></tr></table></figure>
 <p><img src="image-20220912165418223.png" alt="image-20220912165418223"></p>
+<h3 id="运算符-和-的区别">运算符 = 和 &lt;=&gt; 的区别</h3>
+<table>
+<thead>
+<tr>
+<th>条件</th>
+<th>= 返回结果</th>
+<th>&lt;=&gt; 返回结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>比较的两个值都不为NULL<br />例：1 和 2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>有一个为 NULL <br />例：1 和 NULL</td>
+<td>NULL</td>
+<td>0</td>
+</tr>
+<tr>
+<td>两个值都为 NULL</td>
+<td>NULL</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="having-和-where-的区别">having 和 where 的区别</h3>
+<ul>
+<li>where 是一个约束声明，在 select 结果返回前按照条件过滤数据，<span style="color:#b22222">直接对数据表中的数据操作</span>，where 中不能使用聚集函数。</li>
+<li>having 是一个过滤声明，在 select 返回查询结果集后按照条件对数据进行过滤，<span style="color:#b22222">对查询结果集进行操作</span>，having 中可以使用聚集函数。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;score&#96;(</span><br><span class="line">    &#96;sno&#96; int primary key auto_increment,</span><br><span class="line">    &#96;sname&#96; varchar(16) not null,</span><br><span class="line">    &#96;class&#96; varchar(16) not null comment&#39;班级&#39;,</span><br><span class="line">    &#96;ch&#96; double not null comment&#39;语文成绩&#39;,</span><br><span class="line">    &#96;en&#96; double not null comment&#39;英语成绩&#39;,</span><br><span class="line">    &#96;ma&#96; double not null comment&#39;数学成绩&#39;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>注：<code>select sno,sname from score having ch &gt; 60;</code> 执行会出现错误，因为 having 是在select 返回结果集之后进行过滤，对结果集进行操作，而select 返回的结果集中并没有 ch 字段。</p>
+<blockquote>
+<p>where 和 having 都可以使用的场景</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 查询 语文成绩&gt;60 的学生的学号、姓名和成绩。</span><br><span class="line">select sno,sname,ch from score where ch &gt; 60;</span><br><span class="line">select sno,sname,ch from score having ch &gt; 60;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>只能用 where 的场景</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查询 语文成绩&gt;60 的学生的学号、姓名。</span><br><span class="line">select sno,sname from score where ch &gt; 60;</span><br><span class="line"></span><br><span class="line">select sno,sname from score having ch &gt; 60;   # 错误，没有 ch 字段</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>只能用 having 的场景</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查询 语文平均分&gt;60 的班级，并显示其平均分。</span><br><span class="line">select class,avg(ch) from score group by class having avg(ch)&gt;60;</span><br><span class="line"></span><br><span class="line">select class,avg(ch) from score where avg(ch)&gt;60 group by class; # 错误，聚集函数不可用</span><br></pre></td></tr></table></figure>
+<h3 id="关于-select-目标列表达式">关于 select &lt;目标列表达式&gt;</h3>
+<p>目标列表达式，不仅 <span style="color:#b22222"><b>可以是表中的属性列，也可以是算术表达式、字符串常量、函数等</b></span>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 数据表一</span><br><span class="line">create table people(</span><br><span class="line">xxxxname varchar(16) primary key,</span><br><span class="line">xxxxage int not null</span><br><span class="line">);</span><br><span class="line">insert into people values</span><br><span class="line">(&quot;王朝&quot;, 20), (&quot;马汉&quot;, 23), (&quot;张龙&quot;, 21), (&quot;赵虎&quot;, 25);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 数据表二</span><br><span class="line">create table &#96;score&#96;(</span><br><span class="line">    &#96;sno&#96; int primary key auto_increment,</span><br><span class="line">    &#96;sname&#96; varchar(16) not null,</span><br><span class="line">    &#96;class&#96; varchar(16) not null comment&#39;班级&#39;,</span><br><span class="line">    &#96;ch&#96; double not null comment&#39;语文成绩&#39;,</span><br><span class="line">    &#96;en&#96; double not null comment&#39;英语成绩&#39;,</span><br><span class="line">    &#96;ma&#96; double not null comment&#39;数学成绩&#39;</span><br><span class="line">)</span><br><span class="line">alter table score auto_increment&#x3D;19003001;</span><br><span class="line"></span><br><span class="line">insert into score values</span><br><span class="line">(0, &quot;刘备&quot;, &quot;001&quot;, 87, 78, 89),</span><br><span class="line">(0, &quot;关羽&quot;, &quot;001&quot;, 76, 88, 96),</span><br><span class="line">(0, &quot;张飞&quot;, &quot;002&quot;, 55, 42, 61),</span><br><span class="line">(0, &quot;赵云&quot;, &quot;002&quot;, 92, 71, 90),</span><br><span class="line">(0, &quot;马超&quot;, &quot;003&quot;, 73, 64, 89)；</span><br><span class="line">#…… 省略几百条数据（实际一共就这么几条&gt;_&lt;）</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>算术表达式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># people 表中只有 age 字段，现在要查询每个人的出生年份，可以使用（当前年份-age）,并给新字段使用 as 进行重命名，就可以得到想要的结果。</span><br><span class="line">select name, (2022-age) birthyear from people;</span><br></pre></td></tr></table></figure>
+<p><img src="image-20220914211624692.png" alt="image-20220914211624692"></p>
+<blockquote>
+<p>字符串常量</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 对于 score 表</span><br><span class="line"># 现在需要对总分前十的学生颁发一等奖，找出这 10 个学生，并给他们备注“一等奖”说明</span><br><span class="line">select sno, sname, (ch+en+ma) as total, &quot;一等奖&quot; as &quot;备注&quot;</span><br><span class="line">from score</span><br><span class="line">order by total desc</span><br><span class="line">limit 10;</span><br></pre></td></tr></table></figure>
+<p><img src="image-20220914213023264.png" alt="image-20220914213023264"></p>
+<p>函数用法，详见 <a href="#%E5%87%BD%E6%95%B0">函数</a>。</p>
 
 
         <hr>
@@ -1458,7 +1667,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">数据库系统概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E3%80%81DB%E3%80%81DBMS%E3%80%81DBS"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">数据、DB、DBMS、DBS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">数据库的特点</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">数据模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">概念模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DBS%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">DBS的三级模式结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">注</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">关系模型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">关系模式的数据结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E6%9C%AF%E8%AF%AD"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">关系的术语</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">关系的基本类型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">基本关系的性质</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">关系模式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关系的完整性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%A1%E7%90%86MySQL"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">管理MySQL</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">查询数据库</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">查询数据表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">查询数据表结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%B4%A2%E5%BC%95%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">查询数据表索引信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">其它</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E8%BF%9E%E6%8E%A5"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">MySQL 连接</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">修改密码</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">MySQL 数据库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">MySQL 数据类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">数值类型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">日期&#x2F;时间类型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">字符串类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CHAR-%E5%92%8C-VARCHAR"><span class="toc-nav-number">6.3.1.</span> <span class="toc-nav-text">CHAR 和 VARCHAR</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SET-%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.3.2.</span> <span class="toc-nav-text">SET 类型</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">MySQL 数据表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">创建表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">删除表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">修改表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-INSERT"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">MySQL INSERT</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-SELECT"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">MySQL SELECT</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DISTINCT"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">DISTINCT</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#WHERE"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">WHERE</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#AND%E3%80%81OR"><span class="toc-nav-number">9.2.1.</span> <span class="toc-nav-text">AND、OR</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#BETWEEN-AND"><span class="toc-nav-number">9.2.2.</span> <span class="toc-nav-text">BETWEEN AND</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IN"><span class="toc-nav-number">9.2.3.</span> <span class="toc-nav-text">IN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LIKE"><span class="toc-nav-number">9.2.4.</span> <span class="toc-nav-text">LIKE</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IS-NULL"><span class="toc-nav-number">9.2.5.</span> <span class="toc-nav-text">IS NULL</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#NOT"><span class="toc-nav-number">9.2.6.</span> <span class="toc-nav-text">NOT</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ORDER-BY"><span class="toc-nav-number">9.3.</span> <span class="toc-nav-text">ORDER BY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GROUP-BY"><span class="toc-nav-number">9.4.</span> <span class="toc-nav-text">GROUP BY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LIMIT"><span class="toc-nav-number">9.5.</span> <span class="toc-nav-text">LIMIT</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#OFFSET"><span class="toc-nav-number">9.6.</span> <span class="toc-nav-text">OFFSET</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JOIN"><span class="toc-nav-number">9.7.</span> <span class="toc-nav-text">JOIN</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="toc-nav-number">9.7.1.</span> <span class="toc-nav-text">笛卡尔积</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#INNER-JOIN"><span class="toc-nav-number">9.7.2.</span> <span class="toc-nav-text">INNER JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LEFT-JOIN"><span class="toc-nav-number">9.7.3.</span> <span class="toc-nav-text">LEFT JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RIGHT-JOIN"><span class="toc-nav-number">9.7.4.</span> <span class="toc-nav-text">RIGHT JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#FULL-JOIN"><span class="toc-nav-number">9.7.5.</span> <span class="toc-nav-text">FULL JOIN</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#AS"><span class="toc-nav-number">9.8.</span> <span class="toc-nav-text">AS</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-UPDATE"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">MySQL UPDATE</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-DELETE"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">MySQL DELETE</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BA%A6%E6%9D%9F"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">约束</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#NOT-NULL"><span class="toc-nav-number">12.1.</span> <span class="toc-nav-text">NOT NULL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#UNIQUE"><span class="toc-nav-number">12.2.</span> <span class="toc-nav-text">UNIQUE</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PRIMARY-KEY"><span class="toc-nav-number">12.3.</span> <span class="toc-nav-text">PRIMARY KEY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#FOREIGN-KEY"><span class="toc-nav-number">12.4.</span> <span class="toc-nav-text">FOREIGN KEY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CHECK"><span class="toc-nav-number">12.5.</span> <span class="toc-nav-text">CHECK</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DEFAULT"><span class="toc-nav-number">12.6.</span> <span class="toc-nav-text">DEFAULT</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AUTO-INCREMENT"><span class="toc-nav-number">13.</span> <span class="toc-nav-text">AUTO INCREMENT</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="toc-nav-number">14.</span> <span class="toc-nav-text">索引</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-nav-number">15.</span> <span class="toc-nav-text">视图</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-nav-number">16.</span> <span class="toc-nav-text">函数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B6%E5%AE%83-2"><span class="toc-nav-number">17.</span> <span class="toc-nav-text">其它</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#delete%E3%80%81truncate%E3%80%81drop%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">17.1.</span> <span class="toc-nav-text">delete、truncate、drop区别</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#where-%E5%92%8C-on-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">17.2.</span> <span class="toc-nav-text">where 和 on 的区别</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">数据库系统概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E3%80%81DB%E3%80%81DBMS%E3%80%81DBS"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">数据、DB、DBMS、DBS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">数据库的特点</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">数据模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%A6%82%E5%BF%B5%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">概念模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DBS%E7%9A%84%E4%B8%89%E7%BA%A7%E6%A8%A1%E5%BC%8F%E7%BB%93%E6%9E%84"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">DBS的三级模式结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B3%A8"><span class="toc-nav-number">1.6.</span> <span class="toc-nav-text">注</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">关系模型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">关系模式的数据结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E6%9C%AF%E8%AF%AD"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">关系的术语</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">关系的基本类型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-nav-number">2.2.3.</span> <span class="toc-nav-text">基本关系的性质</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">2.2.4.</span> <span class="toc-nav-text">关系模式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E7%B3%BB%E7%9A%84%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">关系的完整性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%AE%A1%E7%90%86MySQL"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">管理MySQL</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">查询数据库</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">查询数据表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">查询数据表结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%B4%A2%E5%BC%95%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">查询数据表索引信息</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">其它</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E8%BF%9E%E6%8E%A5"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">MySQL 连接</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">修改密码</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">MySQL 数据库</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">MySQL 数据类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.1.</span> <span class="toc-nav-text">数值类型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%97%A5%E6%9C%9F-%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.2.</span> <span class="toc-nav-text">日期&#x2F;时间类型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.3.</span> <span class="toc-nav-text">字符串类型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CHAR-%E5%92%8C-VARCHAR"><span class="toc-nav-number">6.3.1.</span> <span class="toc-nav-text">CHAR 和 VARCHAR</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#SET-%E7%B1%BB%E5%9E%8B"><span class="toc-nav-number">6.3.2.</span> <span class="toc-nav-text">SET 类型</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-%E6%95%B0%E6%8D%AE%E8%A1%A8"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">MySQL 数据表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">创建表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%A0%E9%99%A4%E8%A1%A8"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">删除表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">修改表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-INSERT"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">MySQL INSERT</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-SELECT"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">MySQL SELECT</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DISTINCT"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">DISTINCT</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#WHERE"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">WHERE</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#AND%E3%80%81OR"><span class="toc-nav-number">9.2.1.</span> <span class="toc-nav-text">AND、OR</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#BETWEEN-AND"><span class="toc-nav-number">9.2.2.</span> <span class="toc-nav-text">BETWEEN AND</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IN"><span class="toc-nav-number">9.2.3.</span> <span class="toc-nav-text">IN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LIKE"><span class="toc-nav-number">9.2.4.</span> <span class="toc-nav-text">LIKE</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#IS-NULL"><span class="toc-nav-number">9.2.5.</span> <span class="toc-nav-text">IS NULL</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#NOT"><span class="toc-nav-number">9.2.6.</span> <span class="toc-nav-text">NOT</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#GROUP-BY"><span class="toc-nav-number">9.3.</span> <span class="toc-nav-text">GROUP BY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ORDER-BY"><span class="toc-nav-number">9.4.</span> <span class="toc-nav-text">ORDER BY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LIMIT"><span class="toc-nav-number">9.5.</span> <span class="toc-nav-text">LIMIT</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#OFFSET"><span class="toc-nav-number">9.6.</span> <span class="toc-nav-text">OFFSET</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JOIN"><span class="toc-nav-number">9.7.</span> <span class="toc-nav-text">JOIN</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="toc-nav-number">9.7.1.</span> <span class="toc-nav-text">笛卡尔积</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#INNER-JOIN"><span class="toc-nav-number">9.7.2.</span> <span class="toc-nav-text">INNER JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LEFT-JOIN"><span class="toc-nav-number">9.7.3.</span> <span class="toc-nav-text">LEFT JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#RIGHT-JOIN"><span class="toc-nav-number">9.7.4.</span> <span class="toc-nav-text">RIGHT JOIN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#FULL-JOIN"><span class="toc-nav-number">9.7.5.</span> <span class="toc-nav-text">FULL JOIN</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#AS"><span class="toc-nav-number">9.8.</span> <span class="toc-nav-text">AS</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-UPDATE"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">MySQL UPDATE</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#MySQL-DELETE"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">MySQL DELETE</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BA%A6%E6%9D%9F"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">约束</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#NOT-NULL"><span class="toc-nav-number">12.1.</span> <span class="toc-nav-text">NOT NULL</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#UNIQUE"><span class="toc-nav-number">12.2.</span> <span class="toc-nav-text">UNIQUE</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PRIMARY-KEY"><span class="toc-nav-number">12.3.</span> <span class="toc-nav-text">PRIMARY KEY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#FOREIGN-KEY"><span class="toc-nav-number">12.4.</span> <span class="toc-nav-text">FOREIGN KEY</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CHECK"><span class="toc-nav-number">12.5.</span> <span class="toc-nav-text">CHECK</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#DEFAULT"><span class="toc-nav-number">12.6.</span> <span class="toc-nav-text">DEFAULT</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#AUTO-INCREMENT"><span class="toc-nav-number">13.</span> <span class="toc-nav-text">AUTO INCREMENT</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="toc-nav-number">14.</span> <span class="toc-nav-text">索引</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="toc-nav-number">14.1.</span> <span class="toc-nav-text">创建索引</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%A0%E9%99%A4%E7%B4%A2%E5%BC%95"><span class="toc-nav-number">14.2.</span> <span class="toc-nav-text">删除索引</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%98%BE%E7%A4%BA%E7%B4%A2%E5%BC%95%E4%BF%A1%E6%81%AF"><span class="toc-nav-number">14.3.</span> <span class="toc-nav-text">显示索引信息</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-nav-number">15.</span> <span class="toc-nav-text">视图</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-nav-number">16.</span> <span class="toc-nav-text">函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#AVG"><span class="toc-nav-number">16.1.</span> <span class="toc-nav-text">AVG</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#COUNT"><span class="toc-nav-number">16.2.</span> <span class="toc-nav-text">COUNT</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%B6%E5%AE%83-2"><span class="toc-nav-number">17.</span> <span class="toc-nav-text">其它</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#delete%E3%80%81truncate%E3%80%81drop%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">17.1.</span> <span class="toc-nav-text">delete、truncate、drop区别</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#where-%E5%92%8C-on-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">17.2.</span> <span class="toc-nav-text">where 和 on 的区别</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6-%E5%92%8C-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">17.3.</span> <span class="toc-nav-text">运算符 &#x3D; 和 &lt;&#x3D;&gt; 的区别</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#having-%E5%92%8C-where-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">17.4.</span> <span class="toc-nav-text">having 和 where 的区别</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%85%B3%E4%BA%8E-select-%E7%9B%AE%E6%A0%87%E5%88%97%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-nav-number">17.5.</span> <span class="toc-nav-text">关于 select &lt;目标列表达式&gt;</span></a></li></ol></li></ol>
         
         </div>
       </aside>
