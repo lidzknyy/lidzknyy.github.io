@@ -620,7 +620,7 @@
 </ul>
 <h2 id="关系模型">关系模型</h2>
 <h3 id="关系模式的数据结构">关系模式的数据结构</h3>
-<p><b style="color:#b22222">关系模式要求关系必须是规范化的，关系的每一个分量必须是一个不可分的数据项。</b></p>
+<p><b style="color:#cc2222">关系模式要求关系必须是规范化的，关系的每一个分量必须是一个不可分的数据项。</b></p>
 <ul>
 <li>
 <p>关系（relation）：一张数据表为一个关系。</p>
@@ -729,7 +729,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create database test;        # 创建数据库，数据库名为 test</span><br><span class="line">drop database test;          # 删除数据库</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-数据类型">MySQL 数据类型</h2>
 <blockquote>
-<p>定义数据字段的类型对<span style="color:#B22222">数据库的优化</span>是非常重要的。<br>
+<p>定义数据字段的类型对<span style="color:#cc2222">数据库的优化</span>是非常重要的。<br>
 MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <h3 id="数值类型">数值类型</h3>
@@ -923,15 +923,15 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p>char 类型为固定长度，如果数据长度不足，则会在右侧进行填充，检索时会去掉；varchar 类型为可变长度。</p>
 </li>
 <li>
-<p><span style="color:#b22222">数据表的字符集不同，最大存储字节相同，最大存储长度会不同</span>。<br>
+<p><span style="color:#cc2222">数据表的字符集不同，最大存储字节相同，最大存储长度会不同</span>。<br>
  utf8 字符集，每个字符【所有字符】占 3 Bytes；<br>
  gbk 字符集，每个字符占 2 Bytes；<br>
  latin1 字符集，每个字符占 1 Bytes，汉字是两个字符（即：占 2 Bytes）。</p>
-<p><span style="color:#2222f2">例：goods_tbl 表的 charset 是 utf8 字符集。其拥有 varchar(N) 类型字段 info。</span></p>
+<p><span style="color:#ff22ff">例：goods_tbl 表的 charset 是 utf8 字符集。其拥有 varchar(N) 类型字段 info。</span></p>
 <p>  因为 varchar 最多能存储 65535 Bytes 的数据，而 utf8 字符集中每个字符 占 3 Bytes，故 info 字段所能定义最大存储字符数为 65535 / 3 = 21845。</p>
 <p>  又由于 varchar 存储变长字段的字符类型，其存储时需要在前缀长度列表加上实际存储的字符，当存储的字符串长度小于 255 字节时，需要 1 字节的空间，当大于 255 字节时，需要 2 字节的空间。故 N = (65535 - 1) / 3 = 21844 或 N = (65535 - 2) / 3 = 21844，即 varchar(21844);</p>
 <p>  如果 good_tbl 表的 charset 为 latin1。则 info 字段最大能定义 65535 - 2 = 65533 Bytes，varchar(65533) 。</p>
-<p>  实际开发中，varchar 字段长度不仅收到编码限制，还有null标识位，还会受到<span style="color:#b22222">行长度</span>限制，mysql 中要求每一行的定义长度不能超过 65535。故实际最大能存储多少字符，还要考虑其他字段的长度。</p>
+<p>  实际开发中，varchar 字段长度不仅收到编码限制，还有null标识位，还会受到<span style="color:#cc2222">行长度</span>限制，mysql 中要求每一行的定义长度不能超过 65535。故实际最大能存储多少字符，还要考虑其他字段的长度。</p>
 </li>
 <li>
 <p>更多区别，参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/chengyunblogs/p/15788493.html">CHAR 和 VARCHAR的区别</a></p>
@@ -1040,13 +1040,13 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 查询所有学生信息，单表查询</span><br><span class="line">select * from student_tbl;</span><br><span class="line"></span><br><span class="line"># 查询所有学生的考试成绩，多表查询</span><br><span class="line">select student_tbl.*, score_tbl.* from student_tbl, score_tbl where student_tbl.sno&#x3D;score_tbl.sno;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>指定字段查询</p>
-<p><span style="color:#2222f2">例：查询所有学生的姓名和性别</span></p>
+<p><span style="color:#ff22ff">例：查询所有学生的姓名和性别</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sname, sex from student_tbl;</span><br></pre></td></tr></table></figure>
 <h3 id="DISTINCT">DISTINCT</h3>
 <blockquote>
 <p>使用 distinct ，去除查询结果中的重复值。不指定 distinct，默认为 all。</p>
-<p><span style="color:#2222f2">例：查询学生年龄的分布(不考虑不同年龄的人数)</span></p>
+<p><span style="color:#ff22ff">例：查询学生年龄的分布(不考虑不同年龄的人数)</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct age from student_tbl;</span><br></pre></td></tr></table></figure>
 <h3 id="WHERE">WHERE</h3>
@@ -1058,19 +1058,19 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <h4 id="AND、OR">AND、OR</h4>
 <blockquote>
 <p><strong>连接多个查询条件</strong></p>
-<p><span style="color:#2222f2">例：查询 age&gt;19 且 age&lt;30 的学生的姓名和性别</span></p>
+<p><span style="color:#ff22ff">例：查询 age&gt;19 且 age&lt;30 的学生的姓名和性别</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sname, sex from student_tbl where age&gt;19 and age&lt;30;</span><br></pre></td></tr></table></figure>
 <h4 id="BETWEEN-AND">BETWEEN AND</h4>
 <blockquote>
 <p><strong>值在某个区间，包含两个端点</strong></p>
-<p><span style="color:#2222f2">例：查询 age在19和30之间 的学生的姓名和性别</span></p>
+<p><span style="color:#ff22ff">例：查询 age在19和30之间 的学生的姓名和性别</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where age between 19 and 30;</span><br></pre></td></tr></table></figure>
 <h4 id="IN">IN</h4>
 <blockquote>
 <p><strong>值在指定集合中，多个 OR 的缩写</strong></p>
-<p><span style="color:#2222f2">例：查询 年龄是19、20或21 的学生</span></p>
+<p><span style="color:#ff22ff">例：查询 年龄是19、20或21 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where age in(19, 20, 21);</span><br></pre></td></tr></table></figure>
 <h4 id="LIKE">LIKE</h4>
@@ -1078,28 +1078,28 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <blockquote>
 <p><strong>模糊匹配</strong><br>
 通配符 % 表示多个字值，_下划线表示一个字符（注：下划线所表示的字符数量和字符集有关，ascll 字符集，一个汉字字符需要两个_，gbk 则只需要一个_）</p>
-<p><span style="color:#2222f2">例：查询 姓张 的学生</span></p>
+<p><span style="color:#ff22ff">例：查询 姓张 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where sname like &#39;张%&#39;;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><span style="color:#2222f2">例：查询 学号中含有002 的学生</span></p>
+<p><span style="color:#ff22ff">例：查询 学号中含有002 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where sno like &#39;%002%&#39;;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>escape 使用</p>
-<p><span style="color:#2222f2">例：查询 以DB_开头，且倒数第三个字符为 i 的课程信息</span></p>
+<p><span style="color:#ff22ff">例：查询 以DB_开头，且倒数第三个字符为 i 的课程信息</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from course where cname like &#39;DB&#x2F;_%i__&#39; escape&#39;&#x2F;&#39;;</span><br><span class="line"># escape&#39;&#x2F;&#39; 表示 &#x2F; 为换码字符，作用：&#39;&#x2F;&#39;之后的&#39;_&#39;不再作为通配符</span><br></pre></td></tr></table></figure>
 <h4 id="IS-NULL">IS NULL</h4>
 <blockquote>
 <p><strong>查询空记录</strong><br>
-<span style="color:#2222f2">例：查询 成绩还未登记 的记录</span></p>
+<span style="color:#ff22ff">例：查询 成绩还未登记 的记录</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from score_tbl where grade is null;</span><br></pre></td></tr></table></figure>
 <h4 id="NOT">NOT</h4>
 <blockquote>
 <p><strong>取反</strong><br>
-<span style="color:#2222f2">例：查询所有 不姓吴 的学生</span></p>
+<span style="color:#ff22ff">例：查询所有 不姓吴 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from student_tbl where sname not like &#39;吴%&#39;;</span><br></pre></td></tr></table></figure>
 <h3 id="GROUP-BY">GROUP BY</h3>
@@ -1120,7 +1120,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT column_name,column_name</span><br><span class="line">FROM table_name</span><br><span class="line">ORDER BY column_name,column_name ASC|DESC;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><span style="color:#2222f2">例：查询所有学生的成绩，按照成绩，学号，课号降序排列。</span></p>
+<p><span style="color:#ff22ff">例：查询所有学生的成绩，按照成绩，学号，课号降序排列。</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from score_tbl</span><br><span class="line">order by grade,sno,cno desc;</span><br></pre></td></tr></table></figure>
 <h3 id="LIMIT">LIMIT</h3>
@@ -1154,26 +1154,26 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <h4 id="INNER-JOIN">INNER JOIN</h4>
 <blockquote>
 <p>多个表根据字段匹配，结果为所有表的交集</p>
-<p><span style="color:#2222f2">例：查询所有学生考试成绩，只显示有效成绩</span></p>
+<p><span style="color:#ff22ff">例：查询所有学生考试成绩，只显示有效成绩</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select stu.sno, sname, cno, grade</span><br><span class="line">from student_tbl as stu inner join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno;</span><br></pre></td></tr></table></figure>
 <p><img src="innerjoin.png" alt="image-20220912175246739"></p>
 <h4 id="LEFT-JOIN">LEFT JOIN</h4>
 <blockquote>
 <p>返回左表所有行，如果和右表没有匹配记录，则显示NULL</p>
-<p><span style="color:#2222f2">例：查询所有学生002课程成绩，未选课成绩显示 NULL</span></p>
+<p><span style="color:#ff22ff">例：查询所有学生002课程成绩，未选课成绩显示 NULL</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select stu.sno, sname, cno</span><br><span class="line">from student_tbl as stu left join score_tbl as sc</span><br><span class="line">on stu.sno&#x3D;sc.sno and cno&#x3D;&quot;002&quot;;</span><br></pre></td></tr></table></figure>
 <p><img src="leftjoin.png" alt="image-20220912165403951"></p>
 <h4 id="RIGHT-JOIN">RIGHT JOIN</h4>
 <blockquote>
 <p>返回右表所有行，如果和左表没有匹配记录，则显示NULL</p>
-<p><span style="color:#2222f2">例：查询每个课程选课情况，显示课号和选课学生学号</span></p>
+<p><span style="color:#ff22ff">例：查询每个课程选课情况，显示课号和选课学生学号</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select course.cno, sc.sno</span><br><span class="line">from score_tbl as sc right join course_tbl as course</span><br><span class="line">on sc.cno&#x3D;course.cno;</span><br></pre></td></tr></table></figure>
 <p><img src="rightjoin1.png" alt="image-20220912172448443"></p>
 <blockquote>
-<p><span style="color:#2222f2">例：课程选课情况，显示课号和选课人数</span></p>
+<p><span style="color:#ff22ff">例：课程选课情况，显示课号和选课人数</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select course.cno, count(sc.sno) as count</span><br><span class="line">from score_tbl as sc right join course_tbl as course</span><br><span class="line">on sc.cno&#x3D;course.cno group by course.cno;</span><br></pre></td></tr></table></figure>
 <p><img src="rightjoin2.png" alt="image-20220912172505381"></p>
@@ -1211,17 +1211,17 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <blockquote>
 <p><strong>可以同时更新多个字段；<br>
 可以使用 where 指定更新条件。</strong></p>
-<p><span style="color:#2222f2">例：将学号为 1900301 的学生年龄改为 23</span></p>
+<p><span style="color:#ff22ff">例：将学号为 1900301 的学生年龄改为 23</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student_tbl set age&#x3D;23 where sno&#x3D;&quot;1900301&quot;;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>修改值可以使用表达式。</strong></p>
-<p><span style="color:#2222f2">例：将所有学生年龄 +1</span></p>
+<p><span style="color:#ff22ff">例：将所有学生年龄 +1</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student_tbl set age&#x3D;age+1;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>替换某个字段中的某个字符串。</strong></p>
-<p><span style="color:#2222f2">例：将所有 姓长孙的学生 改为 姓张</span></p>
+<p><span style="color:#ff22ff">例：将所有 姓长孙的学生 改为 姓张</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student_tbl set sname&#x3D;replace(sname, &#39;长孙&#39;, &#39;张&#39;);</span><br></pre></td></tr></table></figure>
 <h2 id="MySQL-DELETE">MySQL DELETE</h2>
@@ -1236,7 +1236,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <blockquote>
 <p><strong>如果不指定 where，则删除表中所有记录；<br>
 使用 where，删除指定条件的记录。</strong></p>
-<p><span style="color:#2222f2">例：删除所有年龄大于 25 的学生</span></p>
+<p><span style="color:#ff22ff">例：删除所有年龄大于 25 的学生</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from student_tbl where age&gt;25;</span><br></pre></td></tr></table></figure>
 <h2 id="约束">约束</h2>
@@ -1246,7 +1246,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p>约束该字段值不能为 NULL。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 建表时，添加约束</span><br><span class="line">create table &#96;student&#96; (</span><br><span class="line">    &#96;sno&#96; int not null,</span><br><span class="line">    &#96;sname&#96; varchar(32) not null</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"># 使用 alter 语句，删除或添加约束</span><br><span class="line">alter table student modify sno int null;</span><br><span class="line">alter table student modify sno int not null;</span><br></pre></td></tr></table></figure>
 <h3 id="UNIQUE">UNIQUE</h3>
-<p>约束 <span style="color:#b22222">列或列的集合</span> 不能有重复值。同时为其添加 唯一索引。</p>
+<p>约束 <span style="color:#cc2222">列或列的集合</span> 不能有重复值。同时为其添加 唯一索引。</p>
 <p>在建表时，如果给一个字段同时添加 not null 和 unique 约束，该字段会被默认为添加 primary key 约束；若有多个字段都被添加 not null 和 unique 约束，则第一个拥有双约束的字段 是 primary key 约束。</p>
 <blockquote>
 <p>添加 unique 约束</p>
@@ -1254,7 +1254,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p>使用 alter 语句添加 unique 约束时，可以使用 constraint 指定约束名称。</p>
 <ol>
 <li>单个列添加 unique 约束，默认名称为 字段名；</li>
-<li>多个列联合添加 unique 约束，默认名称为 第一个字段名；<span style="color:#b22222">所有列的值完全相同才会违反 unique 约束。</span></li>
+<li>多个列联合添加 unique 约束，默认名称为 第一个字段名；<span style="color:#cc2222">所有列的值完全相同才会违反 unique 约束。</span></li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 为 sno 字段添加 unique 约束，默认名称为 sno</span><br><span class="line">alter table student add unique(sno);</span><br><span class="line"></span><br><span class="line"># 为 sno,sname 添加联合 unique 约束，名称定义为 unikey</span><br><span class="line">alter table student add constraint uni_key unique(sno, sname);</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -1277,7 +1277,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <p>使用 alter 语句添加或撤销 foreign key 约束</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alter table score_tbl add foreign key (&#96;sno&#96;) references key student_tbl(&#96;sno&#96;);</span><br><span class="line">alter table score_tbl add foreign key (&#96;sno&#96;) references key course_tbl(&#96;cno&#96;);</span><br><span class="line"></span><br><span class="line">alter table score_tbl drop foreign key fk_sno;</span><br><span class="line">alter table score_tbl drop foreign key fk_cno;</span><br></pre></td></tr></table></figure>
-<p><span style="color:#b22222">注：如果没有指定外键的名称，无法进行删除时，可以使用下面的语句进行查看：</span></p>
+<p><span style="color:#cc2222">注：如果没有指定外键的名称，无法进行删除时，可以使用下面的语句进行查看：</span></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE  WHERE constraint_schema &#x3D; &#39;student&#39;  AND table_name &#x3D; &#39;score&#39;;</span><br></pre></td></tr></table></figure>
 <h3 id="CHECK">CHECK</h3>
 <p>使字段的值满足约束条件。</p>
@@ -1359,12 +1359,12 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </tr>
 <tr>
 <td>SUM()</td>
-<td>返回<span style="color:#b22222">数值列</span>的总和</td>
+<td>返回<span style="color:#cc2222">数值列</span>的总和</td>
 <td><code>select sum(col_name) from table;</code></td>
 </tr>
 <tr>
 <td>AVG()</td>
-<td>返回<span style="color:#b22222">数值列</span>的平均值</td>
+<td>返回<span style="color:#cc2222">数值列</span>的平均值</td>
 <td><code>select avg(col_name) from table;</code></td>
 </tr>
 <tr>
@@ -1437,9 +1437,13 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select avg(ch+en+ma) as total_avg from score;</span><br></pre></td></tr></table></figure>
 <h3 id="COUNT">COUNT</h3>
+<blockquote>
 <p>查询学生人数</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from score;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>查询英语及格人数</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select count(*) from score where en&gt;&#x3D;60;</span><br></pre></td></tr></table></figure>
 <h2 id="其它-2">其它</h2>
 <h3 id="delete、truncate、drop区别">delete、truncate、drop区别</h3>
@@ -1455,7 +1459,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 <li>在 left join 中，不管 on 中的条件是否为真，都会返回左表所有记录，未匹配显示 NULL。right join 同理。</li>
 </ul>
 <blockquote>
-<p><span style="color:#2222f2">例：查询所有学生 002课程 的成绩，未选课显示 NULL。</span></p>
+<p><span style="color:#ff22ff">例：查询所有学生 002课程 的成绩，未选课显示 NULL。</span></p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 条件写在 on 中</span><br><span class="line"></span><br><span class="line">select stu.sno, sname, cno</span><br><span class="line">from student_tbl as stu left join score_tbl as sc</span><br><span class="line">on (stu.sno&#x3D;sc.sno and cno&#x3D;&quot;002&quot;);</span><br></pre></td></tr></table></figure>
 <p><img src="leftjoin.png" alt="image-20220912165403951"></p>
@@ -1490,8 +1494,8 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </table>
 <h3 id="having-和-where-的区别">having 和 where 的区别</h3>
 <ul>
-<li>where 是一个约束声明，在 select 结果返回前按照条件过滤数据，<span style="color:#b22222">直接对数据表中的数据操作</span>，where 中不能使用聚集函数。</li>
-<li>having 是一个过滤声明，在 select 返回查询结果集后按照条件对数据进行过滤，<span style="color:#b22222">对查询结果集进行操作</span>，having 中可以使用聚集函数。</li>
+<li>where 是一个约束声明，在 select 结果返回前按照条件过滤数据，<span style="color:#cc2222">直接对数据表中的数据操作</span>，where 中不能使用聚集函数。</li>
+<li>having 是一个过滤声明，在 select 返回查询结果集后按照条件对数据进行过滤，<span style="color:#cc2222">对查询结果集进行操作</span>，having 中可以使用聚集函数。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table &#96;score&#96;(</span><br><span class="line">    &#96;sno&#96; int primary key auto_increment,</span><br><span class="line">    &#96;sname&#96; varchar(16) not null,</span><br><span class="line">    &#96;class&#96; varchar(16) not null comment&#39;班级&#39;,</span><br><span class="line">    &#96;ch&#96; double not null comment&#39;语文成绩&#39;,</span><br><span class="line">    &#96;en&#96; double not null comment&#39;英语成绩&#39;,</span><br><span class="line">    &#96;ma&#96; double not null comment&#39;数学成绩&#39;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <p>注：<code>select sno,sname from score having ch &gt; 60;</code> 执行会出现错误，因为 having 是在select 返回结果集之后进行过滤，对结果集进行操作，而select 返回的结果集中并没有 ch 字段。</p>
@@ -1508,7 +1512,7 @@ MySQL 支持数值、日期 / 时间和字符串三种数据类型。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查询 语文平均分&gt;60 的班级，并显示其平均分。</span><br><span class="line">select class,avg(ch) from score group by class having avg(ch)&gt;60;</span><br><span class="line"></span><br><span class="line">select class,avg(ch) from score where avg(ch)&gt;60 group by class; # 错误，聚集函数不可用</span><br></pre></td></tr></table></figure>
 <h3 id="关于-select-目标列表达式">关于 select &lt;目标列表达式&gt;</h3>
-<p>目标列表达式，不仅 <span style="color:#b22222"><b>可以是表中的属性列，也可以是算术表达式、字符串常量、函数等</b></span>。</p>
+<p>目标列表达式，不仅 <span style="color:#cc2222"><b>可以是表中的属性列，也可以是算术表达式、字符串常量、函数等</b></span>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 数据表一</span><br><span class="line">create table people(</span><br><span class="line">xxxxname varchar(16) primary key,</span><br><span class="line">xxxxage int not null</span><br><span class="line">);</span><br><span class="line">insert into people values</span><br><span class="line">(&quot;王朝&quot;, 20), (&quot;马汉&quot;, 23), (&quot;张龙&quot;, 21), (&quot;赵虎&quot;, 25);</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 数据表二</span><br><span class="line">create table &#96;score&#96;(</span><br><span class="line">    &#96;sno&#96; int primary key auto_increment,</span><br><span class="line">    &#96;sname&#96; varchar(16) not null,</span><br><span class="line">    &#96;class&#96; varchar(16) not null comment&#39;班级&#39;,</span><br><span class="line">    &#96;ch&#96; double not null comment&#39;语文成绩&#39;,</span><br><span class="line">    &#96;en&#96; double not null comment&#39;英语成绩&#39;,</span><br><span class="line">    &#96;ma&#96; double not null comment&#39;数学成绩&#39;</span><br><span class="line">)</span><br><span class="line">alter table score auto_increment&#x3D;19003001;</span><br><span class="line"></span><br><span class="line">insert into score values</span><br><span class="line">(0, &quot;刘备&quot;, &quot;001&quot;, 87, 78, 89),</span><br><span class="line">(0, &quot;关羽&quot;, &quot;001&quot;, 76, 88, 96),</span><br><span class="line">(0, &quot;张飞&quot;, &quot;002&quot;, 55, 42, 61),</span><br><span class="line">(0, &quot;赵云&quot;, &quot;002&quot;, 92, 71, 90),</span><br><span class="line">(0, &quot;马超&quot;, &quot;003&quot;, 73, 64, 89)；</span><br><span class="line">#…… 省略几百条数据（实际一共就这么几条&gt;_&lt;）</span><br></pre></td></tr></table></figure>
 <blockquote>
