@@ -139,10 +139,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://github.com/lidzknyy/lidzknyy.github.io/cn/springboot/springboot入门/">
+  <link rel="canonical" href="https://github.com/lidzknyy/lidzknyy.github.io/categories/Java/总结/">
   <title>
     
-      （一）springboot入门 - zknyy
+      zknyy
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -290,7 +290,29 @@
           <!-- LangSelect -->
           
           
-          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="categories/Java/总结/index.html">
+      
+      
+      <option value="cn"  selected >
+        简体中文
+      </option>
+      
+      <option value="en" >
+        English
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
           
           
         </ul>
@@ -342,19 +364,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('/img/header_img/img2.jpeg');
-      --intro-header-background-image-url-page: url('//img/header_img/img2.jpeg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/img2.jpeg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/img2.jpeg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
     }
 
     header.intro-header {
-       /*post*/
-        background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('/img/header_img/img2.jpeg'); */
+       /*page*/
+        background-image: var(--intro-header-background-image-url-page);
+        /* background-image: url('/img/header_img/archive_bg2.jpg'); */
       
     }
 
@@ -376,42 +398,10 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="post-heading">
-            <div class="tags">
-              
-              <a class="tag" href="/tags/#springboot" title="springboot">springboot</a>
-              
-            </div>
-            <h1>（一）springboot入门</h1>
-            <h2 class="subheading">springboot 学习之旅...</h2>
-            <span class="meta">
-              Posted by lidzknyy on
-              2022-04-16
-            </span>
-
-
-            
-            <!-- WordCount start -->
-            <div class="blank_box"></div>
-            <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
-            </span>
-            <div class="blank_box"></div>
-            <span class="meta">
-              Words <span class="post-count">634</span> In Total
-            </span>
-            <div class="blank_box"></div>
-            <!-- WordCount end -->
-            
-            
-            <!-- 不蒜子统计 start -->
-            <span class="meta" id="busuanzi_container_page_pv">
-              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
-            </span>
-            <!-- 不蒜子统计 end -->
-            
-
-
+          <div class="site-heading">
+            <h1>再看你一眼</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">几时归去，做个闲人，对一行code，一个bug，一地hair。</span>
           </div>
           
         </div>
@@ -452,311 +442,387 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Modify by Yu-Hsuan Yen -->
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+		<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    
 
-        <h2 id="开发环境">开发环境</h2>
-<blockquote>
-<p>IDEA 2021</p>
-<p>jdk1.8   【查看方式：<code>java -version</code>】</p>
-<p>maven 3.6.3  【查看方式： <code>mvn -v</code> / <code>IDEA-&gt;setting-&gt;Maven(setting窗口左上角搜索)-&gt;Maven主路径下方</code>】</p>
-<p>服务器URL : http:start.aliyun.com</p>
-</blockquote>
-<h2 id="springboot简介及相关网站">springboot简介及相关网站</h2>
-<p>  SpringBoot 设计目的是用来简化 Spring 应用的 初始搭建 以及 开发过程。为了让开发人员尽可能快的创建并运行 Spring 应用，尽可能减少项目的配置文件。</p>
-<ul>
-<li>为所有 Spring 开发提供更快的入门体验；</li>
-<li>零配置。无冗余代码生成和 XML 强制配置，遵循 “约定大于配置”；</li>
-<li>集成了大量常用的第三方库的配置，Spring Boot 应用为这些第三方库提供了几乎可以零配置的开箱即用的能力。</li>
-<li>提供了一系列大型项目常用的非功能性特性，例如嵌入式服务器、安全性、度量、运行状况检查、外部化配置等。</li>
-<li>Spring Boot 不是 Spring 的替代者，Spring 框架是通过 IOC 机制来管理 Bean 的。Spring Boot 依赖 Spring 框架在管理对象的依赖。Spring Boot 并不是 Spring 的精简版，而是为使用 Spring 做好各种产品级准备。</li>
-</ul>
-<blockquote>
-<p>Spring 官网：<a target="_blank" rel="noopener" href="https://spring.io/">https://spring.io/</a></p>
-<p>SpringBoot 中文文档：<a target="_blank" rel="noopener" href="http://felord.cn/_doc/_springboot/2.1.5.RELEASE/_book/">http://felord.cn/_doc/_springboot/2.1.5.RELEASE/_book/</a></p>
-<p>Maven 仓库：<a target="_blank" rel="noopener" href="https://mvnrepository.com/">https://mvnrepository.com/</a></p>
-<p>aliyun Maven 仓库：<a target="_blank" rel="noopener" href="https://developer.aliyun.com/mvn/search">https://developer.aliyun.com/mvn/search</a></p>
-<p>Mybatis Dynamic SQL：<a target="_blank" rel="noopener" href="https://mybatis.org/mybatis-dynamic-sql/docs/introduction.html">https://mybatis.org/mybatis-dynamic-sql/docs/introduction.html</a></p>
-<p>B 站黑马程序员 Springboot 教学视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV15b4y1a7yG?vd_source=44787ca5d68505e526ed99a073496e9f">https://www.bilibili.com/video/BV15b4y1a7yG?vd_source=44787ca5d68505e526ed99a073496e9f</a></p>
-</blockquote>
-<h2 id="项目创建">项目创建</h2>
-<h3 id="使用-IDEA-快速搭建项目">使用 IDEA 快速搭建项目</h3>
-<ol>
-<li>
-<p>File -&gt; New -&gt; Project -&gt; Spring Initializr</p>
-<p><img src="image-20220916132300523.png" alt="image-20220916132300523"></p>
-</li>
-<li>
-<p>选择依赖项，也可以不选择，后面需要再加上</p>
-<p><img src="image-20220916132733409.png" alt="image-20220916132733409"></p>
-</li>
-<li>
-<p>选择完依赖项后，点击右下角的完成即可创建成功。</p>
-</li>
-</ol>
-<h3 id="搭建项目的其他方法">搭建项目的其他方法</h3>
-<blockquote>
-<p>通过 Spring 官网搭建项目</p>
-</blockquote>
-<p>1.在 Spring 官网找到 Spring Boot 页面</p>
-<p><img src="image-20220916133137599.png" alt="image-20220916133137599"></p>
-<p>2.在最下面找到 Spring Initializr，点击进入，填写项目信息，生成项目压缩包即可。</p>
-<p><img src="image-20220916134109780.png" alt="image-20220916134109780"></p>
-<h2 id="项目结构">项目结构</h2>
-<h3 id="pom-xml">pom.xml</h3>
-<p>starter ：SpringBoot 中常见项目名称，定义了当前项目使用的所有依赖坐标，以达到减少依赖配置的目的。</p>
-<p>parent：所有 SpringBoot 项目要继承的项目，定义了若干个坐标版本号（依赖管理，而非依赖），以达到减少依赖冲突的目的。</p>
-<p>spring-boot-starter-parent 各版本之间存在着诸多坐标版本不同。</p>
-<p>使用坐标时，只需要写GAV中的G和A，V由SpringBoot提供，除非SpringBoot未提供对应版本V，需要手动添加。</p>
-<h3 id="引导类">引导类</h3>
+    <!-- USE SIDEBAR -->
+    <!-- Post Container -->
+    <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
 
+      <!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
-        <hr>
-        <!-- Pager -->
-        <ul class="pager">
+      
+
+      <!-- 归档列表 -->
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
+          <span class="tag-text">2022</span>
+        </span>
+        <ul>
           
-          <li class="previous">
-            <a href="/cn/spring/spring注解/" data-toggle="tooltip" data-placement="top" title="（二）spring注解开发">&larr; Previous Post</a>
+          <li>
+            10-31
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/总结/Java/" style="color: #0085a1">
+              <span>
+                Java
+                
+                -- cn
+                
+              </span>
+            </a>
           </li>
           
+          <li>
+            10-30
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/总结/mysql/" style="color: #0085a1">
+              <span>
+                mysql
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
           
-          <li class="next">
-            <a href="/cn/spring/spring/" data-toggle="tooltip" data-placement="top" title="（一）Spring入门">Next Post &rarr;</a>
+          <li>
+            09-18
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/spring/spring注解/" style="color: #0085a1">
+              <span>
+                （二）spring注解开发
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            04-16
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/springboot/springboot入门/" style="color: #0085a1">
+              <span>
+                （一）springboot入门
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            03-02
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/spring/spring/" style="color: #0085a1">
+              <span>
+                （一）Spring入门
+                
+                -- cn
+                
+              </span>
+            </a>
           </li>
           
         </ul>
-
-        
-        <!-- tip start -->
-        <!-- tip -->
-<!-- tip start -->
-<div class="tip">
-  <p>
-    
-      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
-    
-  </p>
+      </div>
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2021">
+          <span class="tag-text">2021</span>
+        </span>
+        <ul>
+          
+          <li>
+            12-02
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/note/设计模式/" style="color: #0085a1">
+              <span>
+                设计模式
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-15
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/note/maven/" style="color: #0085a1">
+              <span>
+                Maven
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            08-30
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/note/java笔记/" style="color: #0085a1">
+              <span>
+                java笔记
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            07-09
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/note/MySQL/" style="color: #0085a1">
+              <span>
+                MySQL
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+    </div>
+  </div>
 </div>
-<!-- tip end -->
 
-        <!-- tip end -->
-        
 
-        
-        <!-- Sharing Srtart -->
-        <!-- Social Social Share Post -->
-<!-- Docs:https://github.com/overtrue/share.js -->
+      <!-- 如果开启评论功能 -->
+      
+    </div>
 
-<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
-  <ul class="list-inline text-center social-share-ul">
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-twitter">
-        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a class="social-share-icon icon-wechat">
-        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-weibo">
-        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-qq">
-        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=（一）springboot入门&body=Hi,I found this website and thought you might like it https://github.com/lidzknyy/lidzknyy.github.io/cn/springboot/springboot入门/">
-        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
+    <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Visitors -->
+<h5><a href="/">来访者</a></h5>
+
+<div class="widget">
+  <span>
+    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
+  </span>
+  <br />
+  <span>
+    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
+  </span>
+</div>
+
+
+        <hr>
+    
+        <!-- Featured Tags -->
+
+<section>
+  <h5><a href="/tags/">特色标签</a></h5>
+  <div class="tags">
+    
+    
+    <a href="/tags/#设计模式" title="设计模式" rel="1">设计模式</a>
+    
+    
+    
+    <a href="/tags/#java" title="java" rel="1">java</a>
+    
+    
+    
+    <a href="/tags/#mysql" title="mysql" rel="2">mysql</a>
+    
+    
+    
+    <a href="/tags/#springboot" title="springboot" rel="1">springboot</a>
+    
+    
+    
+    <a href="/tags/#Maven" title="Maven" rel="1">Maven</a>
+    
+    
+    
+    <a href="/tags/#spring" title="spring" rel="2">spring</a>
+    
+    
+    
+    <a href="/tags/#Java" title="Java" rel="1">Java</a>
+    
+    
+    
+    <a href="/tags/#总结" title="总结" rel="1">总结</a>
+    
+    
+  </div>
+</section>
+
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+  <h5><a href="/about/">关于自己</a></h5>
+  <div class="short-about">
+
+    
+    <img id="avatar_pic" src="/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
+    
+
+    
+    <p>Fat people have no future, either thin or die...</p>
+    
+
+    <!-- SNS Link -->
+    <ul class="list-inline">
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+    </ul>
+  </div>
+</section>
+
+        <hr>
+    
+        <!-- RECENT POSTS -->
+
+<h5><a href="/">最近博文</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="../../../cn/%E6%80%BB%E7%BB%93/Java/">
+      <li>Java</li>
+    </a>
+    
+    <a href="../../../cn/%E6%80%BB%E7%BB%93/mysql/">
+      <li>mysql</li>
+    </a>
+    
+    <a href="../../../cn/spring/spring%E6%B3%A8%E8%A7%A3/">
+      <li>（二）spring注解开发</li>
+    </a>
+    
+    <a href="../../../cn/springboot/springboot%E5%85%A5%E9%97%A8/">
+      <li>（一）springboot入门</li>
+    </a>
+    
+    <a href="../../../cn/spring/spring/">
+      <li>（一）Spring入门</li>
+    </a>
+    
   </ul>
 </div>
 
-<!-- css & js -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
-<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-        <!-- Sharing End -->
-        
         <hr>
-
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
-
-  <!-- gitalk start -->
-  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
-
-  <div id="gitalk-container"></div>
-
-  
-    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
-    <script src="/js/comment/gitalk.js"></script>
-  
-
-  <script>
-    var gitalk = new Gitalk({
-      clientID: '3a2fb87f10e4af9fe320',
-      clientSecret: '21dc47c8207b6e318baa54ac24cb20ac5428c924',
-      repo: 'gitalk',
-      owner: 'lidzknyy',
-      admin: 'lidzknyy',
-      id: 'Sat Apr 16 2022 10:28:37 GMT+0800', // Ensure uniqueness and length less than 50
-      distractionFreeMode: false, // Facebook-like distraction free mode
-      perPage: 10,
-      pagerDirection: 'last',
-      createIssueManually: false,
-      language: 'zh-CN',
-      proxy: 'https://cors-anywhere.azm.workers.dev/?https://github.com/login/oauth/access_token'
-    });
-    gitalk.render('gitalk-container');
-
-    var gtFolded = () => {
-      setTimeout(function () {
-        let markdownBody = document.getElementsByClassName("markdown-body");
-        let list = Array.from(markdownBody);
-        list.forEach(item => {
-          if (item.clientHeight > 250) {
-            item.classList.add('gt-comment-body-folded');
-            item.style.maxHeight = '250px';
-            item.title = 'Click to Expand';
-            item.onclick = function () {
-              item.classList.remove('gt-comment-body-folded');
-              item.style.maxHeight = '';
-              item.title = '';
-              item.onclick = null;
-            };
-          }
-        })
-      }, 800);
-    }
-  </script>
-
-  <!-- gitalk end -->
-
-
-<!-- 2. gitment comment -->
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
-        <hr>
-
-      </div>
-
-      <!-- Catalog: Tabe of Content -->
-      <!-- Table of Contents -->
-
     
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">目录</strong>
-        
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">开发环境</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#springboot%E7%AE%80%E4%BB%8B%E5%8F%8A%E7%9B%B8%E5%85%B3%E7%BD%91%E7%AB%99"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">springboot简介及相关网站</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">项目创建</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BD%BF%E7%94%A8-IDEA-%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">使用 IDEA 快速搭建项目</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%90%AD%E5%BB%BA%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">搭建项目的其他方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">项目结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#pom-xml"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">pom.xml</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%BC%95%E5%AF%BC%E7%B1%BB"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">引导类</span></a></li></ol></li></ol>
-        
-        </div>
-      </aside>
-    
-
-
-
-      <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-        <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">特色标签</a>
-          </h5>
-          <div class="tags">
-            
-            <a class="tag" href="/tags/#springboot" title="springboot">springboot</a>
-            
-          </div>
-        </section>
-        
-
         <!-- Friends Blog -->
-        
+
+<h5><a href="/">链友</a></h5>
+<ul class="list-inline">
+  
+  <li><a href="https://redamancyyou.github.io/" target="_blank">狗熊岭在逃熊二</a></li>
+  
+</ul>
+
+
         <hr>
-        <h5>链友</h5>
-        <ul class="list-inline">
+    
+        <!-- Archives -->
 
-          
-          <li>
-            <a href="https://redamancyyou.github.io/" target="_blank">狗熊岭在逃熊二</a>
-          </li>
-          
-        </ul>
-        
-      </div>
-    </div>
+<h5><a href="/archives/">archives</a></h5>
+<div class="widget">
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/10/">October 2022</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/09/">September 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/04/">April 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2022/03/">March 2022</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/12/">December 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/11/">November 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/08/">August 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../../../archives/2021/07/">July 2021</a><span class="archive-list-count">1</span></li></ul>
+</div>
+
+
+        <hr>
+    
+        <!-- Categories -->
+
+<h5><a href="/categories/">categories</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="/categories/#设计模式">
+      <li>设计模式</li>
+    </a>
+    
+    <a href="/categories/#java">
+      <li>java</li>
+    </a>
+    
+    <a href="/categories/#mysql">
+      <li>mysql</li>
+    </a>
+    
+    <a href="/categories/#springboot">
+      <li>springboot</li>
+    </a>
+    
+    <a href="/categories/#Maven">
+      <li>Maven</li>
+    </a>
+    
+    <a href="/categories/#spring">
+      <li>spring</li>
+    </a>
+    
+    <a href="/categories/#Java">
+      <li>Java</li>
+    </a>
+    
+    <a href="/categories/#总结">
+      <li>总结</li>
+    </a>
+    
+  </ul>
+</div>
+
+
+        <hr>
+    
+</div>
+
+
+    
   </div>
-</article>
-
-
-
-<!-- anchorjs start -->
-<!-- async load function -->
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script type="text/javascript">
-  // async load function
-  function async (u, c) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) {
-      o.addEventListener('load', function(e) {
-        c(null, e);
-      }, false);
-    }
-    s.parentNode.insertBefore(o, s);
-  };
-</script>
-<script type="text/javascript">
-  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
-  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
-    anchors.options = {
-      visible: 'hover',
-      placement: 'left',
-      // icon: 'ℬ'
-      icon: '❡'
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-  });
-</script>
-<style>
-  /* place left on bigger screen */
-  @media all and (min-width: 800px) {
-    .anchorjs-link {
-      position: absolute;
-      left: -0.75em;
-      font-size: 1.1em;
-      margin-top: -0.1em;
-    }
-  }
-</style>
-
-<!-- anchorjs end -->
-
+</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
