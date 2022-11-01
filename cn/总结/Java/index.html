@@ -396,11 +396,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">4</span> Minutes
+              Estimated Reading Time <span class="post-count">11</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.3k</span> In Total
+              Words <span class="post-count">3.1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -464,7 +464,7 @@
 
         <h2 id="面向对象的三大特性">面向对象的三大特性</h2>
 <p>Java 面向对象编程的三大特性：封装、继承、多态。</p>
-<p>封装：通过访问控制修饰符实现。隐藏对象的属性和实现细节，仅对外提供公共访问方法和变量，提高复用性和安全性。</p>
+<p>封装：通过访问控制修饰符实现。隐藏类的属性和实现细节，仅对外提供公共访问方法和变量，提高复用性和安全性。</p>
 <p>继承：通过 extends 实现。使用已存在的类的定义为基础扩展新的类，提高代码的复用性。</p>
 <p>多态：父类引用指向子类对象。实现多态的三个必要条件：继承、重写、向上转型。</p>
 <h2 id="接口-和-抽象类-的异同">接口 和 抽象类 的异同</h2>
@@ -530,7 +530,11 @@
 <li>选择抽象类的情况：需要定义子类的行为，又要为子类提供通用的功能。</li>
 </ul>
 <h2 id="多态体现在哪些方面？">多态体现在哪些方面？</h2>
-<p>重载和重写。重载体现编译时的多态性，重写体现运行时的多态性。</p>
+<p>重载和重写。</p>
+<ul>
+<li>重载体现编译时的多态性，在编译时就能确定调用的方法。</li>
+<li>重写体现运行时的多态性，在编译时不能确定，运行时才能确定调用的方法。</li>
+</ul>
 <h2 id="重载-和-重写-的区别">重载 和 重写 的区别</h2>
 <ul>
 <li>
@@ -542,17 +546,10 @@
 </ul>
 <h2 id="重载的方法能否根据返回类型区分？">重载的方法能否根据返回类型区分？</h2>
 <p>不能。重载体现编译时的多态性，如果仅有返回类型不同，则不能确定 接收该方法返回值的变量 的类型，存在二义性，不能通过编译。</p>
-<h2 id="类加载过程">类加载过程</h2>
-<p>什么叫Aop</p>
-<p>Spring bean的生命周期</p>
-<p>线程同步和线程调度相关方法</p>
-<p>Java 会存在内存泄露吗</p>
-<p>大型网站在架构上应当考虑哪些问题</p>
-<p>JavaWeb开发的 Model1 和 Model2 分别指什么</p>
-<p>比较 Java 和 JavaScript</p>
-<p>统计一个字符串在某个文件中出现的次数</p>
-<p>解释一下网络应用模式及特点</p>
-<p>Redis 缓存使用场景</p>
+<h2 id="IOC、AOP">IOC、AOP</h2>
+<p>IOC：控制反转。改变传统开发中主动创建对象的方式，将对象交给第三方容器创建和管理。起到降低耦合的作用。</p>
+<p>AOP：面向切面编程。对面向对象编程的一种增强。将那些与业务无关，却为业务模块多共同调用的逻辑或责任封装起来，减少系统的重复代码，降低模块之间耦合度，提高维护性。<br>
+使用场景：事务管理、安全检查、权限控制、数据校验、日志、缓存、对象池管理等。</p>
 <h2 id="死锁的产生、条件、解除">死锁的产生、条件、解除</h2>
 <p>死锁 (deadlock) ：指两个或两个以上的进程/线程在执行过程中，因争夺资源而造成的一种互相等待的现象，若无外力作用，他们都将无法推进下去。例如：线程A占有了资源1并请求资源2，线程B占有了资源2并请求资源1，且A、B都不愿意释放资源，此时就发生了死锁。</p>
 <h3 id="产生死锁的原因">产生死锁的原因</h3>
@@ -568,6 +565,95 @@
 <p>（4）循环等待条件：若干进程之间形成一种头尾相接的循环等待资源关系。</p>
 <p>前三个条件是死锁存在的必要条件，但不是充分条件。第四个条件是前三个条件同时存在时产生的结果。只要能破坏4个必要条件之一，就可以防止死锁。</p>
 <h3 id="死锁的解除和预防">死锁的解除和预防</h3>
+<h4 id="破坏必要条件">破坏必要条件</h4>
+<p>只要能破坏四个必要条件之一，就能防止死锁。</p>
+<ul>
+<li>破坏互斥条件</li>
+</ul>
+<p>  使资源可同时访问而非互斥使用。但如可写文件、键盘等设备的特殊性质决定其只能互斥的占有，而不能被同时访问，所以该方法很多时候都行不通。</p>
+<ul>
+<li>破坏占有和等待条件</li>
+</ul>
+<p>  静态分配策略。进程在执行前就申请需要的全部资源，直至所要的资源都得到满足后才开始执行。该方法会严重降低资源利用率。</p>
+<p>  例如：进程 A 占有资源R1、R2，进程 B 需要申请资源 R2，但资源 R2 直至 A 快执行结束时才会使用，在 A 执行完之前，B 就需要一直等待。</p>
+<ul>
+<li>破坏不剥夺条件</li>
+</ul>
+<p>  该方法只适用于内存和处理器资源。</p>
+<p>  方法一：进程若要申请资源，必须先释放掉已占用资源，如果仍需使用该资源，应向系统重新提出申请。该方法会造成重复的申请和释放资源。</p>
+<p>  方法二：进程申请新资源时，如果系统有则分配，否则剥夺进程已占有的资源，让进程进入等待状态，资源充足时再重新唤醒。</p>
+<ul>
+<li>
+<p>破坏循环等待条件</p>
+<p>层次分配策略。将系统所有资源排列到不同层次中，进程申请资源时必须满足如下规则：</p>
+<ul>
+<li>
+<p>得到某层资源后，只能申请较高一层的资源；</p>
+</li>
+<li>
+<p>释放某曾资源时，必须先释放多占用的所有更高层资源；</p>
+</li>
+<li>
+<p>得到某曾资源后，如果想申请同层其它资源，必须先释放掉此层已占有资源。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>  按序分配策略。对系统所有资源按顺序编号。进程申请资源时，必须以上升的次序进行申请。例如：系统共有 n 个进程，m 个资源，r~i~ 表示第 i 个资源，于是 m 个资源为 r~1~, r~2~, ……, r~m~，规定进程不得在占有资源 r~i~（1 &lt;= i &lt;= m）后再申请 r~j~（j &lt; i），就可以防止死锁。</p>
+<h4 id="银行家算法">银行家算法</h4>
+<p>该算法需要检查申请者对资源的最大需求量，如果系统现存的各类资源可以满足申请者的请求，就满足申请者的请求。</p>
+<p>这样申请者就可很快完成其计算，然后释放它占用的资源，从而保证了系统中的所有进程都能完成，所以可避免死锁的发生。</p>
+<h3 id="死锁排除">死锁排除</h3>
+<ul>
+<li>撤销陷于死锁的全部进程；</li>
+<li>逐个撤销，直到死锁解除；</li>
+<li>从陷于死锁的进程中逐个强迫其放弃占用的资源，直到死锁解除。</li>
+</ul>
+<h2 id="类加载过程">类加载过程</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ClassLoading</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> B();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;A static code&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;A code&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    A() &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;A class constructor&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;B static code&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;B code&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    B() &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;B class constructor&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A static code</span><br><span class="line">B static code</span><br><span class="line">A code</span><br><span class="line">A class constructor</span><br><span class="line">B code</span><br><span class="line">B class constructor</span><br></pre></td></tr></table></figure>
+<h2 id="Redis">Redis</h2>
+<h3 id="Redis-为什么快？">Redis 为什么快？</h3>
+<ul>
+<li>Redis 基于纯内存操作，所有的数据都在内存中，所有的运算都是内存级别的运算。</li>
+<li>Redis 基于 Reactor 模式设计开发了一套高效的事件处理模型，主要是单线程事件循环和 IO 多路复用。</li>
+<li>Redis 内置了多种优化过后的数据结构实现，性能非常高。</li>
+</ul>
+<h3 id="Redis-缓存">Redis 缓存</h3>
+<h4 id="缓存数据处理流程">缓存数据处理流程</h4>
+<p>用户请求 =&gt; 缓存中查找（有则返回，否则进行下一步） =&gt; 数据库中查找（有则返回，否则返回空数据）</p>
+<h4 id="为什么使用-Redis-缓存">为什么使用 Redis 缓存</h4>
+<p>高性能：用户第一次请求数据，会从数据库中查询，是从硬盘中读取，较慢。如果用户访问的数据属于高频数据并且不经常改变的话，就可以将数据放在缓存中，提高效率。</p>
+<p>高并发：MySQL之类的数据库的 QPS (Query Per Second, 服务器每秒可以执行的查询次数) 大概在 1w 左右（4核8G），使用 Redis 缓存很容易达到 10w+，甚至最高能达到 30w+，使用 Redis 集群会更高。</p>
+<h4 id="Redis-线程模型">Redis 线程模型</h4>
+<p>Redis 读写命令是单线程。4.0 版本后引入多线程执行一些大键值对的异步删除操作，6.0 版本后引入多线程处理网络请求，提高网络 IO 读写性能。</p>
+<blockquote>
+<p>Redis 基于 Reactor 模式开发了自己的网络事件处理器：这个处理器被称为文件事件处理器（file event handler）。</p>
+<ul>
+<li>文件事件处理器使用 I/O 多路复用（multiplexing）程序来同时监听多个套接字，并根据套接字目前执行的任务来为套接字关联不同的事件处理器。</li>
+<li>当被监听的套接字准备好执行连接应答（accept）、读取（read）、写入（write）、关 闭（close）等操作时，与操作相对应的文件事件就会产生，这时文件事件处理器就会调用套接字之前关联好的事件处理器来处理这些事件。</li>
+</ul>
+<p><strong>虽然文件事件处理器以单线程方式运行，但通过使用 I/O 多路复用程序来监听多个套接字</strong>，文件事件处理器既实现了高性能的网络通信模型，又可以很好地与 Redis 服务器中其他同样以单线程方式运行的模块进行对接，这保持了 Redis 内部单线程设计的简单性。</p>
+</blockquote>
+<h4 id="Redis-怎么监听大量的客户端连接">Redis 怎么监听大量的客户端连接</h4>
+<p>Redis 通过 <strong>IO 多路复用程序</strong> 来监听来自客户端的大量连接（或者说是监听多个 socket），它会将感兴趣的事件及类型（读、写）注册到内核中并监听每个事件是否发生。</p>
+<p>这样的好处非常明显： <strong>I/O 多路复用技术的使用让 Redis 不需要额外创建多余的线程来监听客户端的大量连接，降低了资源的消耗</strong>（和 NIO 中的 <code>Selector</code> 组件很像）。</p>
+<p>文件事件处理器（file event handler）主要是包含 4 个部分：</p>
+<ul>
+<li>多个 socket（客户端连接）</li>
+<li>IO 多路复用程序（支持多个客户端连接的关键）</li>
+<li>文件事件分派器（将 socket 关联到相应的事件处理器）</li>
+<li>事件处理器（连接应答处理器、命令请求处理器、命令回复处理器）</li>
+</ul>
+<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/database/redis/redis-event-handler.png" alt="文件事件处理器"></p>
+<h2 id="Spring-bean的生命周期">Spring bean的生命周期</h2>
+<h2 id="线程同步和线程调度相关方法">线程同步和线程调度相关方法</h2>
+<h2 id="Java-会存在内存泄露吗">Java 会存在内存泄露吗</h2>
+<h2 id="大型网站在架构上应当考虑哪些问题">大型网站在架构上应当考虑哪些问题</h2>
+<h2 id="JavaWeb开发的-Model1-和-Model2-分别指什么">JavaWeb开发的 Model1 和 Model2 分别指什么</h2>
+<h2 id="比较-Java-和-JavaScript">比较 Java 和 JavaScript</h2>
+<h2 id="统计一个字符串在某个文件中出现的次数">统计一个字符串在某个文件中出现的次数</h2>
+<h2 id="解释一下网络应用模式及特点">解释一下网络应用模式及特点</h2>
 
 
         <hr>
@@ -713,7 +799,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">面向对象的三大特性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8E%A5%E5%8F%A3-%E5%92%8C-%E6%8A%BD%E8%B1%A1%E7%B1%BB-%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">接口 和 抽象类 的异同</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%9A%E6%80%81%E4%BD%93%E7%8E%B0%E5%9C%A8%E5%93%AA%E4%BA%9B%E6%96%B9%E9%9D%A2%EF%BC%9F"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">多态体现在哪些方面？</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%87%8D%E8%BD%BD-%E5%92%8C-%E9%87%8D%E5%86%99-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">重载 和 重写 的区别</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%87%8D%E8%BD%BD%E7%9A%84%E6%96%B9%E6%B3%95%E8%83%BD%E5%90%A6%E6%A0%B9%E6%8D%AE%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%E5%8C%BA%E5%88%86%EF%BC%9F"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">重载的方法能否根据返回类型区分？</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">类加载过程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%AD%BB%E9%94%81%E7%9A%84%E4%BA%A7%E7%94%9F%E3%80%81%E6%9D%A1%E4%BB%B6%E3%80%81%E8%A7%A3%E9%99%A4"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">死锁的产生、条件、解除</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%A7%E7%94%9F%E6%AD%BB%E9%94%81%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">产生死锁的原因</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%A7%E7%94%9F%E6%AD%BB%E9%94%81%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">产生死锁的四个必要条件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%AD%BB%E9%94%81%E7%9A%84%E8%A7%A3%E9%99%A4%E5%92%8C%E9%A2%84%E9%98%B2"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">死锁的解除和预防</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">面向对象的三大特性</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8E%A5%E5%8F%A3-%E5%92%8C-%E6%8A%BD%E8%B1%A1%E7%B1%BB-%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">接口 和 抽象类 的异同</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%9A%E6%80%81%E4%BD%93%E7%8E%B0%E5%9C%A8%E5%93%AA%E4%BA%9B%E6%96%B9%E9%9D%A2%EF%BC%9F"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">多态体现在哪些方面？</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%87%8D%E8%BD%BD-%E5%92%8C-%E9%87%8D%E5%86%99-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">重载 和 重写 的区别</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%87%8D%E8%BD%BD%E7%9A%84%E6%96%B9%E6%B3%95%E8%83%BD%E5%90%A6%E6%A0%B9%E6%8D%AE%E8%BF%94%E5%9B%9E%E7%B1%BB%E5%9E%8B%E5%8C%BA%E5%88%86%EF%BC%9F"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">重载的方法能否根据返回类型区分？</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#IOC%E3%80%81AOP"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">IOC、AOP</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%AD%BB%E9%94%81%E7%9A%84%E4%BA%A7%E7%94%9F%E3%80%81%E6%9D%A1%E4%BB%B6%E3%80%81%E8%A7%A3%E9%99%A4"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">死锁的产生、条件、解除</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%A7%E7%94%9F%E6%AD%BB%E9%94%81%E7%9A%84%E5%8E%9F%E5%9B%A0"><span class="toc-nav-number">7.1.</span> <span class="toc-nav-text">产生死锁的原因</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E4%BA%A7%E7%94%9F%E6%AD%BB%E9%94%81%E7%9A%84%E5%9B%9B%E4%B8%AA%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-nav-number">7.2.</span> <span class="toc-nav-text">产生死锁的四个必要条件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%AD%BB%E9%94%81%E7%9A%84%E8%A7%A3%E9%99%A4%E5%92%8C%E9%A2%84%E9%98%B2"><span class="toc-nav-number">7.3.</span> <span class="toc-nav-text">死锁的解除和预防</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%A0%B4%E5%9D%8F%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-nav-number">7.3.1.</span> <span class="toc-nav-text">破坏必要条件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95"><span class="toc-nav-number">7.3.2.</span> <span class="toc-nav-text">银行家算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%AD%BB%E9%94%81%E6%8E%92%E9%99%A4"><span class="toc-nav-number">7.4.</span> <span class="toc-nav-text">死锁排除</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="toc-nav-number">8.</span> <span class="toc-nav-text">类加载过程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Redis"><span class="toc-nav-number">9.</span> <span class="toc-nav-text">Redis</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Redis-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%AB%EF%BC%9F"><span class="toc-nav-number">9.1.</span> <span class="toc-nav-text">Redis 为什么快？</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Redis-%E7%BC%93%E5%AD%98"><span class="toc-nav-number">9.2.</span> <span class="toc-nav-text">Redis 缓存</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BC%93%E5%AD%98%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="toc-nav-number">9.2.1.</span> <span class="toc-nav-text">缓存数据处理流程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8-Redis-%E7%BC%93%E5%AD%98"><span class="toc-nav-number">9.2.2.</span> <span class="toc-nav-text">为什么使用 Redis 缓存</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Redis-%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-nav-number">9.2.3.</span> <span class="toc-nav-text">Redis 线程模型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Redis-%E6%80%8E%E4%B9%88%E7%9B%91%E5%90%AC%E5%A4%A7%E9%87%8F%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9E%E6%8E%A5"><span class="toc-nav-number">9.2.4.</span> <span class="toc-nav-text">Redis 怎么监听大量的客户端连接</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Spring-bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-nav-number">10.</span> <span class="toc-nav-text">Spring bean的生命周期</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E5%92%8C%E7%BA%BF%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="toc-nav-number">11.</span> <span class="toc-nav-text">线程同步和线程调度相关方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Java-%E4%BC%9A%E5%AD%98%E5%9C%A8%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E5%90%97"><span class="toc-nav-number">12.</span> <span class="toc-nav-text">Java 会存在内存泄露吗</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E5%9C%A8%E6%9E%B6%E6%9E%84%E4%B8%8A%E5%BA%94%E5%BD%93%E8%80%83%E8%99%91%E5%93%AA%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="toc-nav-number">13.</span> <span class="toc-nav-text">大型网站在架构上应当考虑哪些问题</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#JavaWeb%E5%BC%80%E5%8F%91%E7%9A%84-Model1-%E5%92%8C-Model2-%E5%88%86%E5%88%AB%E6%8C%87%E4%BB%80%E4%B9%88"><span class="toc-nav-number">14.</span> <span class="toc-nav-text">JavaWeb开发的 Model1 和 Model2 分别指什么</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%AF%94%E8%BE%83-Java-%E5%92%8C-JavaScript"><span class="toc-nav-number">15.</span> <span class="toc-nav-text">比较 Java 和 JavaScript</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%BB%9F%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%9C%A8%E6%9F%90%E4%B8%AA%E6%96%87%E4%BB%B6%E4%B8%AD%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0"><span class="toc-nav-number">16.</span> <span class="toc-nav-text">统计一个字符串在某个文件中出现的次数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B%E7%BD%91%E7%BB%9C%E5%BA%94%E7%94%A8%E6%A8%A1%E5%BC%8F%E5%8F%8A%E7%89%B9%E7%82%B9"><span class="toc-nav-number">17.</span> <span class="toc-nav-text">解释一下网络应用模式及特点</span></a></li></ol>
         
         </div>
       </aside>
